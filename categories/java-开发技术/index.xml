@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java 开发技术 on 胡言乱语</title>
+    <link>https://vxgo.github.io/categories/java-%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in Java 开发技术 on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Aug 2018 15:15:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/categories/java-%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JVM-垃圾回收（二）</title>
+      <link>https://vxgo.github.io/2018/08/23/jvm-gc2/</link>
+      <pubDate>Thu, 23 Aug 2018 15:15:07 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/23/jvm-gc2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;接着上次 JVM 中 GC 机制的总结，这次主要复习一下垃圾收集的常用算法和 Minor GC、Full GC 相关的一些知识点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;一-垃圾收集算法&#34;&gt;一、垃圾收集算法&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-标记-清除-mark-sweep&#34;&gt;1.1 标记 - 清除（Mark-Sweep）&lt;/h3&gt;
+
+&lt;p&gt;算法分成 “标记”、“清除” 两个阶段：首先标记出所有需要回收的对象（两次标记），在标记完成后统一回收所有被标记的对象。如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx4.sinaimg.cn/large/687148dbly1ftwah4c7cxj20gv07b0sz.jpg&#34; alt=&#34;&#34; /&gt;
+
+标记－清除算法的不足主要有以下两点：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JVM-垃圾回收（一）</title>
+      <link>https://vxgo.github.io/2018/08/23/jvm-gc1/</link>
+      <pubDate>Thu, 23 Aug 2018 11:25:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/23/jvm-gc1/</guid>
+      <description>&lt;p&gt;在 JVM 运行时数据区域中，程序计数器、虚拟机栈和本地方法栈这三个区域属于线程私有的，只存在于线程的生命周期内，线程结束之后也会消失，因此不需要对这三个区域进行垃圾回收。垃圾回收主要是针对 Java 堆和方法区进行。&lt;/p&gt;
+
+&lt;h2 id=&#34;一-判断对象状态&#34;&gt;一、判断对象状态&lt;/h2&gt;
+
+&lt;p&gt;JVM 在回收一个对象时，首先要判断这个对象的状态，如果判断对象为无效的（没有被任何对象或变量引用），则需要被 JVM 垃圾回收器回收。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-1-引用计数算法&#34;&gt;1.1 引用计数算法&lt;/h3&gt;
+
+&lt;p&gt;给对象添加一个引用计数器，当对象增加一个引用时计数器加 1，引用失效时计数器减 1。引用计数不为 0 的对象仍然存活。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

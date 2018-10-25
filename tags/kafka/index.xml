@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kafka on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/kafka/</link>
+    <description>Recent content in Kafka on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 10 Oct 2016 21:40:52 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转] Kafka入门教程</title>
+      <link>https://vxgo.github.io/2016/10/10/%E8%BD%AC-kafka%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 10 Oct 2016 21:40:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/10/%E8%BD%AC-kafka%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;h1 id=&#34;一-基本概念&#34;&gt;一、基本概念&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-介绍&#34;&gt;1. 介绍&lt;/h2&gt;
+
+&lt;p&gt;Kafka 是一个分布式的、可分区的、可复制的消息系统。它提供了普通消息系统的功能，但具有自己独特的设计。&lt;strong&gt;这个独特的设计是什么样的呢？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/kafka-logo.png&#34; alt=&#34;&#34; /&gt;
+&lt;!-- {% img /images/post/kafka-logo.png 400 %} --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

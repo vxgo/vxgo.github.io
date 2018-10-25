@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>minikube on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/minikube/</link>
+    <description>Recent content in minikube on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 12 Jan 2018 09:23:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/minikube/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes 学习笔记之 MiniKube 安装</title>
+      <link>https://vxgo.github.io/2018/01/12/kubernetes-minikube-installation/</link>
+      <pubDate>Fri, 12 Jan 2018 09:23:01 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/01/12/kubernetes-minikube-installation/</guid>
+      <description>&lt;p&gt;Kubernetes 集群的搭建是有一定难度的，尤其是对于初学者来说，好多概念和原理不懂，即使有现成的教程也会出现很多不可预知的问题，很容易打击学习的积极性，就此弃坑。好在 Kubernetes 社区提供了可以在本地开发和体验的极简集群安装 MiniKube，对于入门学习来说很方便。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/large/687148dbly1fo7n00rkl6j20b40b4goj.jpg&#34; alt=&#34;minikube&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MiniKube 官方安装介绍已经非常详细了，可以参考 &lt;a href=&#34;https://github.com/kubernetes/minikube#installation&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;installation&lt;/a&gt;。但是在国内由于网络访问原因（懂的），即使有梯子也很折腾，所以记录一下阿里修改后的 MiniKube 安装。使用阿里修改后的 MiniKube 就可以从阿里云的镜像地址来获取所需 Docker 镜像和配置，其它的并没有差异，下文着重介绍。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

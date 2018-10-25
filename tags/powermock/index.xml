@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PowerMock on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/powermock/</link>
+    <description>Recent content in PowerMock on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 25 Jul 2017 19:01:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/powermock/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 PowerMock 进行单元测试</title>
+      <link>https://vxgo.github.io/2017/07/25/use-introduction-of-powermock/</link>
+      <pubDate>Tue, 25 Jul 2017 19:01:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/07/25/use-introduction-of-powermock/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;单元测试（Unit Testing）又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。如果我们写的代码依赖于某些模块对象，而单元测试过程中这些对象又很难手动创建，或者模块还没有开发完成，那么就使用一个虚拟的对象来完成单元测试，这就是所谓的 Mock。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Java 单元测试中比较流行的 Mock 测试框架有 &lt;a href=&#34;http://www.jmock.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;jMock&lt;/a&gt;、&lt;a href=&#34;http://easymock.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;EasyMock&lt;/a&gt;、&lt;a href=&#34;https://github.com/mockito/mockito&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Mockito&lt;/a&gt;，但是这些 Mock 工具都不能 Mock &lt;code&gt;static&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;private&lt;/code&gt; 方法等，而 &lt;a href=&#34;https://github.com/powermock/powermock&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;PowerMock&lt;/a&gt; 能够做到。&lt;/p&gt;
+
+&lt;p&gt;使用 PowerMock，首先需要使用 &lt;code&gt;@RunWith(PowerMockRunner.class)&lt;/code&gt; 将测试用例的 Runner 改为 &lt;code&gt;PowerMockRunner&lt;/code&gt;。如果要 Mock &lt;code&gt;static&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;private&lt;/code&gt; 等方法的时候，就需要加注解 &lt;code&gt;@PrepareForTest&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;PowerMock 有两个版本，一个是基于 EasyMock 实现的，另一个是基于 Mockito 实现的。&lt;/p&gt;
+
+&lt;p&gt;下面我将以 PowerMock 的 Mockito 的版本来讲述如何使用 PowerMock。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

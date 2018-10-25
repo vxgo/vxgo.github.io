@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>持续构建 on 胡言乱语</title>
+    <link>https://vxgo.github.io/categories/%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA/</link>
+    <description>Recent content in 持续构建 on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Nov 2016 09:44:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/categories/%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test daocloud CI</title>
+      <link>https://vxgo.github.io/2016/11/18/test-daocloud-ci/</link>
+      <pubDate>Fri, 18 Nov 2016 09:44:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/18/test-daocloud-ci/</guid>
+      <description>Test daocloud CI</description>
+    </item>
+    
+    <item>
+      <title>测试使用 daocloud 持续构建 Hexo</title>
+      <link>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8-daocloud-%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-hexo/</link>
+      <pubDate>Wed, 02 Nov 2016 19:03:06 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8-daocloud-%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-hexo/</guid>
+      <description>测试使用 daocloud 持续构建 Hexo {% note danger %} Coding Hexo DaoCloud {% endnote %} {% note primary %} 看到这边博文，表示持续构建成功！！！ {% endnote %}</description>
+    </item>
+    
+    <item>
+      <title>测试 Travis CI 结合 Hexo 使用</title>
+      <link>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95-travis-ci-%E7%BB%93%E5%90%88-hexo-%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 02 Nov 2016 17:32:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95-travis-ci-%E7%BB%93%E5%90%88-hexo-%E4%BD%BF%E7%94%A8/</guid>
+      <description> 测试 Travis CI 结合 Hexo 使用 </description>
+    </item>
+    
+  </channel>
+</rss>

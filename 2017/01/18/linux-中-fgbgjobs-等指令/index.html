@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="ehlxr">
+  <meta name="description" content="My Hugo Blog.">
+  <meta name="keywords" content="[Hugo theme ehlxr]">
+  
+  <link rel="prev" href="https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/" />
+  <link rel="next" href="https://vxgo.github.io/2017/01/18/linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/" />
+  <link rel="canonical" href="https://vxgo.github.io/2017/01/18/linux-%E4%B8%AD-fgbgjobs-%E7%AD%89%E6%8C%87%E4%BB%A4/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux 中 fg、bg、jobs 等指令 | 胡言乱语
+       
+  </title>
+  <meta name="title" content="Linux 中 fg、bg、jobs 等指令 | 胡言乱语">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://vxgo.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Linux 中 fg、bg、jobs 等指令",
+    "headline" : "Linux 中 fg、bg、jobs 等指令",
+    "description" : "<blockquote>
+<p>记录总结一下 <code>Linux</code> 中 <code>fg</code>、<code>bg</code>、<code>jobs</code>、<code>&amp;</code>、<code>ctrl + z</code> 等相关指令对任务进程的操作。</p>
+</blockquote>
+
+<h1 id="一-基本用法">一、基本用法</h1>
+
+<h2 id="1-1-和-jobs-指令">1.1 <code>&amp;</code> 和 <code>jobs</code> 指令</h2>
+
+<p><code>&amp;</code> 用在一个命令的最后，可以把这个命令转换为后台运行的任务进程。</p>
+
+<p><code>jobs</code> 查看当前终端有多少在后台运行的进程。</p>
+
+<ul>
+<li><p><code>jobs</code> 命令执行的结果，<code>＋</code> 表示是一个当前的作业，<code>-</code> 减号表示是一个当前作业之后的一个作业。</p></li>
+
+<li><p><code>jobs -l</code> 选项可显示所有任务的进程号 <code>pid</code></p></li>
+
+<li><p><code>jobs</code> 的状态可以是 <code>running</code>，<code>stopped</code>，<code>terminated</code>。但是如果任务进程被终止了（<code>kill</code>），当前的终端环境中也就删除了任务的进程标识；也就是说 <strong>jobs 命令显示的是当前 shell 环境中后台正在运行或者被挂起的任务进程信息</strong></p></li>
+</ul>
+
+<p></p>",
+    "inLanguage" : "zh-cn",
+    "author" : "ehlxr",
+    "creator" : "ehlxr",
+    "publisher": "ehlxr",
+    "accountablePerson" : "ehlxr",
+    "copyrightHolder" : "ehlxr",
+    "copyrightYear" : "2017",
+    "datePublished": "2017-01-18 15:30:16 &#43;0000 UTC",
+    "dateModified" : "2017-01-18 15:30:16 &#43;0000 UTC",
+    "url" : "https://vxgo.github.io/2017/01/18/linux-%E4%B8%AD-fgbgjobs-%E7%AD%89%E6%8C%87%E4%BB%A4/",
+    "wordCount" : "117",
+    "keywords" : [ "Linux", "胡言乱语"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+          
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux 中 fg、bg、jobs 等指令</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://vxgo.github.io" rel="author">ehlxr</a> with ♥
+                <span class="post-time">
+                on <time datetime=2017-01-18 itemprop="datePublished">January 18, 2017</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://vxgo.github.io/categories/linux/"> Linux </a>
+                        
+                </span>
+
+                |
+                <a href="#gitalk-container" itemprop="discussionUrl">
+                    <span class="gitalk-comment-count" itemprop="commentCount"></span>
+                </a>
+                条评论
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#一-基本用法">一、基本用法</a>
+<ul>
+<li><a href="#1-1-和-jobs-指令">1.1 <code>&amp;</code> 和 <code>jobs</code> 指令</a></li>
+<li><a href="#1-3-fg-和-bg-指令">1.3 <code>fg</code> 和 <code>bg</code> 指令</a></li>
+</ul></li>
+<li><a href="#二-进程的挂起">二、进程的挂起</a>
+<ul>
+<li><a href="#2-1-后台进程的挂起">2.1 后台进程的挂起</a></li>
+<li><a href="#2-2-前台进程的挂起">2.2 前台进程的挂起</a></li>
+</ul></li>
+<li><a href="#三-挂起进程重新运行">三、挂起进程重新运行</a></li>
+<li><a href="#四-进程的终止">四、进程的终止</a>
+<ul>
+<li><a href="#4-1-后台进程的终止">4.1 后台进程的终止</a></li>
+<li><a href="#4-2-前台进程的终止">4.2 前台进程的终止</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<p>记录总结一下 <code>Linux</code> 中 <code>fg</code>、<code>bg</code>、<code>jobs</code>、<code>&amp;</code>、<code>ctrl + z</code> 等相关指令对任务进程的操作。</p>
+</blockquote>
+
+<h1 id="一-基本用法">一、基本用法</h1>
+
+<h2 id="1-1-和-jobs-指令">1.1 <code>&amp;</code> 和 <code>jobs</code> 指令</h2>
+
+<p><code>&amp;</code> 用在一个命令的最后，可以把这个命令转换为后台运行的任务进程。</p>
+
+<p><code>jobs</code> 查看当前终端有多少在后台运行的进程。</p>
+
+<ul>
+<li><p><code>jobs</code> 命令执行的结果，<code>＋</code> 表示是一个当前的作业，<code>-</code> 减号表示是一个当前作业之后的一个作业。</p></li>
+
+<li><p><code>jobs -l</code> 选项可显示所有任务的进程号 <code>pid</code></p></li>
+
+<li><p><code>jobs</code> 的状态可以是 <code>running</code>，<code>stopped</code>，<code>terminated</code>。但是如果任务进程被终止了（<code>kill</code>），当前的终端环境中也就删除了任务的进程标识；也就是说 <strong>jobs 命令显示的是当前 shell 环境中后台正在运行或者被挂起的任务进程信息</strong></p></li>
+</ul>
+
+<p></p>
+
+<h2 id="1-3-fg-和-bg-指令">1.3 <code>fg</code> 和 <code>bg</code> 指令</h2>
+
+<p><code>fg</code> 将后台任务进程调至前台继续运行，如果后台中有多个任务进程，可以用 <code>fg %num</code> 将选中的任务进程调至前台。</p>
+
+<p><code>bg</code> 将挂起的任务进程重新启动运行，如果有多个暂停的任务进程，可以用 <code>bg %num</code> 将选中的任务进程启动运行。</p>
+
+<blockquote>
+<p><code>%num</code> 是通过 <code>jobs</code> 命令查到的后台正在执行的任务的序号（不是 <code>pid</code>）</p>
+</blockquote>
+
+<h1 id="二-进程的挂起">二、进程的挂起</h1>
+
+<h2 id="2-1-后台进程的挂起">2.1 后台进程的挂起</h2>
+
+<ul>
+<li><p>在 <code>solaris</code> 中通过 <code>stop</code> 命令执行，通过 <code>jobs</code> 命令查看任务号（假设为 <code>num</code>），然后执行：<code>stop %num</code></p></li>
+
+<li><p>在 <code>redhat</code> 中，不存在 <code>stop</code> 命令，可通过执行命令 <code>kill -stop PID</code>，将进程挂起</p></li>
+</ul>
+
+<h2 id="2-2-前台进程的挂起">2.2 前台进程的挂起</h2>
+
+<p><code>ctrl + z</code>：可以将一个正在前台执行的任务放到后台运行，并且挂起</p>
+
+<h1 id="三-挂起进程重新运行">三、挂起进程重新运行</h1>
+
+<ul>
+<li><p>通过 <code>bg %num</code> 即可将挂起的任务进程的状态由 <code>stopped</code> 改为 <code>running</code>，仍在后台运行</p></li>
+
+<li><p>通过 <code>fg %num</code> 即可将挂起的任务进程转为前台执行</p></li>
+</ul>
+
+<h1 id="四-进程的终止">四、进程的终止</h1>
+
+<h2 id="4-1-后台进程的终止">4.1 后台进程的终止</h2>
+
+<ul>
+<li><p>方法一： 通过 <code>jobs</code> 命令查看任务号（假设为 <code>num</code>），然后执行：<code>kill %num</code></p></li>
+
+<li><p>方法二： 通过 <code>ps</code> 命令查看任务的进程号（<code>PID</code>，假设为 <code>pid</code>），然后执行：<code>kill pid</code></p></li>
+</ul>
+
+<h2 id="4-2-前台进程的终止">4.2 前台进程的终止</h2>
+
+<p>执行 <code>ctrl+c</code> 即可终止前台执行任务进程</p>
+
+<blockquote>
+<p>假设要后台运行 <code>xmms</code>，可通过命令：<code>xmms &amp;</code>。但万一你运行程序时忘记使用 <code>&amp;</code> 了，又不想重新执行，你可以先使用 <code>ctrl+z</code> 挂起任务进程，然后敲入<code>bg</code> 命令，这样任务进程就在后台继续运行了。</p>
+</blockquote>
+
+<hr />
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>ehlxr </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://vxgo.github.io/2017/01/18/linux-%E4%B8%AD-fgbgjobs-%E7%AD%89%E6%8C%87%E4%BB%A4/>
+                        <script>
+                            document.write(decodeURI(location.origin + location.pathname))
+                        </script>
+                    </a>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/linux/">
+                    #Linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://vxgo.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/" class="prev" rel="prev" title="[转] CentOS 升级 kernel"><i class="iconfont icon-left"></i>&nbsp;[转] CentOS 升级 kernel</a>
+        
+        
+        <a href="https://vxgo.github.io/2017/01/18/linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/" class="next" rel="next" title="Linux 的 nohup 命令的用法">Linux 的 nohup 命令的用法&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+</article>
+          
+<div class="post-comment"><div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div><div id="gitalk-container" class="gitalk-container"></div>
+    <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: 'be984e1c3cc8125c83436a8e426863e6',
+        title: 'Linux 中 fg、bg、jobs 等指令',
+        clientID: '9d9d3623e388cb2f2283',
+        clientSecret: '99c5b47b7553ab9122642f3e8f8d27973b22f8d2',
+        repo: 'vxgo.github.io',
+        owner: 'vxgo',
+        admin: ['ehlxr'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a>
+    </noscript><div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function showDisqus() {
+      
+
+      
+      
+      
+      
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+      var disqus_shortname = 'ehlxr';
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      window.location.hash = "#disqus_thread";
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://vxgo.github.io">ehlxr</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/oracle/</link>
+    <description>Recent content in Oracle on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Jul 2016 14:06:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle 与 MySQL 知识总结</title>
+      <link>https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 28 Jul 2016 14:06:36 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;对日常工作中使用 Oracle 和 MySQL 数据库知识对比总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;sqlplus-连接数据库的方式&#34;&gt;SQLPlus 连接数据库的方式&lt;/h1&gt;
+
+&lt;h2 id=&#34;cmd-中输入-sqlplus-用户名-密码-数据库实例&#34;&gt;cmd 中输入：sqlplus 用户名/密码@数据库实例&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sqlplus system/lxr316@oracle
+sqlplus sys/admin as sysdba
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;打开-sqlplus-直接输入用户名和密码&#34;&gt;打开 SQLPlus 直接输入用户名和密码&lt;/h2&gt;
+
+&lt;h2 id=&#34;使用命令&#34;&gt;使用命令&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;connect sys/admin as sysdba
+connect system/lxr316
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

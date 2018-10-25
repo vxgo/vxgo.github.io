@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="ehlxr">
+  <meta name="description" content="My Hugo Blog.">
+  <meta name="keywords" content="[Hugo theme ehlxr]">
+  
+  <link rel="prev" href="https://vxgo.github.io/2017/08/24/golang-cheat-sheet/" />
+  <link rel="next" href="https://vxgo.github.io/2017/12/06/go-commons-code-snippets/" />
+  <link rel="canonical" href="https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           [转]Tmux 快捷键速查表 | 胡言乱语
+       
+  </title>
+  <meta name="title" content="[转]Tmux 快捷键速查表 | 胡言乱语">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://vxgo.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "[转]Tmux 快捷键速查表",
+    "headline" : "[转]Tmux 快捷键速查表",
+    "description" : "<h1 id="tmux-快捷键-速查表">Tmux 快捷键 &amp; 速查表</h1>
+
+<p>启动新会话：</p>
+
+<pre><code>tmux [new -s 会话名 -n 窗口名]
+</code></pre>
+
+<p>恢复会话：</p>
+
+<pre><code>tmux at [-t 会话名]
+</code></pre>
+
+<p>列出所有会话：</p>
+
+<pre><code>tmux ls
+</code></pre>
+
+<p><a name="killSessions"></a>关闭会话：</p>
+
+<pre><code>tmux kill-session -t 会话名
+</code></pre>
+
+<p><a name="killAllSessions"></a>关闭所有会话：</p>
+
+<pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+</code></pre>
+
+<p></p>",
+    "inLanguage" : "zh-cn",
+    "author" : "ehlxr",
+    "creator" : "ehlxr",
+    "publisher": "ehlxr",
+    "accountablePerson" : "ehlxr",
+    "copyrightHolder" : "ehlxr",
+    "copyrightYear" : "2017",
+    "datePublished": "2017-10-25 14:45:24 &#43;0000 UTC",
+    "dateModified" : "2017-10-25 14:45:24 &#43;0000 UTC",
+    "url" : "https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/",
+    "wordCount" : "552",
+    "keywords" : [ "Tmux", "胡言乱语"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+          
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">[转]Tmux 快捷键速查表</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://vxgo.github.io" rel="author">ehlxr</a> with ♥
+                <span class="post-time">
+                on <time datetime=2017-10-25 itemprop="datePublished">October 25, 2017</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://vxgo.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+                        
+                </span>
+
+                |
+                <a href="#gitalk-container" itemprop="discussionUrl">
+                    <span class="gitalk-comment-count" itemprop="commentCount"></span>
+                </a>
+                条评论
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#tmux-快捷键-速查表">Tmux 快捷键 &amp; 速查表</a></li>
+<li><a href="#在-tmux-中-按下-tmux-前缀-ctrl-b-然后">在 Tmux 中，按下 Tmux 前缀 <code>ctrl+b</code>，然后：</a>
+<ul>
+<li><a href="#会话">会话</a></li>
+<li><a href="#a-name-windowstabs-a-窗口-标签页"><a name="WindowsTabs"></a>窗口 (标签页)</a></li>
+<li><a href="#调整窗口排序">调整窗口排序</a></li>
+<li><a href="#a-name-panessplits-a-窗格-分割窗口"><a name="PanesSplits"></a>窗格（分割窗口）</a></li>
+<li><a href="#a-name-syncpanes-a-同步窗格"><a name="syncPanes"></a>同步窗格</a></li>
+<li><a href="#调整窗格尺寸">调整窗格尺寸</a></li>
+<li><a href="#文本复制模式">文本复制模式：</a></li>
+<li><a href="#杂项">杂项：</a></li>
+<li><a href="#配置选项">配置选项：</a></li>
+<li><a href="#配置文件-tmux-conf">配置文件（~/.tmux.conf）：</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="tmux-快捷键-速查表">Tmux 快捷键 &amp; 速查表</h1>
+
+<p>启动新会话：</p>
+
+<pre><code>tmux [new -s 会话名 -n 窗口名]
+</code></pre>
+
+<p>恢复会话：</p>
+
+<pre><code>tmux at [-t 会话名]
+</code></pre>
+
+<p>列出所有会话：</p>
+
+<pre><code>tmux ls
+</code></pre>
+
+<p><a name="killSessions"></a>关闭会话：</p>
+
+<pre><code>tmux kill-session -t 会话名
+</code></pre>
+
+<p><a name="killAllSessions"></a>关闭所有会话：</p>
+
+<pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+</code></pre>
+
+<p></p>
+
+<h1 id="在-tmux-中-按下-tmux-前缀-ctrl-b-然后">在 Tmux 中，按下 Tmux 前缀 <code>ctrl+b</code>，然后：</h1>
+
+<h2 id="会话">会话</h2>
+
+<pre><code>:new&lt;回车&gt;  启动新会话
+s           列出所有会话
+$           重命名当前会话
+</code></pre>
+
+<h2 id="a-name-windowstabs-a-窗口-标签页"><a name="WindowsTabs"></a>窗口 (标签页)</h2>
+
+<pre><code>c  创建新窗口
+w  列出所有窗口
+n  后一个窗口
+p  前一个窗口
+f  查找窗口
+,  重命名当前窗口
+&amp;  关闭当前窗口
+</code></pre>
+
+<h2 id="调整窗口排序">调整窗口排序</h2>
+
+<pre><code>swap-window -s 3 -t 1  交换 3 号和 1 号窗口
+swap-window -t 1       交换当前和 1 号窗口
+move-window -t 1       移动当前窗口到 1 号
+</code></pre>
+
+<h2 id="a-name-panessplits-a-窗格-分割窗口"><a name="PanesSplits"></a>窗格（分割窗口）</h2>
+
+<pre><code>%  垂直分割
+&quot;  水平分割
+o  交换窗格
+x  关闭窗格
+⍽  左边这个符号代表空格键 - 切换布局
+q 显示每个窗格是第几个，当数字出现的时候按数字几就选中第几个窗格
+{ 与上一个窗格交换位置
+} 与下一个窗格交换位置
+z 切换窗格最大化/最小化
+</code></pre>
+
+<h2 id="a-name-syncpanes-a-同步窗格"><a name="syncPanes"></a>同步窗格</h2>
+
+<p>这么做可以切换到想要的窗口，输入 Tmux 前缀和一个冒号呼出命令提示行，然后输入：</p>
+
+<pre><code>:setw synchronize-panes
+</code></pre>
+
+<p>你可以指定开或关，否则重复执行命令会在两者间切换。
+这个选项值针对某个窗口有效，不会影响别的会话和窗口。
+完事儿之后再次执行命令来关闭。<a href="http://blog.sanctum.geek.nz/sync-tmux-panes/" rel="nofollow noreferrer" target="_blank">帮助</a></p>
+
+<h2 id="调整窗格尺寸">调整窗格尺寸</h2>
+
+<p>如果你不喜欢默认布局，可以重调窗格的尺寸。虽然这很容易实现，但一般不需要这么干。这几个命令用来调整窗格：</p>
+
+<pre><code>PREFIX : resize-pane -D          当前窗格向下扩大 1 格
+PREFIX : resize-pane -U          当前窗格向上扩大 1 格
+PREFIX : resize-pane -L          当前窗格向左扩大 1 格
+PREFIX : resize-pane -R          当前窗格向右扩大 1 格
+PREFIX : resize-pane -D 20       当前窗格向下扩大 20 格
+PREFIX : resize-pane -t 2 -L 20  编号为 2 的窗格向左扩大 20 格
+</code></pre>
+
+<h2 id="文本复制模式">文本复制模式：</h2>
+
+<p>按下<strong>前缀 [</strong>进入文本复制模式。可以使用方向键在屏幕中移动光标。默认情况下，方向键是启用的。在配置文件中启用 Vim 键盘布局来切换窗口、调整窗格大小。Tmux 也支持 Vi 模式。要是想启用 Vi 模式，只需要把下面这一行添加到 .tmux.conf 中：</p>
+
+<pre><code>setw -g mode-keys vi
+</code></pre>
+
+<p>启用这条配置后，就可以使用 h、j、k、l 来移动光标了。</p>
+
+<p>想要退出文本复制模式的话，按下回车键就可以了。一次移动一格效率低下，在 Vi 模式启用的情况下，可以辅助一些别的快捷键高效工作。</p>
+
+<p>例如，可以使用 w 键逐词移动，使用 b 键逐词回退。使用 f 键加上任意字符跳转到当前行第一次出现该字符的位置，使用 F 键达到相反的效果。</p>
+
+<pre><code>vi             emacs        功能
+^              M-m          反缩进
+Escape         C-g          清除选定内容
+Enter          M-w          复制选定内容
+j              Down         光标下移
+h              Left         光标左移
+l              Right        光标右移
+L                           光标移到尾行
+M              M-r          光标移到中间行
+H              M-R          光标移到首行
+k              Up           光标上移
+d              C-u          删除整行
+D              C-k          删除到行末
+$              C-e          移到行尾
+:              g            前往指定行
+C-d            M-Down       向下滚动半屏
+C-u            M-Up         向上滚动半屏
+C-f            Page down    下一页
+w              M-f          下一个词
+p              C-y          粘贴
+C-b            Page up      上一页
+b              M-b          上一个词
+q              Escape       退出
+C-Down or J    C-Down       向下翻
+C-Up or K      C-Up         向下翻
+n              n            继续搜索
+?              C-r          向前搜索
+/              C-s          向后搜索
+0              C-a          移到行首
+Space          C-Space      开始选中
+               C-t          字符调序
+</code></pre>
+
+<h2 id="杂项">杂项：</h2>
+
+<pre><code>d  退出 tmux（tmux 仍在后台运行）
+t  窗口中央显示一个数字时钟
+?  列出所有快捷键
+:  命令提示符
+</code></pre>
+
+<h2 id="配置选项">配置选项：</h2>
+
+<pre><code># 鼠标支持 - 设置为 on 来启用鼠标
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# 设置默认终端模式为 256color
+set -g default-terminal &quot;screen-256color&quot;
+
+# 启用活动警告
+setw -g monitor-activity on
+set -g visual-activity on
+
+# 居中窗口列表
+set -g status-justify centre
+
+# 最大化/恢复窗格
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+</code></pre>
+
+<h2 id="配置文件-tmux-conf">配置文件（~/.tmux.conf）：</h2>
+
+<pre><code class="language-bash"># 基础设置
+set -g default-terminal &quot;screen-256color&quot;
+set -g display-time 3000
+set -g escape-time 0
+set -g history-limit 65535
+set -g base-index 1
+set -g pane-base-index 1
+
+# 前缀绑定 (Ctrl+a)
+set -g prefix ^a
+unbind ^b
+bind a send-prefix
+
+# 分割窗口
+unbind '&quot;'
+bind - splitw -v
+unbind %
+bind | splitw -h
+
+# 选中窗口
+bind-key k select-pane -U
+bind-key j select-pane -D
+bind-key h select-pane -L
+bind-key l select-pane -R
+
+# copy-mode 将快捷键设置为 vi 模式
+setw -g mode-keys vi
+
+# 启用鼠标(Tmux v2.1)
+set -g mouse on
+
+# 更新配置文件
+bind r source-file ~/.tmux.conf \; display &quot;已更新&quot;
+
+#&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+# Tmux Plugin Manager(Tmux v2.1)
+# Tmux Resurrect
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+
+</code></pre>
+
+<hr />
+
+<p><a href="https://gist.github.com/ryerh/14b7c24dfd623ef8edc7" rel="nofollow noreferrer" target="_blank">原文地址</a></p>
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>ehlxr </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/>
+                        <script>
+                            document.write(decodeURI(location.origin + location.pathname))
+                        </script>
+                    </a>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/tmux/">
+                    #Tmux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://vxgo.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://vxgo.github.io/2017/08/24/golang-cheat-sheet/" class="prev" rel="prev" title="[转] Go Cheat Sheet"><i class="iconfont icon-left"></i>&nbsp;[转] Go Cheat Sheet</a>
+        
+        
+        <a href="https://vxgo.github.io/2017/12/06/go-commons-code-snippets/" class="next" rel="next" title="Go 常用代码块">Go 常用代码块&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+</article>
+          
+<div class="post-comment"><div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div><div id="gitalk-container" class="gitalk-container"></div>
+    <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '8c855f7fa055717c4719712367ff60a8',
+        title: '[转]Tmux 快捷键速查表',
+        clientID: '9d9d3623e388cb2f2283',
+        clientSecret: '99c5b47b7553ab9122642f3e8f8d27973b22f8d2',
+        repo: 'vxgo.github.io',
+        owner: 'vxgo',
+        admin: ['ehlxr'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a>
+    </noscript><div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function showDisqus() {
+      
+
+      
+      
+      
+      
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+      var disqus_shortname = 'ehlxr';
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      window.location.hash = "#disqus_thread";
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://vxgo.github.io">ehlxr</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

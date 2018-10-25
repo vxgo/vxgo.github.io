@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="ehlxr">
+  <meta name="description" content="My Hugo Blog.">
+  <meta name="keywords" content="[Hugo theme ehlxr]">
+  
+  <link rel="prev" href="https://vxgo.github.io/2016/07/28/update-from-github-fork/" />
+  <link rel="next" href="https://vxgo.github.io/2016/07/30/%E8%BD%AC%E5%B0%86-centos-%E7%9A%84-yum-%E6%BA%90%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%9B%BD%E5%86%85%E7%9A%84%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/" />
+  <link rel="canonical" href="https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Oracle 与 MySQL 知识总结 | 胡言乱语
+       
+  </title>
+  <meta name="title" content="Oracle 与 MySQL 知识总结 | 胡言乱语">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://vxgo.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Oracle 与 MySQL 知识总结",
+    "headline" : "Oracle 与 MySQL 知识总结",
+    "description" : "<blockquote>
+<p>对日常工作中使用 Oracle 和 MySQL 数据库知识对比总结。</p>
+</blockquote>
+
+<h1 id="sqlplus-连接数据库的方式">SQLPlus 连接数据库的方式</h1>
+
+<h2 id="cmd-中输入-sqlplus-用户名-密码-数据库实例">cmd 中输入：sqlplus 用户名/密码@数据库实例</h2>
+
+<pre><code class="language-bash">sqlplus system/lxr316@oracle
+sqlplus sys/admin as sysdba
+</code></pre>
+
+<h2 id="打开-sqlplus-直接输入用户名和密码">打开 SQLPlus 直接输入用户名和密码</h2>
+
+<h2 id="使用命令">使用命令</h2>
+
+<pre><code class="language-bash">connect sys/admin as sysdba
+connect system/lxr316
+</code></pre>
+
+<p></p>",
+    "inLanguage" : "zh-cn",
+    "author" : "ehlxr",
+    "creator" : "ehlxr",
+    "publisher": "ehlxr",
+    "accountablePerson" : "ehlxr",
+    "copyrightHolder" : "ehlxr",
+    "copyrightYear" : "2016",
+    "datePublished": "2016-07-28 14:06:36 &#43;0000 UTC",
+    "dateModified" : "2016-07-28 14:06:36 &#43;0000 UTC",
+    "url" : "https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/",
+    "wordCount" : "797",
+    "keywords" : [ "MySQL","Oracle", "胡言乱语"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+          
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Oracle 与 MySQL 知识总结</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://vxgo.github.io" rel="author">ehlxr</a> with ♥
+                <span class="post-time">
+                on <time datetime=2016-07-28 itemprop="datePublished">July 28, 2016</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://vxgo.github.io/categories/sql/"> SQL </a>
+                        
+                </span>
+
+                |
+                <a href="#gitalk-container" itemprop="discussionUrl">
+                    <span class="gitalk-comment-count" itemprop="commentCount"></span>
+                </a>
+                条评论
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#sqlplus-连接数据库的方式">SQLPlus 连接数据库的方式</a>
+<ul>
+<li><a href="#cmd-中输入-sqlplus-用户名-密码-数据库实例">cmd 中输入：sqlplus 用户名/密码@数据库实例</a></li>
+<li><a href="#打开-sqlplus-直接输入用户名和密码">打开 SQLPlus 直接输入用户名和密码</a></li>
+<li><a href="#使用命令">使用命令</a></li>
+<li><a href="#超级管理员登录">超级管理员登录</a></li>
+<li><a href="#断开数据库">断开数据库</a></li>
+</ul></li>
+<li><a href="#mysql-连接">MySQL 连接</a></li>
+<li><a href="#用户操作">用户操作</a>
+<ul>
+<li><a href="#oracle">Oracle</a>
+<ul>
+<li><a href="#创建用户">创建用户</a></li>
+<li><a href="#修改用户密码">修改用户密码</a></li>
+<li><a href="#账户上锁-解锁">账户上锁、解锁</a></li>
+<li><a href="#用户首次登录时直接修改密码-密码失效">用户首次登录时直接修改密码&ndash;密码失效</a></li>
+</ul></li>
+<li><a href="#mysql">MySQL</a>
+<ul>
+<li><a href="#创建用户-1">创建用户:</a></li>
+<li><a href="#设置与更改用户密码">设置与更改用户密码</a></li>
+<li><a href="#删除用户">删除用户</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#权限管理">权限管理</a>
+<ul>
+<li><a href="#oracle-1">Oracle</a>
+<ul>
+<li><a href="#授权">授权</a></li>
+<li><a href="#收回权限">收回权限</a></li>
+<li><a href="#常用系统权限">常用系统权限</a></li>
+<li><a href="#常用对象权限">常用对象权限</a></li>
+<li><a href="#权限的级联授予">权限的级联授予</a></li>
+</ul></li>
+<li><a href="#mysql-1">MySQL</a>
+<ul>
+<li><a href="#授权-1">授权:</a></li>
+<li><a href="#撤销用户权限">撤销用户权限</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#oracle角色-role">Oracle角色 role</a>
+<ul>
+<li><a href="#角色数据字典表">角色数据字典表</a></li>
+<li><a href="#建一个角色">建一个角色</a></li>
+<li><a href="#授权给角色">授权给角色</a></li>
+<li><a href="#授予-回收用户角色">授予/回收用户角色</a></li>
+<li><a href="#创建带有口令以角色">创建带有口令以角色</a></li>
+<li><a href="#修改角色-是否需要口令">修改角色：是否需要口令</a></li>
+<li><a href="#设置当前用户要生效的角色">设置当前用户要生效的角色</a></li>
+<li><a href="#修改指定用户-设置其默认角色">修改指定用户，设置其默认角色</a></li>
+<li><a href="#删除角色">删除角色</a></li>
+<li><a href="#系统角色">系统角色</a></li>
+</ul></li>
+<li><a href="#查看表结构信息命令">查看表结构信息命令</a>
+<ul>
+<li><a href="#oracle-2">Oracle</a></li>
+<li><a href="#mysql-2">MySQL</a></li>
+</ul></li>
+<li><a href="#显示当前登录用户">显示当前登录用户</a>
+<ul>
+<li><a href="#oracle-3">Oracle</a></li>
+<li><a href="#mysql-3">MySQL</a></li>
+</ul></li>
+<li><a href="#mysql-查看用户下的数据库">MySQL 查看用户下的数据库</a></li>
+<li><a href="#oracle-用户锁定与解锁">Oracle 用户锁定与解锁</a></li>
+<li><a href="#清屏命令">清屏命令</a>
+<ul>
+<li><a href="#sqlplus">SQLPlus</a></li>
+<li><a href="#mysql-4">MySQL</a></li>
+</ul></li>
+<li><a href="#oracle-更改当前用户日期格式命令">Oracle 更改当前用户日期格式命令</a></li>
+<li><a href="#oracle-中的基本数据类型">Oracle 中的基本数据类型</a></li>
+<li><a href="#oracle-表结构操作">Oracle 表结构操作</a>
+<ul>
+<li><a href="#表重命名">表重命名</a></li>
+<li><a href="#给表增加注释">给表增加注释</a></li>
+<li><a href="#添加约束方式">添加约束方式</a>
+<ul>
+<li><a href="#方式一">方式一</a></li>
+<li><a href="#方式二">方式二</a></li>
+</ul></li>
+<li><a href="#删除约束方式">删除约束方式</a></li>
+<li><a href="#删除表结构">删除表结构</a></li>
+<li><a href="#表中增加字段">表中增加字段</a></li>
+<li><a href="#删除字段">删除字段</a></li>
+<li><a href="#字段重命名">字段重命名</a></li>
+<li><a href="#修改字段">修改字段</a></li>
+</ul></li>
+<li><a href="#oracle-备份表">Oracle 备份表</a>
+<ul>
+<li><a href="#在当前的数据库之内进行备份">在当前的数据库之内进行备份</a></li>
+<li><a href="#数据的移动">数据的移动</a></li>
+<li><a href="#数据库服务器之间拷贝表">数据库服务器之间拷贝表</a>
+<ul>
+<li><a href="#客户端连接服务器">客户端连接服务器</a></li>
+<li><a href="#从a服务器拷贝到自己的数据库中">从A服务器拷贝到自己的数据库中</a></li>
+<li><a href="#从自己的数据库中拷贝到a服务器">从自己的数据库中拷贝到A服务器</a></li>
+<li><a href="#从a服务器拷贝表到b服务器">从A服务器拷贝表到B服务器</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#oracledblink-数据库连接">OracleDBLINK 数据库连接</a></li>
+<li><a href="#mysql-查看数据库字符集">MySQL 查看数据库字符集</a></li>
+<li><a href="#truncate-与-delete">truncate 与 delete</a>
+<ul>
+<li><a href="#使用格式">使用格式</a></li>
+<li><a href="#truncate-与-delete-的区别">truncate 与 delete 的区别</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<p>对日常工作中使用 Oracle 和 MySQL 数据库知识对比总结。</p>
+</blockquote>
+
+<h1 id="sqlplus-连接数据库的方式">SQLPlus 连接数据库的方式</h1>
+
+<h2 id="cmd-中输入-sqlplus-用户名-密码-数据库实例">cmd 中输入：sqlplus 用户名/密码@数据库实例</h2>
+
+<pre><code class="language-bash">sqlplus system/lxr316@oracle
+sqlplus sys/admin as sysdba
+</code></pre>
+
+<h2 id="打开-sqlplus-直接输入用户名和密码">打开 SQLPlus 直接输入用户名和密码</h2>
+
+<h2 id="使用命令">使用命令</h2>
+
+<pre><code class="language-bash">connect sys/admin as sysdba
+connect system/lxr316
+</code></pre>
+
+<p></p>
+
+<h2 id="超级管理员登录">超级管理员登录</h2>
+
+<pre><code class="language-bash">sys as sysdba
+</code></pre>
+
+<h2 id="断开数据库">断开数据库</h2>
+
+<pre><code class="language-bash">disconnect; # 可简写 disconn
+</code></pre>
+
+<h1 id="mysql-连接">MySQL 连接</h1>
+
+<p><strong>命令：</strong> <code>mysql [–h 服务器地址] –u 用户名 –p [密码]</code>（*需要配置 mysql 数据库的 bin 到环境变量中*）</p>
+
+<pre><code class="language-bash">mysql -h localhost –u root –p root
+mysql –u root -p
+</code></pre>
+
+<h1 id="用户操作">用户操作</h1>
+
+<h2 id="oracle">Oracle</h2>
+
+<h3 id="创建用户">创建用户</h3>
+
+<pre><code class="language-sql">create user [username] identified by [password];
+</code></pre>
+
+<h3 id="修改用户密码">修改用户密码</h3>
+
+<pre><code class="language-sql">alter user [username] identified by [password];
+</code></pre>
+
+<h3 id="账户上锁-解锁">账户上锁、解锁</h3>
+
+<pre><code class="language-sql">alter user [username] account lock|unlock;
+</code></pre>
+
+<h3 id="用户首次登录时直接修改密码-密码失效">用户首次登录时直接修改密码&ndash;密码失效</h3>
+
+<pre><code class="language-sql">alter user [username] password expire;
+</code></pre>
+
+<h2 id="mysql">MySQL</h2>
+
+<h3 id="创建用户-1">创建用户:</h3>
+
+<pre><code class="language-sql">CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+</code></pre>
+
+<p><strong>备注：</strong>
+* username：你将创建的用户名。
+* host：指定该用户在哪个主机上可以登陆,如果是本地用户可用localhost, 如果想让该用户可以从任意远程主机登陆,可以使用通配符%。
+* password：该用户的登陆密码,密码可以为空,如果为空则该用户可以不需要密码登陆服务器。</p>
+
+<p><em>例如：</em></p>
+
+<pre><code class="language-sql">CREATE USER 'dog'@'localhost'IDENTIFIED BY '123456';
+CREATE USER 'pig'@'192.168.1.101_'IDENDIFIED BY '123456';
+CREATE USER 'pig'@'%' IDENTIFIED BY '123456';
+CREATE USER 'pig'@'%' IDENTIFIED BY '';
+CREATE USER 'pig'@'%';
+</code></pre>
+
+<h3 id="设置与更改用户密码">设置与更改用户密码</h3>
+
+<pre><code class="language-sql">SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
+</code></pre>
+
+<p>如果是当前登陆用户</p>
+
+<pre><code class="language-sql">SET PASSWORD = PASSWORD(&quot;newpassword&quot;);
+</code></pre>
+
+<h3 id="删除用户">删除用户</h3>
+
+<pre><code class="language-sql">DROP USER 'username'@'host';
+</code></pre>
+
+<h1 id="权限管理">权限管理</h1>
+
+<h2 id="oracle-1">Oracle</h2>
+
+<h3 id="授权">授权</h3>
+
+<pre><code class="language-sql">grant 权限 to 用户名;
+grant all on 表名 to用户/角色
+</code></pre>
+
+<h3 id="收回权限">收回权限</h3>
+
+<pre><code class="language-sql">revoke 权限from 用户名;
+</code></pre>
+
+<p>对象权限可以级联收回，但是系统权限不可以级联收回。</p>
+
+<ul>
+<li>系统权限： A 赋予一个系统权限给 B，B 再授予 C。然后A将该权限从 B 回收，此后 C 仍然有该权限。</li>
+<li>对象权限： A 赋予一个对象权限给 B，B 再授予 C。然后A将该权限从 B 回收，此后 C 也失去了该权限。</li>
+</ul>
+
+<h3 id="常用系统权限">常用系统权限</h3>
+
+<pre><code class="language-sql">create session --用户登录
+create table     --创建表
+unlimited tablespace   --无限表空间
+</code></pre>
+
+<h3 id="常用对象权限">常用对象权限</h3>
+
+<pre><code class="language-sql">select on 表名; -- 查询权限
+update on 表名; -- 更新权限
+delete on 表名; -- 删除权限
+insert on 表名; -- 插入权限
+</code></pre>
+
+<h3 id="权限的级联授予">权限的级联授予</h3>
+
+<pre><code class="language-sql">grant 权限 to 用户名 with admin option|with grant option;
+</code></pre>
+
+<ul>
+<li>with admin option：系统权限</li>
+<li>with grant option：对象权限</li>
+</ul>
+
+<h2 id="mysql-1">MySQL</h2>
+
+<h3 id="授权-1">授权:</h3>
+
+<pre><code class="language-sql">GRANT privileges ON databasename.tablename TO 'username'@'host'
+</code></pre>
+
+<p><strong>备注：</strong>
+* privileges：用户的操作权限,如 SELECT , INSERT , UPDATE 等；如果要授予所的权限则使用 ALL。
+* databasename：数据库名。
+* tablename：表名</p>
+
+<p>如果要授予该用户对所有数据库和表的相应操作权限则可用 <code>*</code> 表示, 如 <code>*.*</code> 。
+<em>例如：</em></p>
+
+<pre><code class="language-sql">GRANT SELECT, INSERT ON test.user TO 'pig'@'%';
+
+GRANT ALL ON *.* TO 'pig'@'%';
+</code></pre>
+
+<p><strong>注意：</strong> 用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令:</p>
+
+<pre><code class="language-sql">GRANT privileges ON databasename.tablename TO 'username'@'host' WITH GRANT OPTION;
+</code></pre>
+
+<h3 id="撤销用户权限">撤销用户权限</h3>
+
+<pre><code class="language-sql">REVOKE privilege ON databasename.tablename FROM 'username'@'host';
+</code></pre>
+
+<p><strong>说明：</strong> privilege, databasename, tablename - 同授权部分。
+<em>例如：</em></p>
+
+<pre><code class="language-sql">REVOKE SELECT ON *.* FROM 'pig'@'%';
+</code></pre>
+
+<p><strong>注意：</strong> 假如你在给用户 <code>'pig'@'%'</code> 授权的时候是这样的（或类似的）：<code>GRANT SELECT ON test.user TO 'pig'@'%';</code> 则在使用：<code>REVOKE SELECT ON *.* FROM'pig'@'%';</code> 命令并不能撤销该用户对 test 数据库中 user 表的 SELECT 操作；相反，如果授权使用的是：<code>GRANT SELECT ON *.* TO'pig'@'%';</code> 则：<code>REVOKE SELECT ONtest.user FROM 'pig'@'%';</code> 命令也不能撤销该用户对 test 数据库中 user 表的 SELECT 权限。</p>
+
+<p>具体信息可以用命令：<code>SHOW GRANTS FOR 'pig'@'%';</code> 查看。</p>
+
+<h1 id="oracle角色-role">Oracle角色 role</h1>
+
+<p>角色：权限的集合</p>
+
+<h2 id="角色数据字典表">角色数据字典表</h2>
+
+<ul>
+<li>查看当前用户中的角色：<code>user_role_privs</code></li>
+<li>查看角色中的系统权限：<code>role_sys_privs</code></li>
+<li>查看角色中的对象权限：<code>role_tab_privs</code></li>
+</ul>
+
+<h2 id="建一个角色">建一个角色</h2>
+
+<pre><code class="language-sql">create role role1;
+</code></pre>
+
+<h2 id="授权给角色">授权给角色</h2>
+
+<pre><code class="language-sql">grant create any table, create procedure to role1;
+</code></pre>
+
+<h2 id="授予-回收用户角色">授予/回收用户角色</h2>
+
+<pre><code class="language-sql">grant role1 to user1;
+revoke role1 from user1;
+</code></pre>
+
+<h2 id="创建带有口令以角色">创建带有口令以角色</h2>
+
+<p>在生效带有口令的角色时必须提供口令</p>
+
+<pre><code class="language-sql">create role role1 identified by password1;
+</code></pre>
+
+<h2 id="修改角色-是否需要口令">修改角色：是否需要口令</h2>
+
+<pre><code class="language-sql">alter role role1 not identified;
+alter role role1 identified by password1;
+</code></pre>
+
+<h2 id="设置当前用户要生效的角色">设置当前用户要生效的角色</h2>
+
+<pre><code class="language-sql">set role role1; -- 使 role1 生效
+set role role1, role2; -- 使 role1, role2 生效
+set role role1 identified by password1; -- 使用带有口令的 role1 生效
+set role all; -- 使用该用户的所有角色生效
+set role none; -- 设置所有角色失效
+set role all except role1; -- 除 role1 外的该用户的所有其它角色生效
+select * from SESSION_ROLES; -- 查看当前用户的生效的角色。
+</code></pre>
+
+<h2 id="修改指定用户-设置其默认角色">修改指定用户，设置其默认角色</h2>
+
+<pre><code class="language-sql">alter user user1 default role role1;
+alter user user1 default role all except role1;
+</code></pre>
+
+<h2 id="删除角色">删除角色</h2>
+
+<pre><code class="language-sql">drop role role1;
+</code></pre>
+
+<p><strong>注意：</strong> 角色删除后，原来拥用该角色的用户将失去该角色，相应的权限也将会失去。</p>
+
+<h2 id="系统角色">系统角色</h2>
+
+<ul>
+<li>DBA: 拥有全部特权，是系统最高权限角色</li>
+<li>RESOURCE：拥有 RESOURCE 角色权限的用户只可以创建实体</li>
+<li>CONNECT：拥有 CONNECT 角色权限的用户只可以登录 Oracle</li>
+</ul>
+
+<p>对于普通用户：授予 CONNECT，RESOURCE 角色权限；对于DBA管理用户：授予 CONNECT，RESOURCE， DBA 角色权限。</p>
+
+<h1 id="查看表结构信息命令">查看表结构信息命令</h1>
+
+<h2 id="oracle-2">Oracle</h2>
+
+<pre><code class="language-sql">desc(ribe) 表名; -- 如：desc lxr
+</code></pre>
+
+<h2 id="mysql-2">MySQL</h2>
+
+<pre><code class="language-sql">desc(ribe) 表名;
+</code></pre>
+
+<h1 id="显示当前登录用户">显示当前登录用户</h1>
+
+<h2 id="oracle-3">Oracle</h2>
+
+<pre><code class="language-sql">show user;
+</code></pre>
+
+<h2 id="mysql-3">MySQL</h2>
+
+<pre><code class="language-sql">select user();
+</code></pre>
+
+<h1 id="mysql-查看用户下的数据库">MySQL 查看用户下的数据库</h1>
+
+<pre><code class="language-sql">show databases;
+</code></pre>
+
+<p>查看表</p>
+
+<pre><code class="language-sql">show tables;
+</code></pre>
+
+<h1 id="oracle-用户锁定与解锁">Oracle 用户锁定与解锁</h1>
+
+<pre><code class="language-sql">ALTER USER username ACCOUNT LOCK; -- 锁定用户
+ALTER USER username ACCOUNT UNLOCK; -- 解锁用户
+</code></pre>
+
+<h1 id="清屏命令">清屏命令</h1>
+
+<h2 id="sqlplus">SQLPlus</h2>
+
+<pre><code class="language-sql">clear screen -- 简写：cl scr
+
+cls -- dos 清屏命令
+</code></pre>
+
+<h2 id="mysql-4">MySQL</h2>
+
+<pre><code class="language-sql">system clear; -- Linux 环境下
+system cls; -- dos 环境下
+</code></pre>
+
+<h1 id="oracle-更改当前用户日期格式命令">Oracle 更改当前用户日期格式命令</h1>
+
+<pre><code class="language-sql">alter session set nls_date_format = 'yyyy-mm-dd';
+</code></pre>
+
+<h1 id="oracle-中的基本数据类型">Oracle 中的基本数据类型</h1>
+
+<ul>
+<li>数值：number(5,2)，int</li>
+<li>字符：char，varchar2(4000)</li>
+<li>日期：date</li>
+<li>图片：BLOB (binaryLargeObject) 4G</li>
+<li>文本：CLOB (Character LargeObject) 4G</li>
+</ul>
+
+<h1 id="oracle-表结构操作">Oracle 表结构操作</h1>
+
+<h2 id="表重命名">表重命名</h2>
+
+<pre><code class="language-sql">alter table 表名 rename to 新表名;
+</code></pre>
+
+<h2 id="给表增加注释">给表增加注释</h2>
+
+<pre><code class="language-sql">comment on table 表名 is '注释内容';
+</code></pre>
+
+<h2 id="添加约束方式">添加约束方式</h2>
+
+<h3 id="方式一">方式一</h3>
+
+<pre><code class="language-sql">alter table 表名 add constraint 约束名 约束类型(约束的字段名);
+</code></pre>
+
+<p>Constraint 约束类型：</p>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>名称</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>primary key</td>
+<td>主键</td>
+</tr>
+
+<tr>
+<td>unique</td>
+<td>唯一</td>
+</tr>
+
+<tr>
+<td>check</td>
+<td>限制</td>
+</tr>
+
+<tr>
+<td>not null</td>
+<td>不能为null</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="方式二">方式二</h3>
+
+<pre><code class="language-sql">alter table 表名 add constraint 约束名 foreign key(字段名) references 表名(字段名);
+</code></pre>
+
+<p><strong>foreign key 外键：</strong> 参照主键中存在的值，可以插入重复的记录、可以插入重复的空值</p>
+
+<h2 id="删除约束方式">删除约束方式</h2>
+
+<pre><code class="language-sql"> alter table 表名 drop constraint 约束名;
+</code></pre>
+
+<h2 id="删除表结构">删除表结构</h2>
+
+<pre><code class="language-sql">drop table 表名; -- 此操作属DDL，会自动提交且不可回滚
+</code></pre>
+
+<h2 id="表中增加字段">表中增加字段</h2>
+
+<pre><code class="language-sql">alter table 表名 add 字段名 类型;
+</code></pre>
+
+<h2 id="删除字段">删除字段</h2>
+
+<pre><code class="language-sql">alter table 表名 drop 字段名;
+</code></pre>
+
+<p>通常在系统不忙的时候删除不使用的字段，可以先设置字段为 unused</p>
+
+<pre><code class="language-sql">alter table test3 set unused column address;
+</code></pre>
+
+<p>再执行删除</p>
+
+<pre><code class="language-sql">alter table test3 unused column;
+</code></pre>
+
+<h2 id="字段重命名">字段重命名</h2>
+
+<pre><code class="language-sql">alter table 表名 rename column 字段名 to 新字段名;
+</code></pre>
+
+<h2 id="修改字段">修改字段</h2>
+
+<pre><code class="language-sql">alter table 表名 modify 字段名 新类型;
+</code></pre>
+
+<p>添加 not null</p>
+
+<pre><code class="language-sql">alter table 表名 modify 字段名 not null
+</code></pre>
+
+<p>删除 not null</p>
+
+<pre><code class="language-sql">alter table 表名 modify 字段名 null;
+</code></pre>
+
+<h1 id="oracle-备份表">Oracle 备份表</h1>
+
+<h2 id="在当前的数据库之内进行备份">在当前的数据库之内进行备份</h2>
+
+<pre><code class="language-sql">create table 表名(字段) as select 查询语句;
+</code></pre>
+
+<h2 id="数据的移动">数据的移动</h2>
+
+<pre><code class="language-sql">insert into 表名（字段列表）select 字段列表 from 表名;
+</code></pre>
+
+<h2 id="数据库服务器之间拷贝表">数据库服务器之间拷贝表</h2>
+
+<h3 id="客户端连接服务器">客户端连接服务器</h3>
+
+<pre><code class="language-sql">copy from system/hhl@hhl create hhl_table using select * from scott.emp;
+</code></pre>
+
+<h3 id="从a服务器拷贝到自己的数据库中">从A服务器拷贝到自己的数据库中</h3>
+
+<pre><code class="language-sql">copy from 用户名/密码@主机字符串 create 表名 using 查询语句;
+</code></pre>
+
+<h3 id="从自己的数据库中拷贝到a服务器">从自己的数据库中拷贝到A服务器</h3>
+
+<pre><code class="language-sql">copy to 用户用/密码@主机字符串 create 表名 using 查询语句;
+</code></pre>
+
+<h3 id="从a服务器拷贝表到b服务器">从A服务器拷贝表到B服务器</h3>
+
+<pre><code class="language-sql">copy from 用户用/密码@主机字符串 to 用户用/密码@主机字符串 create 表名 using 查询语句;
+</code></pre>
+
+<h1 id="oracledblink-数据库连接">OracleDBLINK 数据库连接</h1>
+
+<p>在当前的数据库内直接操作其他服务器中的表做增删改查，格式如下：</p>
+
+<pre><code class="language-sql">create database link 名 connect to 用户名 identified by 密码 using '主机字符串';
+</code></pre>
+
+<h1 id="mysql-查看数据库字符集">MySQL 查看数据库字符集</h1>
+
+<pre><code class="language-sql">show variables like 'character%';
+show variables like '%collation%';
+</code></pre>
+
+<h1 id="truncate-与-delete">truncate 与 delete</h1>
+
+<h2 id="使用格式">使用格式</h2>
+
+<pre><code class="language-sql">truncate table 表名; -- 删除表中全部记录
+delete from 表名;
+</code></pre>
+
+<h2 id="truncate-与-delete-的区别">truncate 与 delete 的区别</h2>
+
+<ul>
+<li>truncate 删除速度比 delete 删除速度快；</li>
+<li>truncate 不可以回滚，delete 可以回滚。</li>
+</ul>
+
+<hr />
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>ehlxr </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/>
+                        <script>
+                            document.write(decodeURI(location.origin + location.pathname))
+                        </script>
+                    </a>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/mysql/">
+                    #MySQL</a></span>
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/oracle/">
+                    #Oracle</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://vxgo.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://vxgo.github.io/2016/07/28/update-from-github-fork/" class="prev" rel="prev" title="GitHub 更新已经 fork 的项目"><i class="iconfont icon-left"></i>&nbsp;GitHub 更新已经 fork 的项目</a>
+        
+        
+        <a href="https://vxgo.github.io/2016/07/30/%E8%BD%AC%E5%B0%86-centos-%E7%9A%84-yum-%E6%BA%90%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%9B%BD%E5%86%85%E7%9A%84%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/" class="next" rel="next" title="[转]将 Centos 的 yum 源更改为国内的阿里云源">[转]将 Centos 的 yum 源更改为国内的阿里云源&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+</article>
+          
+<div class="post-comment"><div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div><div id="gitalk-container" class="gitalk-container"></div>
+    <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: 'c0803556e6d2ce315fb470863dca006d',
+        title: 'Oracle 与 MySQL 知识总结',
+        clientID: '9d9d3623e388cb2f2283',
+        clientSecret: '99c5b47b7553ab9122642f3e8f8d27973b22f8d2',
+        repo: 'vxgo.github.io',
+        owner: 'vxgo',
+        admin: ['ehlxr'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a>
+    </noscript><div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function showDisqus() {
+      
+
+      
+      
+      
+      
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+      var disqus_shortname = 'ehlxr';
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      window.location.hash = "#disqus_thread";
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://vxgo.github.io">ehlxr</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

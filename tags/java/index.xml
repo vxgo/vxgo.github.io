@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/java/</link>
+    <description>Recent content in Java on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Aug 2018 15:15:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JVM-垃圾回收（二）</title>
+      <link>https://vxgo.github.io/2018/08/23/jvm-gc2/</link>
+      <pubDate>Thu, 23 Aug 2018 15:15:07 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/23/jvm-gc2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;接着上次 JVM 中 GC 机制的总结，这次主要复习一下垃圾收集的常用算法和 Minor GC、Full GC 相关的一些知识点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;一-垃圾收集算法&#34;&gt;一、垃圾收集算法&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-标记-清除-mark-sweep&#34;&gt;1.1 标记 - 清除（Mark-Sweep）&lt;/h3&gt;
+
+&lt;p&gt;算法分成 “标记”、“清除” 两个阶段：首先标记出所有需要回收的对象（两次标记），在标记完成后统一回收所有被标记的对象。如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx4.sinaimg.cn/large/687148dbly1ftwah4c7cxj20gv07b0sz.jpg&#34; alt=&#34;&#34; /&gt;
+
+标记－清除算法的不足主要有以下两点：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JVM-垃圾回收（一）</title>
+      <link>https://vxgo.github.io/2018/08/23/jvm-gc1/</link>
+      <pubDate>Thu, 23 Aug 2018 11:25:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/23/jvm-gc1/</guid>
+      <description>&lt;p&gt;在 JVM 运行时数据区域中，程序计数器、虚拟机栈和本地方法栈这三个区域属于线程私有的，只存在于线程的生命周期内，线程结束之后也会消失，因此不需要对这三个区域进行垃圾回收。垃圾回收主要是针对 Java 堆和方法区进行。&lt;/p&gt;
+
+&lt;h2 id=&#34;一-判断对象状态&#34;&gt;一、判断对象状态&lt;/h2&gt;
+
+&lt;p&gt;JVM 在回收一个对象时，首先要判断这个对象的状态，如果判断对象为无效的（没有被任何对象或变量引用），则需要被 JVM 垃圾回收器回收。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-1-引用计数算法&#34;&gt;1.1 引用计数算法&lt;/h3&gt;
+
+&lt;p&gt;给对象添加一个引用计数器，当对象增加一个引用时计数器加 1，引用失效时计数器减 1。引用计数不为 0 的对象仍然存活。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 位运算笔记</title>
+      <link>https://vxgo.github.io/2018/08/02/java-positional-operator/</link>
+      <pubDate>Thu, 02 Aug 2018 17:24:58 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/02/java-positional-operator/</guid>
+      <description>&lt;p&gt;一些零碎的知识点总是似懂非懂，用法老是模棱两可，每次都要去网络上查询，长时间不用又忘记了。比如 Java 中的位运算。今天抽空归纳总结一下，加强一下记忆。&lt;/p&gt;
+
+&lt;h2 id=&#34;一-原码-反码和补码&#34;&gt;一、原码、反码和补码&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-原码&#34;&gt;1.1 原码&lt;/h3&gt;
+
+&lt;p&gt;一个数在计算机中的二进制表示形式，叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号，正数为 0, 负数为 1。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。&lt;/p&gt;
+
+&lt;p&gt;原码就是符号位加上真值的绝对值，即用第一位表示符号，其余位表示值。比如 8 位二进制:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[+1] 原 = 0000 0001
+[-1] 原 = 1000 0001
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;第一位是符号位，因为第一位是符号位，所以 8 位二进制数的取值范围就是：[1111 1111 , 0111 1111]，即：[-127 , 127]
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JVM 运行时数据区域</title>
+      <link>https://vxgo.github.io/2018/04/08/jvm-runtime-data-area/</link>
+      <pubDate>Sun, 08 Apr 2018 17:30:33 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/04/08/jvm-runtime-data-area/</guid>
+      <description>&lt;p&gt;Java 的内存区域划分绝不仅仅只是堆内存（heap）和栈内存（Stack），实际上 JVM 在执行 Java 程序的过程中会把它所管理的内存划分为以下几个数据区域：程序计数器、Java 虚拟机栈、本地方法栈、堆、方法区、运行时常量和直接内存。如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/large/687148dbly1fq7bi09iazj21gf0ve0vv.jpg&#34; alt=&#34;Runtime DataArea&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 PowerMock 进行单元测试</title>
+      <link>https://vxgo.github.io/2017/07/25/use-introduction-of-powermock/</link>
+      <pubDate>Tue, 25 Jul 2017 19:01:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/07/25/use-introduction-of-powermock/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;单元测试（Unit Testing）又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。如果我们写的代码依赖于某些模块对象，而单元测试过程中这些对象又很难手动创建，或者模块还没有开发完成，那么就使用一个虚拟的对象来完成单元测试，这就是所谓的 Mock。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Java 单元测试中比较流行的 Mock 测试框架有 &lt;a href=&#34;http://www.jmock.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;jMock&lt;/a&gt;、&lt;a href=&#34;http://easymock.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;EasyMock&lt;/a&gt;、&lt;a href=&#34;https://github.com/mockito/mockito&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Mockito&lt;/a&gt;，但是这些 Mock 工具都不能 Mock &lt;code&gt;static&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;private&lt;/code&gt; 方法等，而 &lt;a href=&#34;https://github.com/powermock/powermock&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;PowerMock&lt;/a&gt; 能够做到。&lt;/p&gt;
+
+&lt;p&gt;使用 PowerMock，首先需要使用 &lt;code&gt;@RunWith(PowerMockRunner.class)&lt;/code&gt; 将测试用例的 Runner 改为 &lt;code&gt;PowerMockRunner&lt;/code&gt;。如果要 Mock &lt;code&gt;static&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;private&lt;/code&gt; 等方法的时候，就需要加注解 &lt;code&gt;@PrepareForTest&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;PowerMock 有两个版本，一个是基于 EasyMock 实现的，另一个是基于 Mockito 实现的。&lt;/p&gt;
+
+&lt;p&gt;下面我将以 PowerMock 的 Mockito 的版本来讲述如何使用 PowerMock。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Java 程序员的 Golang 入门笔记</title>
+      <link>https://vxgo.github.io/2017/07/22/from-java-to-golang/</link>
+      <pubDate>Sat, 22 Jul 2017 11:23:10 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/07/22/from-java-to-golang/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;最近抽空学习了一下 &lt;code&gt;Go&lt;/code&gt; 语言，好多特性感觉非常棒，由于高效的开发效率以及性能，现在好多优秀的开源项目都是基于 &lt;code&gt;Go&lt;/code&gt; 开发，比如 &lt;code&gt;Docker&lt;/code&gt;、&lt;code&gt;etcd&lt;/code&gt;、&lt;code&gt;consul&lt;/code&gt;、&lt;code&gt;Kubernetes&lt;/code&gt; 等。&lt;code&gt;Go&lt;/code&gt; 势必会在互联网技术的服务化，容器化的将来大展拳脚。正好网上看到一篇关于 &lt;code&gt;Java&lt;/code&gt; 程序员入门 &lt;code&gt;Golang&lt;/code&gt; 的文章，写的挺好的，所以特此转载过来，再加上自己的一些学习经验，供大家参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;Golang&lt;/code&gt; 从 &lt;code&gt;09&lt;/code&gt; 年发布，中间经历了多个版本的演进，已经渐渐趋于成熟，其媲美于 &lt;code&gt;C&lt;/code&gt; 语言的性能、&lt;code&gt;Python&lt;/code&gt; 的开发效率，又被称为 21 世纪的 &lt;code&gt;C&lt;/code&gt; 语言，尤其适合开发后台服务。这篇文章主要是介绍 &lt;code&gt;Golang&lt;/code&gt; 的一些主要特性，和 &lt;code&gt;Java&lt;/code&gt; 做一个对比，以便更好的理解 &lt;code&gt;Golang&lt;/code&gt; 这门语言。&lt;/p&gt;
+
+&lt;p&gt;关于 &lt;code&gt;Golang&lt;/code&gt; 环境的搭建就不讲了，可以参考 &lt;a href=&#34;https://golang.org/doc/install&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 或者大神 &lt;a href=&#34;https://github.com/astaxie&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;astaxie&lt;/a&gt; 的开源书籍 &lt;a href=&#34;https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.0.md&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;build-web-application-with-golang&lt;/a&gt; 的相关篇章。下面我没让你就从 &lt;code&gt;Go&lt;/code&gt; 版本的&lt;code&gt;Hello World&lt;/code&gt; 开始。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 获取系统的配置信息</title>
+      <link>https://vxgo.github.io/2017/03/29/java-%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Wed, 29 Mar 2017 15:33:54 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/03/29/java-%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF/</guid>
+      <description>&lt;p&gt;&lt;code&gt;System.getProperty()&lt;/code&gt; 可以获取系统的配置信息，最近项目开发中要用到临时文件，所以想到了使用系统临时文件目录，最后得知可以通过 &lt;code&gt;System.getProperty(&amp;quot;java.io.tmpdir&amp;quot;)&lt;/code&gt; 可以获取不同操作系统平台下的临时目录。比如：&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;windows&lt;/code&gt; 中的目录是：&lt;code&gt;C:\Users\登录用户~1\AppData\Local\Temp\&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;linux&lt;/code&gt; 下的目录是：&lt;code&gt;/tmp&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;Mac&lt;/code&gt; 下目录是 &lt;code&gt;/var/folders/c8/2c9rf0ss2w9c8tdtfcgvg9kh0000gn/T/&lt;/code&gt; （我感觉是不同电脑应该不一样）&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] JMS 基本概念</title>
+      <link>https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Thu, 21 Jul 2016 12:35:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description>&lt;p&gt;JMS（JAVA Message Service,java消息服务）API是一个消息服务的标准或者说是规范，允许应用程序组件基于JavaEE平台创建、发送、接收和读取消息。它使分布式通信耦合度更低，消息服务更加可靠以及异步性。&lt;/p&gt;
+
+&lt;h2 id=&#34;基本概念&#34;&gt;基本概念&lt;/h2&gt;
+
+&lt;p&gt;JMS是java的消息服务，JMS的客户端之间可以通过JMS服务进行异步的消息传输。&lt;/p&gt;
+
+&lt;h2 id=&#34;消息模型&#34;&gt;消息模型&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Point-to-Point(P2P)&lt;/li&gt;
+&lt;li&gt;Publish/Subscribe(Pub/Sub)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;即点对点和发布订阅模型
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java List与数组之间的转换</title>
+      <link>https://vxgo.github.io/2016/07/20/java-list%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 20 Jul 2016 15:52:33 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/20/java-list%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&lt;h3 id=&#34;1-数组转换为list&#34;&gt;1. 数组转换为List&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;String[] arr = new String[] {&amp;quot;str1&amp;quot;, &amp;quot;str2&amp;quot;};
+List&amp;lt;String&amp;gt; list = Arrays.asList(arr);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

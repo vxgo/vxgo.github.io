@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="ehlxr">
+  <meta name="description" content="My Hugo Blog.">
+  <meta name="keywords" content="[Hugo theme ehlxr]">
+  
+  <link rel="prev" href="https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" />
+  <link rel="next" href="https://vxgo.github.io/2016/09/24/using-oh-my-zsh/" />
+  <link rel="canonical" href="https://vxgo.github.io/2016/09/06/gogs-installation-introduction/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           5 分钟搭建 Git 服务器-Gogs | 胡言乱语
+       
+  </title>
+  <meta name="title" content="5 分钟搭建 Git 服务器-Gogs | 胡言乱语">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://vxgo.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "5 分钟搭建 Git 服务器-Gogs",
+    "headline" : "5 分钟搭建 Git 服务器-Gogs",
+    "description" : "<blockquote>
+<p>Gogs 基于 Go 语言的自助 Git 服务。它具有易安装、跨平台、轻量级、开源化等特性&hellip;</p>
+</blockquote>
+
+<p><img src="/images/post/gogs-logo.png" alt="" />
+<!-- {% img /images/post/gogs-logo.png 150 %} --></p>
+
+<p>最近新到一家公司，发现在使用 Gogs 搭建 Git 服务，遂研究了一下，和前段时间研究的 GitLab 做了一个简单的对比，虽然 Gogs 相对与 GitLab 还比较年轻，也许没有 GitLab 强大和稳健，但 Gogs 更加简单易用，而且能够满足正常的工作使用。</p>
+
+<p>Gogs 是轻量级的 Git 服务，正如官方介绍的：一个廉价的树莓派的配置足以满足 Gogs 的最低系统硬件要求。最大程度上节省您的服务器资源！关键的一点是免费开源的，所有的代码都开源在 GitHub 上。下面结合官方的介绍，总结一下在 Linux 系统下的安装方法，真的是相当的简单，5 分钟足矣！</p>
+
+<p></p>",
+    "inLanguage" : "zh-cn",
+    "author" : "ehlxr",
+    "creator" : "ehlxr",
+    "publisher": "ehlxr",
+    "accountablePerson" : "ehlxr",
+    "copyrightHolder" : "ehlxr",
+    "copyrightYear" : "2016",
+    "datePublished": "2016-09-06 12:15:14 &#43;0000 UTC",
+    "dateModified" : "2016-09-06 12:15:14 &#43;0000 UTC",
+    "url" : "https://vxgo.github.io/2016/09/06/gogs-installation-introduction/",
+    "wordCount" : "147",
+    "keywords" : [ "Gogs","Git", "胡言乱语"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+          
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">5 分钟搭建 Git 服务器-Gogs</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://vxgo.github.io" rel="author">ehlxr</a> with ♥
+                <span class="post-time">
+                on <time datetime=2016-09-06 itemprop="datePublished">September 6, 2016</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://vxgo.github.io/categories/git/"> Git </a>
+                        
+                </span>
+
+                |
+                <a href="#gitalk-container" itemprop="discussionUrl">
+                    <span class="gitalk-comment-count" itemprop="commentCount"></span>
+                </a>
+                条评论
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#一-安装">一、安装</a>
+<ul>
+<li><a href="#1-1-下载">1.1 下载</a></li>
+<li><a href="#1-2-解压安装包">1.2 解压安装包</a></li>
+<li><a href="#1-3-安装">1.3 安装</a></li>
+<li><a href="#1-4-配置">1.4 配置</a></li>
+<li><a href="#1-5-完成安装">1.5 完成安装</a></li>
+<li><a href="#1-6-后台运行">1.6 后台运行</a></li>
+</ul></li>
+<li><a href="#升级">升级</a>
+<ul>
+<li><a href="#2-1-首先-确认当前安装的位置">2.1 首先，确认当前安装的位置：</a></li>
+<li><a href="#2-2-然后将当前目录移动到另一个临时的位置-但不是删除">2.2 然后将当前目录移动到另一个临时的位置，但不是删除！</a></li>
+<li><a href="#2-3-下载并解压新的二进制">2.3 下载并解压新的二进制：</a></li>
+<li><a href="#2-4-复制-custom-data-和-log-目录到新解压的目录中">2.4 复制 <code>custom</code>、<code>data</code> 和 <code>log</code> 目录到新解压的目录中：</a></li>
+<li><a href="#2-5-最后-运行并打开浏览器进行测试">2.5 最后，运行并打开浏览器进行测试：</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<p>Gogs 基于 Go 语言的自助 Git 服务。它具有易安装、跨平台、轻量级、开源化等特性&hellip;</p>
+</blockquote>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/gogs-logo.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<!-- {% img /images/post/gogs-logo.png 150 %} --></p>
+
+<p>最近新到一家公司，发现在使用 Gogs 搭建 Git 服务，遂研究了一下，和前段时间研究的 GitLab 做了一个简单的对比，虽然 Gogs 相对与 GitLab 还比较年轻，也许没有 GitLab 强大和稳健，但 Gogs 更加简单易用，而且能够满足正常的工作使用。</p>
+
+<p>Gogs 是轻量级的 Git 服务，正如官方介绍的：一个廉价的树莓派的配置足以满足 Gogs 的最低系统硬件要求。最大程度上节省您的服务器资源！关键的一点是免费开源的，所有的代码都开源在 GitHub 上。下面结合官方的介绍，总结一下在 Linux 系统下的安装方法，真的是相当的简单，5 分钟足矣！</p>
+
+<p></p>
+
+<h1 id="一-安装">一、安装</h1>
+
+<h2 id="1-1-下载">1.1 下载</h2>
+
+<p>下载对应系统版本的二进制安装包，并上传至 Linux 系统，或通过以下命令下载：</p>
+
+<pre><code class="language-bash">$ wget https://github.com/gogits/gogs/releases/download/v0.9.97/linux_amd64.tar.gz
+</code></pre>
+
+<p><em><a href="https://github.com/gogits/gogs/releases" rel="nofollow noreferrer" target="_blank">Gogs发布版本</a></em></p>
+
+<h2 id="1-2-解压安装包">1.2 解压安装包</h2>
+
+<pre><code class="language-bash">$ tar -xzvf gogs_v0.9.97_linux_amd64.tar.gz
+</code></pre>
+
+<h2 id="1-3-安装">1.3 安装</h2>
+
+<p>进入到刚刚解压后的目录执行命令 <code>./gogs web</code>，出现以下信息：</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/20160906134643.jpg" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
+<h2 id="1-4-配置">1.4 配置</h2>
+
+<p>打开浏览器输地址入：<code>http://ip:3000</code>，第一次会出现以下的配置界面，根据实际情况选择即可。</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/Gogs-install.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
+<h2 id="1-5-完成安装">1.5 完成安装</h2>
+
+<p>之后进入以下界面，表明安装已经完成。</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/20160906135253.jpg" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
+<h2 id="1-6-后台运行">1.6 后台运行</h2>
+
+<p>后台运行可参考以下命令：</p>
+
+<pre><code class="language-bash">$ nohup ./gogs web &gt; nohup.out 2&gt;&amp;1 &amp;
+</code></pre>
+
+<h1 id="升级">升级</h1>
+
+<p>引用自官方<a href="https://gogs.io/docs/upgrade/upgrade_from_binary" rel="nofollow noreferrer" target="_blank">二级制升级文档</a></p>
+
+<h2 id="2-1-首先-确认当前安装的位置">2.1 首先，确认当前安装的位置：</h2>
+
+<pre><code class="language-bash"> # 默认位置在 git 用户下的家目录
+ $ sudo su - git
+ $ cd ~
+ $ pwd
+ /home/git
+ $ ls
+ gogs gogs-repositories
+</code></pre>
+
+<h2 id="2-2-然后将当前目录移动到另一个临时的位置-但不是删除">2.2 然后将当前目录移动到另一个临时的位置，但不是删除！</h2>
+
+<pre><code class="language-bash">$ mv gogs gogs_old
+</code></pre>
+
+<h2 id="2-3-下载并解压新的二进制">2.3 下载并解压新的二进制：</h2>
+
+<pre><code class="language-bash"># 请根据系统和类型获取相应的二进制版本
+$ wget https://dl.gogs.io/gogs_v$VERSION_$OS_$ARCH.tar.gz
+$ tar -zxvf gogs_v$VERSION_$OS_$ARCH.tar.gz
+$ ls
+gogs gogs_old  gogs-repositories gogs_v$VERSION_$OS_$ARCH.tar.gz
+</code></pre>
+
+<h2 id="2-4-复制-custom-data-和-log-目录到新解压的目录中">2.4 复制 <code>custom</code>、<code>data</code> 和 <code>log</code> 目录到新解压的目录中：</h2>
+
+<pre><code class="language-bash">$ cp -R gogs_old/custom gogs
+$ cp -R gogs_old/data gogs
+$ cp -R gogs_old/log gogs
+</code></pre>
+
+<h2 id="2-5-最后-运行并打开浏览器进行测试">2.5 最后，运行并打开浏览器进行测试：</h2>
+
+<pre><code class="language-bash">$ cd gogs
+$ ./gogs web
+</code></pre>
+
+<hr />
+
+<p>&lt;!&ndash;</p>
+
+<p>&ndash;&gt;</p>
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>ehlxr </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://vxgo.github.io/2016/09/06/gogs-installation-introduction/>
+                        <script>
+                            document.write(decodeURI(location.origin + location.pathname))
+                        </script>
+                    </a>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/gogs/">
+                    #Gogs</a></span>
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/git/">
+                    #Git</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://vxgo.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" class="prev" rel="prev" title="CentOS 中配置 Git 命令自动补全"><i class="iconfont icon-left"></i>&nbsp;CentOS 中配置 Git 命令自动补全</a>
+        
+        
+        <a href="https://vxgo.github.io/2016/09/24/using-oh-my-zsh/" class="next" rel="next" title="Oh My Zsh 替换你的 Bash Shell">Oh My Zsh 替换你的 Bash Shell&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+</article>
+          
+<div class="post-comment"><div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div><div id="gitalk-container" class="gitalk-container"></div>
+    <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '8e0a0a6455a49987e3ef2d3d52540334',
+        title: '5 分钟搭建 Git 服务器-Gogs',
+        clientID: '9d9d3623e388cb2f2283',
+        clientSecret: '99c5b47b7553ab9122642f3e8f8d27973b22f8d2',
+        repo: 'vxgo.github.io',
+        owner: 'vxgo',
+        admin: ['ehlxr'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a>
+    </noscript><div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function showDisqus() {
+      
+
+      
+      
+      
+      
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+      var disqus_shortname = 'ehlxr';
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      window.location.hash = "#disqus_thread";
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://vxgo.github.io">ehlxr</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

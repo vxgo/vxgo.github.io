@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CentOS on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/centos/</link>
+    <description>Recent content in CentOS on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 10 Jan 2017 11:01:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转] CentOS 升级 kernel</title>
+      <link>https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/</link>
+      <pubDate>Tue, 10 Jan 2017 11:01:09 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/</guid>
+      <description>&lt;h1 id=&#34;一-手动档&#34;&gt;一、手动档&lt;/h1&gt;
+
+&lt;p&gt;手动档就是从源码开始编译内核安装，好处是可以自己选择任意版本的内核，缺点就是耗时长，编译安装消耗系统资源&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-获取-kernel-源码&#34;&gt;1.1、获取 kernel 源码&lt;/h2&gt;
+
+&lt;p&gt;这世界上最伟大的 Linux 内核源码下载地址是 &lt;a href=&#34;https://kernel.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;kernel&lt;/a&gt; 官网，选择一个稳定版本下载即可&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-解压并清理&#34;&gt;1.2、解压并清理&lt;/h2&gt;
+
+&lt;p&gt;官方要求将其解压到 &lt;code&gt;/usr/src&lt;/code&gt; 目录，其实在哪都可以，为了规范一点索性也解压到此位置，然后为了防止编译残留先做一次清理动作&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载内核源码
+$ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.xz
+
+# 解压并移动到 /usr/src
+$ tar -Jxvf linux-4.8.6.tar.xz
+$ mv linux-4.8.6 /usr/src/kernels
+
+# 执行清理（没 gcc 的要装一下）
+$ cd /usr/src/kernels/linux-4.8.6
+$ make mrproper &amp;amp;&amp;amp; make clean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装Python3、pip3</title>
+      <link>https://vxgo.github.io/2017/01/07/centos-7-%E5%AE%89%E8%A3%85python3pip3/</link>
+      <pubDate>Sat, 07 Jan 2017 19:23:22 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/07/centos-7-%E5%AE%89%E8%A3%85python3pip3/</guid>
+      <description>&lt;p&gt;CentOS 7 默认安装了 Python 2，当需要使用 Python 3 的时候，可以手动下载 Python 源码后编译安装。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-安装-python-3&#34;&gt;一、安装 Python 3&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-安装准备&#34;&gt;1.1 安装准备&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo mkdir /usr/local/python3 # 创建安装目录
+
+# 下载 Python 源文件
+$ wget --no-check-certificate https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+# 注意：wget获取https的时候要加上：--no-check-certificate
+
+$ tar -xzvf Python-3.6.0.tgz # 解压缩包
+
+$ cd Python-3.6.0 # 进入解压目录
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装 Nginx</title>
+      <link>https://vxgo.github.io/2016/12/23/centos-%E5%AE%89%E8%A3%85-nginx/</link>
+      <pubDate>Fri, 23 Dec 2016 11:20:44 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/23/centos-%E5%AE%89%E8%A3%85-nginx/</guid>
+      <description>&lt;h1 id=&#34;一-安装准备&#34;&gt;一、安装准备&lt;/h1&gt;
+
+&lt;p&gt;首先由于 Nginx 的一些模块依赖一些 lib 库，所以在安装 Nginx 之前，必须先安装这些 lib 库，这些依赖库主要有 g++、gcc、openssl-devel、pcre-devel 和 zlib-devel，执行如下命令安装：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ yum install gcc-c++
+$ yum install pcre pcre-devel
+$ yum install zlib zlib-devel
+$ yum install openssl openssl--devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;二-安装-nginx&#34;&gt;二、安装 Nginx&lt;/h1&gt;
+
+&lt;p&gt;安装之前，最好检查一下是否已经安装有 Nginx&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ find -name nginx
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装 rar、zip 解压缩</title>
+      <link>https://vxgo.github.io/2016/12/22/centos-%E5%AE%89%E8%A3%85-rarzip-%E8%A7%A3%E5%8E%8B%E7%BC%A9/</link>
+      <pubDate>Thu, 22 Dec 2016 15:39:45 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/22/centos-%E5%AE%89%E8%A3%85-rarzip-%E8%A7%A3%E5%8E%8B%E7%BC%A9/</guid>
+      <description>&lt;p&gt;Windows 系统压缩的 rar 和 zip 文件，在 Linux 系统下是无法通过 tar 命令解压缩的，需要使用 rar 和 zip 命令来解压缩。下面记录一下 rar 和 zip 安装和简单的使用。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-rar-安装使用&#34;&gt;一、rar 安装使用&lt;/h1&gt;
+
+&lt;p&gt;Linux 系统下使用 rarlinux 解压缩 rar 压缩文件，下载页面：&lt;a href=&#34;http://www.rarsoft.com/download.htm。&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.rarsoft.com/download.htm。&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-下载系统对应的版本&#34;&gt;1.1 下载系统对应的版本&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget http://www.rarsoft.com/rar/rarlinux-x64-5.4.0.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;1-2-解压-安装&#34;&gt;1.2 解压、安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ tar -zxvf rarlinux-x64-5.4.0.tar.gz
+$ cd rar
+$ make
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 中配置 Git 命令自动补全</title>
+      <link>https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</link>
+      <pubDate>Sun, 04 Sep 2016 10:03:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</guid>
+      <description>&lt;h1 id=&#34;1-step-1&#34;&gt;1. Step 1&lt;/h1&gt;
+
+&lt;p&gt;保存以下文件的内容为：&lt;code&gt;git-completion.bash&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/git/git/blob/master/contrib/completion/git-completion.bash&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;git-completion.bash&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-step-2&#34;&gt;2.  Step 2&lt;/h1&gt;
+
+&lt;p&gt;将上述文件 &lt;code&gt;git-completion.bash&lt;/code&gt; copy 至个人 &lt;code&gt;home&lt;/code&gt; 目录，可设为隐藏文件以免后续被误删。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cp git-completion.bash ~/.git-completion.bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 系统下 GitLab 搭建与基本配置</title>
+      <link>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 31 Jul 2016 18:15:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://about.gitlab.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitLab 是一个开源的版本管理系统，提供了类似于 GitHub 的源代码浏览，管理缺陷和注释等功能，你可以将代码免费托管到 GitLab.com，而且不限项目数量和成员数。最吸引人的一点是，可以在自己的服务器上搭建 GitLab CE （社区免费版）版本，方便内部团队协作开发和代码管理。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面介绍如何在 CentOS 服务器上搭建 GitLab CE 版本，以及一些基本的配置。&lt;/p&gt;
+
+&lt;h1 id=&#34;1-安装&#34;&gt;1. 安装&lt;/h1&gt;
+
+&lt;p&gt;GitLab 提供了两种安装方式：源码手动编译安装和软件包管理安装。&lt;/p&gt;
+
+&lt;p&gt;源码手动编译安装虽然配置灵活，但过程比较麻烦，不容易安装成功，所以我这里选择软件包管理安装的形式。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-使用-gitlab-提供仓库在线安装&#34;&gt;1.1 使用 GitLab 提供仓库在线安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+yum install gitlab-ce
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装最新的 Git</title>
+      <link>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%9A%84-git/</link>
+      <pubDate>Sat, 30 Jul 2016 22:12:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%9A%84-git/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;1-查看-yum-源仓库的-git-信息&#34;&gt;1. 查看 yum 源仓库的 Git 信息：&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# yum info git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20160730222608.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最&lt;a href=&#34;https://github.com/git/git/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;新的 Git 发布版本&lt;/a&gt;，已经 2.9.2 了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装 Node.js</title>
+      <link>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85-node.js/</link>
+      <pubDate>Sat, 30 Jul 2016 16:19:03 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85-node.js/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org/en/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;1-下载源码安装文件&#34;&gt;1. 下载源码安装文件&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-在线安装&#34;&gt;1.1 在线安装&lt;/h2&gt;
+
+&lt;p&gt;通过以下命令下载源文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://nodejs.org/dist/v4.4.7/node-v4.4.7.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转]将 Centos 的 yum 源更改为国内的阿里云源</title>
+      <link>https://vxgo.github.io/2016/07/30/%E8%BD%AC%E5%B0%86-centos-%E7%9A%84-yum-%E6%BA%90%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%9B%BD%E5%86%85%E7%9A%84%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/</link>
+      <pubDate>Sat, 30 Jul 2016 11:57:59 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/30/%E8%BD%AC%E5%B0%86-centos-%E7%9A%84-yum-%E6%BA%90%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%9B%BD%E5%86%85%E7%9A%84%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/</guid>
+      <description>&lt;p&gt;阿里云Linux安装镜像源地址：&lt;a href=&#34;http://mirrors.aliyun.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://mirrors.aliyun.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CentOS系统更换软件安装源&lt;/p&gt;
+
+&lt;h3 id=&#34;一-备份你的原镜像文件-以免出错后可以恢复&#34;&gt;一、备份你的原镜像文件，以免出错后可以恢复。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

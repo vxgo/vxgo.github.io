@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitLab on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/gitlab/</link>
+    <description>Recent content in GitLab on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 31 Jul 2016 18:15:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS 系统下 GitLab 搭建与基本配置</title>
+      <link>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 31 Jul 2016 18:15:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://about.gitlab.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitLab 是一个开源的版本管理系统，提供了类似于 GitHub 的源代码浏览，管理缺陷和注释等功能，你可以将代码免费托管到 GitLab.com，而且不限项目数量和成员数。最吸引人的一点是，可以在自己的服务器上搭建 GitLab CE （社区免费版）版本，方便内部团队协作开发和代码管理。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面介绍如何在 CentOS 服务器上搭建 GitLab CE 版本，以及一些基本的配置。&lt;/p&gt;
+
+&lt;h1 id=&#34;1-安装&#34;&gt;1. 安装&lt;/h1&gt;
+
+&lt;p&gt;GitLab 提供了两种安装方式：源码手动编译安装和软件包管理安装。&lt;/p&gt;
+
+&lt;p&gt;源码手动编译安装虽然配置灵活，但过程比较麻烦，不容易安装成功，所以我这里选择软件包管理安装的形式。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-使用-gitlab-提供仓库在线安装&#34;&gt;1.1 使用 GitLab 提供仓库在线安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+yum install gitlab-ce
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

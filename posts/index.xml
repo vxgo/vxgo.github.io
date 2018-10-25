@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 胡言乱语</title>
+    <link>https://vxgo.github.io/posts/</link>
+    <description>Recent content in Posts on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Aug 2018 15:15:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JVM-垃圾回收（二）</title>
+      <link>https://vxgo.github.io/2018/08/23/jvm-gc2/</link>
+      <pubDate>Thu, 23 Aug 2018 15:15:07 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/23/jvm-gc2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;接着上次 JVM 中 GC 机制的总结，这次主要复习一下垃圾收集的常用算法和 Minor GC、Full GC 相关的一些知识点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;一-垃圾收集算法&#34;&gt;一、垃圾收集算法&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-标记-清除-mark-sweep&#34;&gt;1.1 标记 - 清除（Mark-Sweep）&lt;/h3&gt;
+
+&lt;p&gt;算法分成 “标记”、“清除” 两个阶段：首先标记出所有需要回收的对象（两次标记），在标记完成后统一回收所有被标记的对象。如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx4.sinaimg.cn/large/687148dbly1ftwah4c7cxj20gv07b0sz.jpg&#34; alt=&#34;&#34; /&gt;
+
+标记－清除算法的不足主要有以下两点：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JVM-垃圾回收（一）</title>
+      <link>https://vxgo.github.io/2018/08/23/jvm-gc1/</link>
+      <pubDate>Thu, 23 Aug 2018 11:25:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/23/jvm-gc1/</guid>
+      <description>&lt;p&gt;在 JVM 运行时数据区域中，程序计数器、虚拟机栈和本地方法栈这三个区域属于线程私有的，只存在于线程的生命周期内，线程结束之后也会消失，因此不需要对这三个区域进行垃圾回收。垃圾回收主要是针对 Java 堆和方法区进行。&lt;/p&gt;
+
+&lt;h2 id=&#34;一-判断对象状态&#34;&gt;一、判断对象状态&lt;/h2&gt;
+
+&lt;p&gt;JVM 在回收一个对象时，首先要判断这个对象的状态，如果判断对象为无效的（没有被任何对象或变量引用），则需要被 JVM 垃圾回收器回收。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-1-引用计数算法&#34;&gt;1.1 引用计数算法&lt;/h3&gt;
+
+&lt;p&gt;给对象添加一个引用计数器，当对象增加一个引用时计数器加 1，引用失效时计数器减 1。引用计数不为 0 的对象仍然存活。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 位运算笔记</title>
+      <link>https://vxgo.github.io/2018/08/02/java-positional-operator/</link>
+      <pubDate>Thu, 02 Aug 2018 17:24:58 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/08/02/java-positional-operator/</guid>
+      <description>&lt;p&gt;一些零碎的知识点总是似懂非懂，用法老是模棱两可，每次都要去网络上查询，长时间不用又忘记了。比如 Java 中的位运算。今天抽空归纳总结一下，加强一下记忆。&lt;/p&gt;
+
+&lt;h2 id=&#34;一-原码-反码和补码&#34;&gt;一、原码、反码和补码&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-原码&#34;&gt;1.1 原码&lt;/h3&gt;
+
+&lt;p&gt;一个数在计算机中的二进制表示形式，叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号，正数为 0, 负数为 1。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。&lt;/p&gt;
+
+&lt;p&gt;原码就是符号位加上真值的绝对值，即用第一位表示符号，其余位表示值。比如 8 位二进制:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[+1] 原 = 0000 0001
+[-1] 原 = 1000 0001
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;第一位是符号位，因为第一位是符号位，所以 8 位二进制数的取值范围就是：[1111 1111 , 0111 1111]，即：[-127 , 127]
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SQL 事务隔离</title>
+      <link>https://vxgo.github.io/2018/05/31/sql-transaction-isolation/</link>
+      <pubDate>Thu, 31 May 2018 13:55:26 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/05/31/sql-transaction-isolation/</guid>
+      <description>SQL 标准定义了 4 类隔离级别，包括了一些具体规则，用来限定事务内外的哪些改变是可见的，哪些是不可见的。低级别的隔离级一般支持更高的并发处理，并拥有更低的系统开销。
+一、SQL 事务隔离级别说明 1.1 Read Uncommitted（读取未提交内容） 在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。本隔离级别很少用于实际应用，因为它的性能也不比其他级别好多少。读取未提交的数据，也被称之为脏读（Dirty Read）。 1.2 Read Committed（读取提交内容） 这是大多数数据库系统的默认隔离级别（但不是 MySQL 默认的）。它满足了隔离的简单定义：一个事务只能看见已经提交事务所做的改变。这种隔离级别 也支持所谓的不可重复读（Nonrepeatable Read），因为同一事务的其他实例在该实例处理其间可能会有新的 commit，所以同一 select 可能返回不同结果。
+1.3 Repeatable Read（可重读） 这是 MySQL 的默认事务隔离级别，它确保同一事务的多个实例在并发读取数据时，会看到同样的数据行。不过理论上，这会导致另一个棘手的问题：幻读 （Phantom Read）。简单的说，幻读指当用户读取某一范围的数据行时，另一个事务又在该范围内插入了新行，当用户再读取该范围的数据行时，会发现有新的 “幻影” 行。InnoDB 和 Falcon 存储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）机制解决了该问题。
+1.4 Serializable（可串行化） 这是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突，从而解决幻读问题。简言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超时现象和锁竞争。
+二、事务隔离带来的问题 这四种隔离级别采取不同的锁类型来实现，若读取的是同一个数据的话，就容易发生问题。例如：
+2.1 脏读（Drity Read） 一个事务读取到另一事务未提交的更新数据。当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中（这个数据在有可能会回滚），这时，另外一个事务也访问这个数据，然后使用了这个数据。
+2.2 不可重复读 (Non-repeatable read） 在一个事务内，前后两次读到的数据是不一样。在 T1 事务两次读取同一数据之间，T2 事务对该数据进行了修改，就会发生 T1 事务中的两次数据读取不一样的结果。相反， 可重复读：在同一事务中多次读取数据时，能够保证所读数据一样，也就是后续读取不能读到另一事务已提交的更新数据。
+2.3 幻读 (Phantom Read） 指当事务不是独立执行时发生的一种现象，例如：T1 事务对表中的 &amp;ldquo;全部数据行&amp;rdquo; 进行了修改，同时 T2 事务向表中插入了一行 &amp;ldquo;新数据&amp;rdquo;，操作 T1 事务的用户发现表中还存在没有修改的数据行，就好象发生了幻觉一 样。一般解决幻读的方法是增加范围锁 RangeS，锁定检锁范围为只读，这样就避免了幻读。</description>
+    </item>
+    
+    <item>
+      <title>JVM 运行时数据区域</title>
+      <link>https://vxgo.github.io/2018/04/08/jvm-runtime-data-area/</link>
+      <pubDate>Sun, 08 Apr 2018 17:30:33 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/04/08/jvm-runtime-data-area/</guid>
+      <description>&lt;p&gt;Java 的内存区域划分绝不仅仅只是堆内存（heap）和栈内存（Stack），实际上 JVM 在执行 Java 程序的过程中会把它所管理的内存划分为以下几个数据区域：程序计数器、Java 虚拟机栈、本地方法栈、堆、方法区、运行时常量和直接内存。如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/large/687148dbly1fq7bi09iazj21gf0ve0vv.jpg&#34; alt=&#34;Runtime DataArea&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac 实用小工具</title>
+      <link>https://vxgo.github.io/2018/03/30/mac-utility-tools/</link>
+      <pubDate>Fri, 30 Mar 2018 20:45:40 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/03/30/mac-utility-tools/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;记录备忘一下 Mac 系统下一些实用的小工具&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;收费&#34;&gt;收费&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Bartender&lt;/code&gt; : 菜单栏管理工具，可以将菜单放进 Bartender 的二级菜单&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SizeUp&lt;/code&gt; : 实用分屏小工具&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Proxifier&lt;/code&gt; :  配合 ss/ssr 可以实现真正的全局代理软件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;iStat Menus&lt;/code&gt; : 能够在系统菜单栏实时监控 CPU、内存、硬盘、网络、温度、电池以及系统时间等&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CleanMyMac&lt;/code&gt; : 系统清理工具，可以清除 mac 系统多余的语言包、系统缓存、应用程序等&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;KeyCue&lt;/code&gt; : 快捷键辅助工具，忘记一些快捷键的时候按住 Command 就会出现快捷键大全的菜单&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Araxis Merge&lt;/code&gt; : 可视化文件合并以及数据同步工具&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>漂 泊</title>
+      <link>https://vxgo.github.io/2018/03/10/drifter/</link>
+      <pubDate>Sat, 10 Mar 2018 23:02:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/03/10/drifter/</guid>
+      <description>&lt;blockquote class=&#39;blockquote-center&#39;&gt; 北漂，是一种选择，但越来越多的会是无奈和彷徨，
+踌躇满志而来，万念俱灰而归，也许就是大多数北漂的归属，结局也许有些夸张。
+最终，我还是无法爱上这座城市，最起码我努力爱过...
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx1.sinaimg.cn/large/687148dbgy1fp8q20yzt6g206y046x0m.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang 反射使用总结</title>
+      <link>https://vxgo.github.io/2018/01/26/golang-reflect/</link>
+      <pubDate>Fri, 26 Jan 2018 21:27:56 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/01/26/golang-reflect/</guid>
+      <description>&lt;p&gt;Go 语言中反射的操作主要定义在标准库 &lt;a href=&#34;https://golang.org/pkg/reflect/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reflect&lt;/code&gt;&lt;/a&gt; 中，在标准库中定义了两种类型来表现运行时的对象信息，分别是：&lt;a href=&#34;https://golang.org/pkg/reflect/#Value&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reflect.Value&lt;/code&gt;&lt;/a&gt;（反射对象的类型）和 &lt;a href=&#34;https://golang.org/pkg/reflect/#Type&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reflect.Type&lt;/code&gt;&lt;/a&gt;（反射对象的值），Go 语言中所有反射操作都是基于这两个类型进行的。&lt;/p&gt;
+
+&lt;!-- {% img https://ws1.sinaimg.cn/large/687148dbly1fo6mhg1xw3j20mf0c10v1.jpg 350 %} --&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ws1.sinaimg.cn/large/687148dbly1fo6mhg1xw3j20mf0c10v1.jpg&#34; alt=&#34;golang-reflect&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;为了方便演示操作（&lt;a href=&#34;https://github.com/ehlxr/go-utils/blob/master/common/reflect/main.go&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;完整代码示例&lt;/a&gt;），首先定义以下结构体以及字段、方法：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes 学习笔记之 MiniKube 安装</title>
+      <link>https://vxgo.github.io/2018/01/12/kubernetes-minikube-installation/</link>
+      <pubDate>Fri, 12 Jan 2018 09:23:01 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/01/12/kubernetes-minikube-installation/</guid>
+      <description>&lt;p&gt;Kubernetes 集群的搭建是有一定难度的，尤其是对于初学者来说，好多概念和原理不懂，即使有现成的教程也会出现很多不可预知的问题，很容易打击学习的积极性，就此弃坑。好在 Kubernetes 社区提供了可以在本地开发和体验的极简集群安装 MiniKube，对于入门学习来说很方便。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/large/687148dbly1fo7n00rkl6j20b40b4goj.jpg&#34; alt=&#34;minikube&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MiniKube 官方安装介绍已经非常详细了，可以参考 &lt;a href=&#34;https://github.com/kubernetes/minikube#installation&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;installation&lt;/a&gt;。但是在国内由于网络访问原因（懂的），即使有梯子也很折腾，所以记录一下阿里修改后的 MiniKube 安装。使用阿里修改后的 MiniKube 就可以从阿里云的镜像地址来获取所需 Docker 镜像和配置，其它的并没有差异，下文着重介绍。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>又是一年岁末时...</title>
+      <link>https://vxgo.github.io/2017/12/31/summary-in-2017/</link>
+      <pubDate>Sun, 31 Dec 2017 11:52:58 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/12/31/summary-in-2017/</guid>
+      <description>&lt;p&gt;2017 年最后一天了，北京的天气很好，阳光明媚，关键是没有雾霾。说起雾霾，今年北京可是&amp;rdquo;治理&amp;rdquo;的很有效果，截止目前雾霾天和去年的好天气一样多，买了个空气净化器还没怎么派上用场，哈哈。&lt;/p&gt;
+
+&lt;p&gt;步入了婚姻的殿堂，享受幸福的同是多了一份责任。进入人生下一个阶段，需要处理的关系更多，新的一年需要勉励自己不断前行&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://wx2.sinaimg.cn/large/687148dbly1fodlad6j39g20dw06i4qp.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;奋斗在一线的程序猿，到了一定的阶段，就不得不审视一下自己的未来。作为碌碌无为低端程序猿的我，此刻对未来感到深深的迷茫。少了年少时的拼劲，多了肩膀上的重担，不知作为下一个低端人群的我在北京还能拼搏多久。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go 常用代码块</title>
+      <link>https://vxgo.github.io/2017/12/06/go-commons-code-snippets/</link>
+      <pubDate>Wed, 06 Dec 2017 10:07:54 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/12/06/go-commons-code-snippets/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;总结备忘一下常用的的 Go 代码片段&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;遍历目录下的文件&#34;&gt;遍历目录下的文件&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func getFilelist(r string) {
+    err := filepath.Walk(r, func(p string, f os.FileInfo, err error) error {
+        if f == nil {
+            return nil
+        }
+        if p == r || f.IsDir() {
+            return nil
+        }
+        fmt.Println(p)
+        return nil
+    })
+    if err != nil {
+        fmt.Printf(&amp;quot;filepath.Walk() returned %v\n&amp;quot;, err)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转]Tmux 快捷键速查表</title>
+      <link>https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/</link>
+      <pubDate>Wed, 25 Oct 2017 14:45:24 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/</guid>
+      <description>&lt;h1 id=&#34;tmux-快捷键-速查表&#34;&gt;Tmux 快捷键 &amp;amp; 速查表&lt;/h1&gt;
+
+&lt;p&gt;启动新会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux [new -s 会话名 -n 窗口名]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;恢复会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux at [-t 会话名]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;列出所有会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name=&#34;killSessions&#34;&gt;&lt;/a&gt;关闭会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux kill-session -t 会话名
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name=&#34;killAllSessions&#34;&gt;&lt;/a&gt;关闭所有会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Go Cheat Sheet</title>
+      <link>https://vxgo.github.io/2017/08/24/golang-cheat-sheet/</link>
+      <pubDate>Thu, 24 Aug 2017 14:18:53 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/08/24/golang-cheat-sheet/</guid>
+      <description>&lt;h1 id=&#34;go-cheat-sheet&#34;&gt;Go Cheat Sheet&lt;/h1&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Most example code taken from &lt;a href=&#34;http://tour.golang.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;A Tour of Go&lt;/a&gt;, which is an excellent introduction to Go.
+If you&amp;rsquo;re new to Go, do that tour. Seriously.&lt;/p&gt;
+
+&lt;h2 id=&#34;go-in-a-nutshell&#34;&gt;Go in a Nutshell&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Imperative language&lt;/li&gt;
+&lt;li&gt;Statically typed&lt;/li&gt;
+&lt;li&gt;Syntax tokens similar to C (but less parentheses and no semicolons) and the structure to Oberon-2&lt;/li&gt;
+&lt;li&gt;Compiles to native code (no JVM)&lt;/li&gt;
+&lt;li&gt;No classes, but structs with methods&lt;/li&gt;
+&lt;li&gt;Interfaces&lt;/li&gt;
+&lt;li&gt;No implementation inheritance. There&amp;rsquo;s &lt;a href=&#34;http://golang.org/doc/effective%5Fgo.html#embedding&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;type embedding&lt;/a&gt;, though.&lt;/li&gt;
+&lt;li&gt;Functions are first class citizens&lt;/li&gt;
+&lt;li&gt;Functions can return multiple values&lt;/li&gt;
+&lt;li&gt;Has closures&lt;/li&gt;
+&lt;li&gt;Pointers, but not pointer arithmetic&lt;/li&gt;
+&lt;li&gt;Built-in concurrency primitives: Goroutines and Channels&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 PowerMock 进行单元测试</title>
+      <link>https://vxgo.github.io/2017/07/25/use-introduction-of-powermock/</link>
+      <pubDate>Tue, 25 Jul 2017 19:01:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/07/25/use-introduction-of-powermock/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;单元测试（Unit Testing）又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。如果我们写的代码依赖于某些模块对象，而单元测试过程中这些对象又很难手动创建，或者模块还没有开发完成，那么就使用一个虚拟的对象来完成单元测试，这就是所谓的 Mock。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Java 单元测试中比较流行的 Mock 测试框架有 &lt;a href=&#34;http://www.jmock.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;jMock&lt;/a&gt;、&lt;a href=&#34;http://easymock.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;EasyMock&lt;/a&gt;、&lt;a href=&#34;https://github.com/mockito/mockito&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Mockito&lt;/a&gt;，但是这些 Mock 工具都不能 Mock &lt;code&gt;static&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;private&lt;/code&gt; 方法等，而 &lt;a href=&#34;https://github.com/powermock/powermock&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;PowerMock&lt;/a&gt; 能够做到。&lt;/p&gt;
+
+&lt;p&gt;使用 PowerMock，首先需要使用 &lt;code&gt;@RunWith(PowerMockRunner.class)&lt;/code&gt; 将测试用例的 Runner 改为 &lt;code&gt;PowerMockRunner&lt;/code&gt;。如果要 Mock &lt;code&gt;static&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;private&lt;/code&gt; 等方法的时候，就需要加注解 &lt;code&gt;@PrepareForTest&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;PowerMock 有两个版本，一个是基于 EasyMock 实现的，另一个是基于 Mockito 实现的。&lt;/p&gt;
+
+&lt;p&gt;下面我将以 PowerMock 的 Mockito 的版本来讲述如何使用 PowerMock。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Java 程序员的 Golang 入门笔记</title>
+      <link>https://vxgo.github.io/2017/07/22/from-java-to-golang/</link>
+      <pubDate>Sat, 22 Jul 2017 11:23:10 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/07/22/from-java-to-golang/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;最近抽空学习了一下 &lt;code&gt;Go&lt;/code&gt; 语言，好多特性感觉非常棒，由于高效的开发效率以及性能，现在好多优秀的开源项目都是基于 &lt;code&gt;Go&lt;/code&gt; 开发，比如 &lt;code&gt;Docker&lt;/code&gt;、&lt;code&gt;etcd&lt;/code&gt;、&lt;code&gt;consul&lt;/code&gt;、&lt;code&gt;Kubernetes&lt;/code&gt; 等。&lt;code&gt;Go&lt;/code&gt; 势必会在互联网技术的服务化，容器化的将来大展拳脚。正好网上看到一篇关于 &lt;code&gt;Java&lt;/code&gt; 程序员入门 &lt;code&gt;Golang&lt;/code&gt; 的文章，写的挺好的，所以特此转载过来，再加上自己的一些学习经验，供大家参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;Golang&lt;/code&gt; 从 &lt;code&gt;09&lt;/code&gt; 年发布，中间经历了多个版本的演进，已经渐渐趋于成熟，其媲美于 &lt;code&gt;C&lt;/code&gt; 语言的性能、&lt;code&gt;Python&lt;/code&gt; 的开发效率，又被称为 21 世纪的 &lt;code&gt;C&lt;/code&gt; 语言，尤其适合开发后台服务。这篇文章主要是介绍 &lt;code&gt;Golang&lt;/code&gt; 的一些主要特性，和 &lt;code&gt;Java&lt;/code&gt; 做一个对比，以便更好的理解 &lt;code&gt;Golang&lt;/code&gt; 这门语言。&lt;/p&gt;
+
+&lt;p&gt;关于 &lt;code&gt;Golang&lt;/code&gt; 环境的搭建就不讲了，可以参考 &lt;a href=&#34;https://golang.org/doc/install&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 或者大神 &lt;a href=&#34;https://github.com/astaxie&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;astaxie&lt;/a&gt; 的开源书籍 &lt;a href=&#34;https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.0.md&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;build-web-application-with-golang&lt;/a&gt; 的相关篇章。下面我没让你就从 &lt;code&gt;Go&lt;/code&gt; 版本的&lt;code&gt;Hello World&lt;/code&gt; 开始。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Git查看、删除、重命名远程分支和tag</title>
+      <link>https://vxgo.github.io/2017/06/15/%E8%BD%AC-git%E6%9F%A5%E7%9C%8B%E5%88%A0%E9%99%A4%E9%87%8D%E5%91%BD%E5%90%8D%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%92%8Ctag/</link>
+      <pubDate>Thu, 15 Jun 2017 10:18:29 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/06/15/%E8%BD%AC-git%E6%9F%A5%E7%9C%8B%E5%88%A0%E9%99%A4%E9%87%8D%E5%91%BD%E5%90%8D%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%92%8Ctag/</guid>
+      <description>&lt;h2 id=&#34;查看远程分支&#34;&gt;查看远程分支&lt;/h2&gt;
+
+&lt;p&gt;加上 &lt;code&gt;-a&lt;/code&gt; 参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git branch -a
+ master
+ remote
+ tungway
+ v1.52
+* zrong
+ remotes/origin/master
+ remotes/origin/tungway
+ remotes/origin/v1.52
+ remotes/origin/zrong
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;删除远程分支和-tag&#34;&gt;删除远程分支和 &lt;code&gt;tag&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;code&gt;Git v1.7.0&lt;/code&gt; 之后，可以使用这种语法删除远程分支：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git push origin --delete &amp;lt;branchName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>占用端口、PID 查询总结</title>
+      <link>https://vxgo.github.io/2017/05/24/query-port-pid/</link>
+      <pubDate>Wed, 24 May 2017 10:45:20 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/05/24/query-port-pid/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;总结一下日常工作学习中常用的查询占用端口、PID相关命令。主要有命令 ps、lsof、netstat 等命令。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;ps&#34;&gt;ps&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ps -ef&lt;/code&gt; 或者 &lt;code&gt;ps aux&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;根据命令（IntelliJIDEALicenseServer）搜索 PID（17107）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ps -ef | grep IntelliJIDEALicenseServer | grep -v &amp;quot;grep&amp;quot;
+  501 17017 12203   0 10:01上午 ttys000    0:00.02 IntelliJIDEALicenseServer -p 21014
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;lsof&#34;&gt;lsof&lt;/h2&gt;
+
+&lt;p&gt;根据 PID（17107）搜索占用端口（21014）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ lsof -p 17017 -nP | grep TCP
+COMMAND     PID  USER   FD     TYPE             DEVICE SIZE/OFF    NODE NAME
+IntelliJI 17017 ehlxr    3u    IPv4 0xc0df10496212b0e3      0t0     TCP *:21014 (LISTEN)
+
+# 或者使用
+$ lsof -nP -iTCP -sTCP:LISTEN | grep 17017
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;-n 表示不显示主机名&lt;/li&gt;
+&lt;li&gt;-P 表示不显示端口俗称&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 操作笔记</title>
+      <link>https://vxgo.github.io/2017/04/14/linux-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 14 Apr 2017 11:18:41 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/04/14/linux-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;好记性不如烂笔头，记录一下日常工作学习中常使用的 Linux 命令。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;安装磁盘分配&#34;&gt;安装磁盘分配&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/boot&lt;/code&gt; 用来存放与 Linux 系统启动有关的程序，比如启动引导装载程序等，建议大小为 100MB。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;swap&lt;/code&gt; 实现虚拟内存，建议大小是物理内存的1~2倍。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt; Linux系统的根目录，所有的目录都挂在这个目录下面，建议大小为5GB以上。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/home&lt;/code&gt; 存放普通用户的数据，是普通用户的宿主目录，建议大小为剩下的空间。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;系统目录结构&#34;&gt;系统目录结构&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt;：存放系统程序，也就是 At&amp;amp;t 开发的 Unix 程序。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr&lt;/code&gt;：存放 Unix 系统商（比如 IBM 和 HP）开发的程序。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/local&lt;/code&gt;：存放用户自己安装的程序。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/opt&lt;/code&gt;：在某些系统，用于存放第三方厂商开发的程序，所以取名为 option，意为 &amp;ldquo;选装&amp;rdquo;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Poker 机械键盘入手记</title>
+      <link>https://vxgo.github.io/2017/04/09/poker-%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98%E5%85%A5%E6%89%8B%E8%AE%B0/</link>
+      <pubDate>Sun, 09 Apr 2017 16:49:50 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/04/09/poker-%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98%E5%85%A5%E6%89%8B%E8%AE%B0/</guid>
+      <description>&lt;p&gt;作为一个码农，天天和键盘打交道，没有一款称心如意的键盘怎么能行了？要说那一款键盘堪称神器，我想大多数程序员首推 HHKB ，怎奈囊中羞涩，只能找一款 HHKB 的替代品，于是，Poker 浮现我的眼中，经济实惠，小巧玲珑，深得我心&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;关注这款键盘其实很久了，虽说相对于 HHKB 来说便宜很多，但也有点儿心疼，迟迟没能入手。最近过生日，女朋友很民主的征求我的意见，问我想要什么礼物，嘿嘿&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 获取系统的配置信息</title>
+      <link>https://vxgo.github.io/2017/03/29/java-%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Wed, 29 Mar 2017 15:33:54 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/03/29/java-%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF/</guid>
+      <description>&lt;p&gt;&lt;code&gt;System.getProperty()&lt;/code&gt; 可以获取系统的配置信息，最近项目开发中要用到临时文件，所以想到了使用系统临时文件目录，最后得知可以通过 &lt;code&gt;System.getProperty(&amp;quot;java.io.tmpdir&amp;quot;)&lt;/code&gt; 可以获取不同操作系统平台下的临时目录。比如：&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;windows&lt;/code&gt; 中的目录是：&lt;code&gt;C:\Users\登录用户~1\AppData\Local\Temp\&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;linux&lt;/code&gt; 下的目录是：&lt;code&gt;/tmp&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;Mac&lt;/code&gt; 下目录是 &lt;code&gt;/var/folders/c8/2c9rf0ss2w9c8tdtfcgvg9kh0000gn/T/&lt;/code&gt; （我感觉是不同电脑应该不一样）&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac 使用技巧总结</title>
+      <link>https://vxgo.github.io/2017/02/21/mac-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 21 Feb 2017 21:40:06 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/02/21/mac-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Mac 系统日常使用技巧归纳总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-mac-中-finder-显示-关闭隐藏文件&#34;&gt;一、Mac 中 Finder 显示、关闭隐藏文件&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-终端命令模式&#34;&gt;1.1 终端命令模式&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;打开终端，输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  # 此命令显示隐藏文件
+  defaults write com.apple.finder AppleShowAllFiles -bool true
+
+  # 此命令关闭显示隐藏文件
+  defaults write com.apple.finder AppleShowAllFiles -bool false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;命令运行之后需要重新加载 Finder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;快捷键 &lt;code&gt;Option + Command + ESC&lt;/code&gt;，选中 &lt;code&gt;Finder&lt;/code&gt;，重新启动即可&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-finder-快捷键&#34;&gt;1.2 Finder 快捷键&lt;/h2&gt;
+
+&lt;p&gt;在 macOS Sierra（10.12） 版本的系统中，我们可以使用快捷键&lt;code&gt;⌘⇧.&lt;/code&gt;(&lt;code&gt;Command + Shift + .&lt;/code&gt;) 来快速（在 Finder 中）显示和隐藏隐藏文件了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 的 nohup 命令的用法</title>
+      <link>https://vxgo.github.io/2017/01/18/linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Wed, 18 Jan 2017 16:13:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/18/linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用 &lt;code&gt;nohup&lt;/code&gt; 命令。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;命令简介&#34;&gt;命令简介&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ nohup Command [ Arg … ] [ &amp;amp; ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。&lt;code&gt;nohup&lt;/code&gt; 就是不挂起的意思（&lt;code&gt;no hang up&lt;/code&gt;）。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nohup&lt;/code&gt; 运行由 &lt;code&gt;Command&lt;/code&gt; 和相关的 &lt;code&gt;Arg&lt;/code&gt; 参数指定的命令，忽略所有挂断（&lt;code&gt;SIGHUP&lt;/code&gt;）信号。要运行后台中的 &lt;code&gt;nohup&lt;/code&gt; 命令，添加 &lt;code&gt;&amp;amp;&lt;/code&gt; （ 表示 &lt;code&gt;and&lt;/code&gt; 的符号）到命令的尾部。&lt;/p&gt;
+
+&lt;p&gt;如果使用 &lt;code&gt;nohup&lt;/code&gt; 命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为 &lt;code&gt;nohup.out&lt;/code&gt; 的文件中，除非另外指定了输出文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 中 fg、bg、jobs 等指令</title>
+      <link>https://vxgo.github.io/2017/01/18/linux-%E4%B8%AD-fgbgjobs-%E7%AD%89%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Wed, 18 Jan 2017 15:30:16 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/18/linux-%E4%B8%AD-fgbgjobs-%E7%AD%89%E6%8C%87%E4%BB%A4/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;记录总结一下 &lt;code&gt;Linux&lt;/code&gt; 中 &lt;code&gt;fg&lt;/code&gt;、&lt;code&gt;bg&lt;/code&gt;、&lt;code&gt;jobs&lt;/code&gt;、&lt;code&gt;&amp;amp;&lt;/code&gt;、&lt;code&gt;ctrl + z&lt;/code&gt; 等相关指令对任务进程的操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-基本用法&#34;&gt;一、基本用法&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-和-jobs-指令&#34;&gt;1.1 &lt;code&gt;&amp;amp;&lt;/code&gt; 和 &lt;code&gt;jobs&lt;/code&gt; 指令&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;amp;&lt;/code&gt; 用在一个命令的最后，可以把这个命令转换为后台运行的任务进程。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;jobs&lt;/code&gt; 查看当前终端有多少在后台运行的进程。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;jobs&lt;/code&gt; 命令执行的结果，&lt;code&gt;＋&lt;/code&gt; 表示是一个当前的作业，&lt;code&gt;-&lt;/code&gt; 减号表示是一个当前作业之后的一个作业。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;jobs -l&lt;/code&gt; 选项可显示所有任务的进程号 &lt;code&gt;pid&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;jobs&lt;/code&gt; 的状态可以是 &lt;code&gt;running&lt;/code&gt;，&lt;code&gt;stopped&lt;/code&gt;，&lt;code&gt;terminated&lt;/code&gt;。但是如果任务进程被终止了（&lt;code&gt;kill&lt;/code&gt;），当前的终端环境中也就删除了任务的进程标识；也就是说 &lt;strong&gt;jobs 命令显示的是当前 shell 环境中后台正在运行或者被挂起的任务进程信息&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] CentOS 升级 kernel</title>
+      <link>https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/</link>
+      <pubDate>Tue, 10 Jan 2017 11:01:09 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/</guid>
+      <description>&lt;h1 id=&#34;一-手动档&#34;&gt;一、手动档&lt;/h1&gt;
+
+&lt;p&gt;手动档就是从源码开始编译内核安装，好处是可以自己选择任意版本的内核，缺点就是耗时长，编译安装消耗系统资源&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-获取-kernel-源码&#34;&gt;1.1、获取 kernel 源码&lt;/h2&gt;
+
+&lt;p&gt;这世界上最伟大的 Linux 内核源码下载地址是 &lt;a href=&#34;https://kernel.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;kernel&lt;/a&gt; 官网，选择一个稳定版本下载即可&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-解压并清理&#34;&gt;1.2、解压并清理&lt;/h2&gt;
+
+&lt;p&gt;官方要求将其解压到 &lt;code&gt;/usr/src&lt;/code&gt; 目录，其实在哪都可以，为了规范一点索性也解压到此位置，然后为了防止编译残留先做一次清理动作&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载内核源码
+$ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.xz
+
+# 解压并移动到 /usr/src
+$ tar -Jxvf linux-4.8.6.tar.xz
+$ mv linux-4.8.6 /usr/src/kernels
+
+# 执行清理（没 gcc 的要装一下）
+$ cd /usr/src/kernels/linux-4.8.6
+$ make mrproper &amp;amp;&amp;amp; make clean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker 利用数据卷容器来备份、恢复、迁移数据</title>
+      <link>https://vxgo.github.io/2017/01/09/docker-%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E5%8D%B7%E5%AE%B9%E5%99%A8%E6%9D%A5%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 09 Jan 2017 16:54:24 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/09/docker-%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E5%8D%B7%E5%AE%B9%E5%99%A8%E6%9D%A5%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;在 Docker 容器之间如果需要共享数据，可以创建一个数据卷容器来实现，并且可以方便的通过数据卷容器来备份、恢复、迁移数据。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;创建数据卷容器&#34;&gt;创建数据卷容器&lt;/h1&gt;
+
+&lt;p&gt;创建一个名为：dbdata 的数据卷容器；设置挂载点为 &lt;code&gt;/vdata&lt;/code&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo docker run -d -v /vdata --name dbdata alpine sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;数据卷容器是一个普通的 Docker 容器，可以不需要启动。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装Python3、pip3</title>
+      <link>https://vxgo.github.io/2017/01/07/centos-7-%E5%AE%89%E8%A3%85python3pip3/</link>
+      <pubDate>Sat, 07 Jan 2017 19:23:22 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/07/centos-7-%E5%AE%89%E8%A3%85python3pip3/</guid>
+      <description>&lt;p&gt;CentOS 7 默认安装了 Python 2，当需要使用 Python 3 的时候，可以手动下载 Python 源码后编译安装。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-安装-python-3&#34;&gt;一、安装 Python 3&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-安装准备&#34;&gt;1.1 安装准备&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo mkdir /usr/local/python3 # 创建安装目录
+
+# 下载 Python 源文件
+$ wget --no-check-certificate https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+# 注意：wget获取https的时候要加上：--no-check-certificate
+
+$ tar -xzvf Python-3.6.0.tgz # 解压缩包
+
+$ cd Python-3.6.0 # 进入解压目录
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Good bye 2016...</title>
+      <link>https://vxgo.github.io/2016/12/31/good-bye-2016.../</link>
+      <pubDate>Sat, 31 Dec 2016 12:51:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/31/good-bye-2016.../</guid>
+      <description>&lt;p&gt;时光飞逝，转眼间，2016 年已经在今天画上句号，结束了，再提起 2016 年就已经是过往了&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;印象中，十年应该要算是很长的一段时间吧，但仔细一琢磨十年前也就才 2006 年&amp;hellip;那时候是高中，每天除了上课就是写作业，学习很枯燥总感觉时间很多，憧憬着美好的未来，过着也算是无忧无虑生活。每天放学，下晚自习，总是很快的骑着自行车冲出校门口，因为晚了学生会很多，那时候骑自行车一个比一个快。周五不用上晚自习，三五成群去网吧通宵，包宿八块钱八个小时，从晚上十点到第二天早上六点，六点从网吧出来总会有种恍如隔世的感觉，大街上几乎没有人，回出租屋睡上一天，感觉就是一周最美好的时光了！看着别的同学拿着小灵通、MP3 ，很羡慕，自已也想要有一个，都不敢奢望能有一台电脑&amp;hellip;一切仿佛也就是昨天而已，但是已经十年之前了，不禁一颤，人生能有几个十年&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] shell 中单引号、双引号、反引号、反斜杠区别</title>
+      <link>https://vxgo.github.io/2016/12/30/%E8%BD%AC-shell-%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8D%E5%BC%95%E5%8F%B7%E5%8F%8D%E6%96%9C%E6%9D%A0%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 30 Dec 2016 15:36:51 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/30/%E8%BD%AC-shell-%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8D%E5%BC%95%E5%8F%B7%E5%8F%8D%E6%96%9C%E6%9D%A0%E5%8C%BA%E5%88%AB/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;shell&lt;/code&gt; 可以识别 &lt;code&gt;4&lt;/code&gt; 种不同类型的引字符号：单引号字符 &lt;code&gt;&#39;&lt;/code&gt;，双引号字符 &lt;code&gt;&amp;quot;&lt;/code&gt;，反斜杠字符 &lt;code&gt;\&lt;/code&gt;，反引号字符 &lt;code&gt;`&lt;/code&gt; ，学习 &lt;code&gt;shell&lt;/code&gt; 编程的朋友可以看下。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;1-单引号&#34;&gt;1. 单引号( &lt;code&gt;&#39;&lt;/code&gt; )&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ grep Susan phonebook
+Susan Goldberg 403-212-4921
+Susan Topple 212-234-2343
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果我们想查找的是 &lt;code&gt;Susan Goldberg&lt;/code&gt;，不能直接使用 &lt;code&gt;grep Susan Goldberg phonebook&lt;/code&gt; 命令，&lt;code&gt;grep&lt;/code&gt; 会把 &lt;code&gt;Goldberg&lt;/code&gt; 和 &lt;code&gt;phonebook&lt;/code&gt; 当作需要搜索的文件。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ grep &#39;Susan Gold&#39; phonebook
+Susan Goldberg 403-212-4921
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当 &lt;code&gt;shell&lt;/code&gt; 碰到第一个单引号时，它忽略掉其后直到右引号的所有特殊字符。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装 Nginx</title>
+      <link>https://vxgo.github.io/2016/12/23/centos-%E5%AE%89%E8%A3%85-nginx/</link>
+      <pubDate>Fri, 23 Dec 2016 11:20:44 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/23/centos-%E5%AE%89%E8%A3%85-nginx/</guid>
+      <description>&lt;h1 id=&#34;一-安装准备&#34;&gt;一、安装准备&lt;/h1&gt;
+
+&lt;p&gt;首先由于 Nginx 的一些模块依赖一些 lib 库，所以在安装 Nginx 之前，必须先安装这些 lib 库，这些依赖库主要有 g++、gcc、openssl-devel、pcre-devel 和 zlib-devel，执行如下命令安装：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ yum install gcc-c++
+$ yum install pcre pcre-devel
+$ yum install zlib zlib-devel
+$ yum install openssl openssl--devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;二-安装-nginx&#34;&gt;二、安装 Nginx&lt;/h1&gt;
+
+&lt;p&gt;安装之前，最好检查一下是否已经安装有 Nginx&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ find -name nginx
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装 rar、zip 解压缩</title>
+      <link>https://vxgo.github.io/2016/12/22/centos-%E5%AE%89%E8%A3%85-rarzip-%E8%A7%A3%E5%8E%8B%E7%BC%A9/</link>
+      <pubDate>Thu, 22 Dec 2016 15:39:45 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/22/centos-%E5%AE%89%E8%A3%85-rarzip-%E8%A7%A3%E5%8E%8B%E7%BC%A9/</guid>
+      <description>&lt;p&gt;Windows 系统压缩的 rar 和 zip 文件，在 Linux 系统下是无法通过 tar 命令解压缩的，需要使用 rar 和 zip 命令来解压缩。下面记录一下 rar 和 zip 安装和简单的使用。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-rar-安装使用&#34;&gt;一、rar 安装使用&lt;/h1&gt;
+
+&lt;p&gt;Linux 系统下使用 rarlinux 解压缩 rar 压缩文件，下载页面：&lt;a href=&#34;http://www.rarsoft.com/download.htm。&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.rarsoft.com/download.htm。&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-下载系统对应的版本&#34;&gt;1.1 下载系统对应的版本&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget http://www.rarsoft.com/rar/rarlinux-x64-5.4.0.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;1-2-解压-安装&#34;&gt;1.2 解压、安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ tar -zxvf rarlinux-x64-5.4.0.tar.gz
+$ cd rar
+$ make
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vim Tab 设置为 4 个空格</title>
+      <link>https://vxgo.github.io/2016/12/02/vim-tab-%E8%AE%BE%E7%BD%AE%E4%B8%BA-4-%E4%B8%AA%E7%A9%BA%E6%A0%BC/</link>
+      <pubDate>Fri, 02 Dec 2016 20:46:05 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/02/vim-tab-%E8%AE%BE%E7%BD%AE%E4%B8%BA-4-%E4%B8%AA%E7%A9%BA%E6%A0%BC/</guid>
+      <description>&lt;p&gt;在 &lt;code&gt;vim&lt;/code&gt; 的配置文件中（Liunx：&lt;code&gt;/etc/vimrc&lt;/code&gt;）中添加以下代码后，重启 &lt;code&gt;vim&lt;/code&gt; 即可实现按 &lt;code&gt;TAB&lt;/code&gt; 产生 &lt;code&gt;4&lt;/code&gt; 个空格：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;set ts=4 # 注：ts 是 tabstop 的缩写，设 TAB 宽 4 个空格
+set expandtab
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对于已保存的文件，可以使用下面的方法进行空格和 &lt;code&gt;TAB&lt;/code&gt; 的替换：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TAB&lt;/code&gt; 替换为空格：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;:set ts=4
+:set expandtab
+:%retab!
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>忙忙碌碌的十一月份</title>
+      <link>https://vxgo.github.io/2016/11/30/%E5%BF%99%E5%BF%99%E7%A2%8C%E7%A2%8C%E7%9A%84%E5%8D%81%E4%B8%80%E6%9C%88%E4%BB%BD/</link>
+      <pubDate>Wed, 30 Nov 2016 20:04:13 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/30/%E5%BF%99%E5%BF%99%E7%A2%8C%E7%A2%8C%E7%9A%84%E5%8D%81%E4%B8%80%E6%9C%88%E4%BB%BD/</guid>
+      <description>&lt;p&gt;早就有计划在西安买房，一直觉得还早，主要是没钱，近期有人肯借钱就想看看市场。买房需要做很多准备工作，本想着慢慢先看着，一边从同学朋友那里打听消息，一边从网上看各个楼盘信息，怎奈越看越着急，就想一下子赶紧买了。看中的两个楼盘，价格其实都远远超过自己的预算和目前能承受的能力，不得不说我是一个容易被蛊惑的人，听着置业顾问的天花乱坠的描述，有好几次都差点都掉坑里了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20161130202110.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Linux 查看系统内核版本和发行版本</title>
+      <link>https://vxgo.github.io/2016/11/18/%E8%BD%AC-linux-%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC%E5%92%8C%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Fri, 18 Nov 2016 14:56:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/18/%E8%BD%AC-linux-%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC%E5%92%8C%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC/</guid>
+      <description>&lt;h1 id=&#34;一-查看-linux-内核版本命令&#34;&gt;一、查看 Linux 内核版本命令&lt;/h1&gt;
+
+&lt;p&gt;以下两条命令适合所有 &lt;code&gt;Linux&lt;/code&gt; 系统。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-cat-proc-version&#34;&gt;1、cat /proc/version&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cat /proc/version
+Linux version 3.10.0-327.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.3 20140911 (Red Hat 4.8.3-9) (GCC) ) #1 SMP Thu Nov 19 22:10:57 UTC 2015
+
+➜  ~ cat /proc/version
+Linux version 4.4.0-36-generic (buildd@lcy01-01) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.2) ) #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-uname-a&#34;&gt;2、uname -a&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ uname -a
+Linux centos 3.10.0-327.el7.x86_64 #1 SMP Thu Nov 19 22:10:57 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+
+➜  ~ uname -a
+Linux www 4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Test daocloud CI</title>
+      <link>https://vxgo.github.io/2016/11/18/test-daocloud-ci/</link>
+      <pubDate>Fri, 18 Nov 2016 09:44:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/18/test-daocloud-ci/</guid>
+      <description>Test daocloud CI</description>
+    </item>
+    
+    <item>
+      <title>[转] Git 版本回滚</title>
+      <link>https://vxgo.github.io/2016/11/07/%E8%BD%AC-git-%E7%89%88%E6%9C%AC%E5%9B%9E%E6%BB%9A/</link>
+      <pubDate>Mon, 07 Nov 2016 16:53:38 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/07/%E8%BD%AC-git-%E7%89%88%E6%9C%AC%E5%9B%9E%E6%BB%9A/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;总有一天你会遇到下面的问题：
+* 改完代码匆忙提交，上线发现有问题，怎么办？赶紧回滚。
+* 改完代码测试也没有问题，但是上线发现你的修改影响了之前运行正常的代码报错，必须回滚。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这些开发中很常见的问题，所以 &lt;code&gt;git&lt;/code&gt; 的取消提交，回退甚至返回上一版本都是特别重要的。大致分为下面 &lt;code&gt;2&lt;/code&gt; 种情况：&lt;/p&gt;
+
+&lt;h1 id=&#34;一-没有-push&#34;&gt;一、没有 push&lt;/h1&gt;
+
+&lt;p&gt;这种情况发生在你的本地代码仓库，可能你 &lt;code&gt;add&lt;/code&gt;，&lt;code&gt;commit&lt;/code&gt; 以后发现代码有点问题，准备取消提交，用到下面命令回退到某个版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset [--soft | --mixed | --hard]
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://vxgo.github.io/2016/11/03/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 03 Nov 2016 15:46:19 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/03/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20161103001.png&#34; alt=&#34;Docker&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;一-centos-系统安装&#34;&gt;一、CentOS 系统安装&lt;/h1&gt;
+
+&lt;p&gt;参考《Docker — 从入门到实践》 之 &lt;a href=&#34;https://github.com/yeasy/docker_practice/blob/master/install/centos.md&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;CentOS 操作系统安装 Docker&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-系统要求&#34;&gt;1.1 系统要求&lt;/h2&gt;
+
+&lt;p&gt;Docker 最低支持 CentOS 7。&lt;/p&gt;
+
+&lt;p&gt;Docker 需要安装在 64 位的平台，并且内核版本不低于 3.10。 CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 &lt;code&gt;overlay2&lt;/code&gt; 存储层驱动）无法使用，并且部分功能可能不太稳定。&lt;/p&gt;
+
+&lt;p&gt;参考升级&lt;a href=&#34;http://ehlxr.me/2017/01/10/%E8%BD%AC-CentOS-%E5%8D%87%E7%BA%A7-kernel/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;CentOS 升级 kernel&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-使用脚本自动安装&#34;&gt;1.2 使用脚本自动安装&lt;/h2&gt;
+
+&lt;p&gt;Docker 官方为了简化安装流程，提供了一套安装脚本，CentOS 系统上可以使用这套脚本安装：
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>测试使用 daocloud 持续构建 Hexo</title>
+      <link>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8-daocloud-%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-hexo/</link>
+      <pubDate>Wed, 02 Nov 2016 19:03:06 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8-daocloud-%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-hexo/</guid>
+      <description>测试使用 daocloud 持续构建 Hexo {% note danger %} Coding Hexo DaoCloud {% endnote %} {% note primary %} 看到这边博文，表示持续构建成功！！！ {% endnote %}</description>
+    </item>
+    
+    <item>
+      <title>测试 Travis CI 结合 Hexo 使用</title>
+      <link>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95-travis-ci-%E7%BB%93%E5%90%88-hexo-%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 02 Nov 2016 17:32:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95-travis-ci-%E7%BB%93%E5%90%88-hexo-%E4%BD%BF%E7%94%A8/</guid>
+      <description> 测试 Travis CI 结合 Hexo 使用 </description>
+    </item>
+    
+    <item>
+      <title>热爱微小的改变</title>
+      <link>https://vxgo.github.io/2016/10/31/%E7%83%AD%E7%88%B1%E5%BE%AE%E5%B0%8F%E7%9A%84%E6%94%B9%E5%8F%98/</link>
+      <pubDate>Mon, 31 Oct 2016 17:05:37 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/31/%E7%83%AD%E7%88%B1%E5%BE%AE%E5%B0%8F%E7%9A%84%E6%94%B9%E5%8F%98/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20161031001.jpg&#34; alt=&#34;&#34; /&gt;
+当你有着强烈的情绪时，可能是因为你要明哲保身。你不愿冒险因为你害怕被拒绝、害怕失败、害怕自己hold不住。真的，试想下如果你彻底的失败了，甚至在完全陌生的人面前流泪你会怎么做？也许你不相信你会采取合理的风险。也许你曾经打破常规去挑战自我的极限，但是结果却并不令你满意。但卖掉你所有的财产，搬去墨西哥并非我今天所谈论的改变类型。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>看懂的人都还在加班中...</title>
+      <link>https://vxgo.github.io/2016/10/27/%E7%9C%8B%E6%87%82%E7%9A%84%E4%BA%BA%E9%83%BD%E8%BF%98%E5%9C%A8%E5%8A%A0%E7%8F%AD%E4%B8%AD.../</link>
+      <pubDate>Thu, 27 Oct 2016 15:06:38 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/27/%E7%9C%8B%E6%87%82%E7%9A%84%E4%BA%BA%E9%83%BD%E8%BF%98%E5%9C%A8%E5%8A%A0%E7%8F%AD%E4%B8%AD.../</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;以下是关于程序员的一些笑话，据说看懂的人都还在加班中。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;0、老婆给当程序员的老公打电话：下班顺路买十个包子，如果看到卖西瓜的，买一个。当晚老公手捧一个包子进了家门。老婆怒道：你怎么只买一个包子？！老公甚恐，喃喃道：因为我真看到卖西瓜的了。&lt;/p&gt;
+
+&lt;p&gt;1、一程序员去面试，面试官问：“你毕业才两年，这三年工作经验是怎么来的？！”程序员答：“加班。”&lt;/p&gt;
+
+&lt;p&gt;2、某程序员对书法十分感兴趣，退休后决定在这方面有所建树。于是花重金购买了上等的文房四宝。一日，饭后突生雅兴，一番磨墨拟纸，并点上了上好的檀香，颇有王羲之风范，又具颜真卿气势，定神片刻，泼墨挥毫，郑重地写下一行字：&lt;code&gt;hello world&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;3、问：程序员最讨厌康熙的哪个儿子。答：胤禩。因为他是八阿哥（&lt;code&gt;bug&lt;/code&gt;）
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows 10 删除、恢复资源管理器中“视频、图片”等文件夹</title>
+      <link>https://vxgo.github.io/2016/10/25/windows-10-%E5%88%A0%E9%99%A4%E6%81%A2%E5%A4%8D%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87%E7%AD%89%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Tue, 25 Oct 2016 11:48:31 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/25/windows-10-%E5%88%A0%E9%99%A4%E6%81%A2%E5%A4%8D%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87%E7%AD%89%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Windows 10 资源管理器中的&amp;rdquo;视频、图片、文档、下载、音乐、桌面&amp;rdquo;等文件夹目前通过一般途径是删除不了的，只能通过注册表的删除删掉，本文介绍一种比较简单的删除、恢复方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20161025111013.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>设置 Sublime Text3 主题透明</title>
+      <link>https://vxgo.github.io/2016/10/24/%E8%AE%BE%E7%BD%AE-sublime-text3-%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E/</link>
+      <pubDate>Mon, 24 Oct 2016 17:30:55 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/24/%E8%AE%BE%E7%BD%AE-sublime-text3-%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E/</guid>
+      <description>&lt;h1 id=&#34;1-下载安装包&#34;&gt;1. 下载安装包&lt;/h1&gt;
+
+&lt;p&gt;下载地址：&lt;a href=&#34;https://github.com/vhanla/SublimeTextTrans&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;SublimeTextTrans&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h1 id=&#34;2-安装插件&#34;&gt;2. 安装插件&lt;/h1&gt;
+
+&lt;p&gt;解压到 Sublime Text3 的 Packages 存放目录下，命名为：&lt;code&gt;SublimeTextTrans&lt;/code&gt;。点击 Sublime Text3 的 &lt;code&gt;Preferences -&amp;gt; Browse Packages&lt;/code&gt; 打开 Packages 存放目录，一般情况是在 &lt;code&gt;C:\Users\YOURNAME\AppData\Roaming\Sublime Text 3\Packages&lt;/code&gt; 目录下。&lt;/p&gt;
+
+&lt;h1 id=&#34;3-设置-sublime-text3-的透明度级别&#34;&gt;3. 设置 Sublime Text3 的透明度级别。&lt;/h1&gt;
+
+&lt;p&gt;点击 Sublime Text3 的 &lt;code&gt;Preferences -&amp;gt; Package Setting -&amp;gt; SublimeTextTrans -&amp;gt; Setting - User&lt;/code&gt; 就可以设置透明度的级别了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转]用 Markdown 写印象笔记（Evernote）</title>
+      <link>https://vxgo.github.io/2016/10/19/%E8%BD%AC%E7%94%A8-markdown-%E5%86%99%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0evernote/</link>
+      <pubDate>Wed, 19 Oct 2016 10:47:23 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/19/%E8%BD%AC%E7%94%A8-markdown-%E5%86%99%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0evernote/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用印象笔记很久了，什么都觉得很好，就是不支持 Markdown 书写语法，实在是太遗憾了。今天发现网上有人介绍了一款 Sublime 的一个插件 &lt;a href=&#34;https://packagecontrol.io/packages/Evernote&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt;，尝试了一下觉得还是一个不错的方案，正好我也很喜欢使用 Sublime 编辑器，如此甚好，哈哈&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/2016101901.png&#34; alt=&#34;&#34; /&gt;
+&lt;!-- {% img /images/post/2016101901.png 400 %} --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Kafka入门教程</title>
+      <link>https://vxgo.github.io/2016/10/10/%E8%BD%AC-kafka%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 10 Oct 2016 21:40:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/10/%E8%BD%AC-kafka%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;h1 id=&#34;一-基本概念&#34;&gt;一、基本概念&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-介绍&#34;&gt;1. 介绍&lt;/h2&gt;
+
+&lt;p&gt;Kafka 是一个分布式的、可分区的、可复制的消息系统。它提供了普通消息系统的功能，但具有自己独特的设计。&lt;strong&gt;这个独特的设计是什么样的呢？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/kafka-logo.png&#34; alt=&#34;&#34; /&gt;
+&lt;!-- {% img /images/post/kafka-logo.png 400 %} --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>闲言碎语，不知所云...</title>
+      <link>https://vxgo.github.io/2016/09/28/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD%E4%B8%8D%E7%9F%A5%E6%89%80%E4%BA%91.../</link>
+      <pubDate>Wed, 28 Sep 2016 13:34:18 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/28/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD%E4%B8%8D%E7%9F%A5%E6%89%80%E4%BA%91.../</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;闲言碎语，不知所云，乱七八糟，聊以自慰&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;搭建博客有一段时间了，记录总结的基本都是技术相关的，对于一个有强迫症加语文学的不好的人来说，总结技术文章太痛苦了，总结一篇文章得纠结好久，总觉得组织的语言不够恰当准确，每次都是改了又改，反复琢磨，怎奈肚子里的墨水实在是少的可怜，真是羡慕那些可以把自己心里所想的东西用文字能够表达很清楚的人。&lt;/p&gt;
+
+&lt;p&gt;说到底还是看的东西少，缺少写东西的锻炼，青春迷茫的时候有大把机会可以利用，可惜都不知道把时间用在了哪儿，等慢慢想要沉淀的时候才发现工作和生活中琐碎已经占据了所有的时间。但不管怎样，从此刻启程，做一些自己想要做的事儿，我想应该不会太晚吧！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Oh My Zsh 替换你的 Bash Shell</title>
+      <link>https://vxgo.github.io/2016/09/24/using-oh-my-zsh/</link>
+      <pubDate>Sat, 24 Sep 2016 12:31:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/24/using-oh-my-zsh/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Oh-My-Zsh is an open source, community-driven framework for managing your ZSH configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes, and a few things that make you shout&amp;hellip;&lt;/p&gt;
+
+&lt;blockquote class=&#39;blockquote-center&#39;&gt;[Oh My ZSH!][1]&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ws2.sinaimg.cn/large/687148dbly1focma5ect2j209d05s3yl.jpg&#34; alt=&#34;Oh My Zsh&#34; /&gt;
+&lt;!-- {% img /images/post/OMZLogo_BnW.png 200 &#39;Oh My Zsh&#39;%} --&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;1-oh-my-zsh-简介&#34;&gt;1. Oh My Zsh 简介&lt;/h1&gt;
+
+&lt;p&gt;无意中看见了 Linux 的一款 Shell，相比于 Bash 极其美艳，决定入坑试水一下，不试不知道，一试绝对有惊喜，不仅外观美艳而且功能强大，那还有不替换 Bash 的理由吗？搞起搞起&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>5 分钟搭建 Git 服务器-Gogs</title>
+      <link>https://vxgo.github.io/2016/09/06/gogs-installation-introduction/</link>
+      <pubDate>Tue, 06 Sep 2016 12:15:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/06/gogs-installation-introduction/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Gogs 基于 Go 语言的自助 Git 服务。它具有易安装、跨平台、轻量级、开源化等特性&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/gogs-logo.png&#34; alt=&#34;&#34; /&gt;
+&lt;!-- {% img /images/post/gogs-logo.png 150 %} --&gt;&lt;/p&gt;
+
+&lt;p&gt;最近新到一家公司，发现在使用 Gogs 搭建 Git 服务，遂研究了一下，和前段时间研究的 GitLab 做了一个简单的对比，虽然 Gogs 相对与 GitLab 还比较年轻，也许没有 GitLab 强大和稳健，但 Gogs 更加简单易用，而且能够满足正常的工作使用。&lt;/p&gt;
+
+&lt;p&gt;Gogs 是轻量级的 Git 服务，正如官方介绍的：一个廉价的树莓派的配置足以满足 Gogs 的最低系统硬件要求。最大程度上节省您的服务器资源！关键的一点是免费开源的，所有的代码都开源在 GitHub 上。下面结合官方的介绍，总结一下在 Linux 系统下的安装方法，真的是相当的简单，5 分钟足矣！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 中配置 Git 命令自动补全</title>
+      <link>https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</link>
+      <pubDate>Sun, 04 Sep 2016 10:03:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</guid>
+      <description>&lt;h1 id=&#34;1-step-1&#34;&gt;1. Step 1&lt;/h1&gt;
+
+&lt;p&gt;保存以下文件的内容为：&lt;code&gt;git-completion.bash&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/git/git/blob/master/contrib/completion/git-completion.bash&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;git-completion.bash&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-step-2&#34;&gt;2.  Step 2&lt;/h1&gt;
+
+&lt;p&gt;将上述文件 &lt;code&gt;git-completion.bash&lt;/code&gt; copy 至个人 &lt;code&gt;home&lt;/code&gt; 目录，可设为隐藏文件以免后续被误删。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cp git-completion.bash ~/.git-completion.bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Naruto-Pictures</title>
+      <link>https://vxgo.github.io/2016/09/02/naruto-pictures/</link>
+      <pubDate>Fri, 02 Sep 2016 14:36:04 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/02/naruto-pictures/</guid>
+      <description>{% gp 5-3 %} {% endgp %}
+Your browser does not support the audio element.  --  </description>
+    </item>
+    
+    <item>
+      <title>使用Hexo基于GitHub Pages搭建个人博客（三）</title>
+      <link>https://vxgo.github.io/2016/08/30/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%89/</link>
+      <pubDate>Tue, 30 Aug 2016 14:23:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/08/30/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%89/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;生命不息，折腾不休。从搭建 blog 以来，博文虽没有写几篇，但折腾的时间花了不少，走过了不少弯路，也踩过了不少的坑，虽然很懒，但本着好记性不如烂笔头的宗旨，打算在折腾记忆尚未磨灭之际记录一下走过的路和踩过的坑&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;接着前两篇使用 Hexo 基于 GitHub Pages 搭建个人博客之上，本文记录了在使用非常漂亮简洁的 &lt;a href=&#34;http://theme-next.iissnan.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Next&lt;/a&gt; 主题过程中的各种折腾，其它主题的相关设置大同小异。再次衷心的感谢 Hexo 的作者和 Next 主题作者的无私奉献。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-主题基本配置&#34;&gt;一、主题基本配置&lt;/h1&gt;
+
+&lt;p&gt;记录一下 Next 主题的基本配置、设置「阅读全文」、关闭新建页面的评论功能、页面文章的篇数、宽度调节、设置「JavaScript 第三方库」等内容、在线字体替换（选择关闭，加快访问速度）&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Java程序员情书</title>
+      <link>https://vxgo.github.io/2016/08/22/%E8%BD%AC-java%E7%A8%8B%E5%BA%8F%E5%91%98%E6%83%85%E4%B9%A6/</link>
+      <pubDate>Mon, 22 Aug 2016 14:24:15 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/08/22/%E8%BD%AC-java%E7%A8%8B%E5%BA%8F%E5%91%98%E6%83%85%E4%B9%A6/</guid>
+      <description>&lt;p&gt;我能抽象出整个世界．．．&lt;/p&gt;
+
+&lt;p&gt;但是我却不能抽象出你．．．&lt;/p&gt;
+
+&lt;p&gt;你肯定是一个单例，因为你是那样的独一无二&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;所以我的世界并不完整．．．&lt;/p&gt;
+
+&lt;p&gt;我可以重载甚至覆盖这个世界里的任何一种方法．．．&lt;/p&gt;
+
+&lt;p&gt;但是却不能覆盖对你的思念．．．&lt;/p&gt;
+
+&lt;p&gt;也许命中注定了 你与我存在于不同的包里&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;在你的世界里，你被烙上了私有的属性&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 系统下 GitLab 搭建与基本配置</title>
+      <link>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 31 Jul 2016 18:15:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://about.gitlab.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitLab 是一个开源的版本管理系统，提供了类似于 GitHub 的源代码浏览，管理缺陷和注释等功能，你可以将代码免费托管到 GitLab.com，而且不限项目数量和成员数。最吸引人的一点是，可以在自己的服务器上搭建 GitLab CE （社区免费版）版本，方便内部团队协作开发和代码管理。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面介绍如何在 CentOS 服务器上搭建 GitLab CE 版本，以及一些基本的配置。&lt;/p&gt;
+
+&lt;h1 id=&#34;1-安装&#34;&gt;1. 安装&lt;/h1&gt;
+
+&lt;p&gt;GitLab 提供了两种安装方式：源码手动编译安装和软件包管理安装。&lt;/p&gt;
+
+&lt;p&gt;源码手动编译安装虽然配置灵活，但过程比较麻烦，不容易安装成功，所以我这里选择软件包管理安装的形式。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-使用-gitlab-提供仓库在线安装&#34;&gt;1.1 使用 GitLab 提供仓库在线安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+yum install gitlab-ce
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装最新的 Git</title>
+      <link>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%9A%84-git/</link>
+      <pubDate>Sat, 30 Jul 2016 22:12:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%9A%84-git/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;1-查看-yum-源仓库的-git-信息&#34;&gt;1. 查看 yum 源仓库的 Git 信息：&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# yum info git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20160730222608.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最&lt;a href=&#34;https://github.com/git/git/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;新的 Git 发布版本&lt;/a&gt;，已经 2.9.2 了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装 Node.js</title>
+      <link>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85-node.js/</link>
+      <pubDate>Sat, 30 Jul 2016 16:19:03 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/30/centos-7-%E5%AE%89%E8%A3%85-node.js/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org/en/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;1-下载源码安装文件&#34;&gt;1. 下载源码安装文件&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-在线安装&#34;&gt;1.1 在线安装&lt;/h2&gt;
+
+&lt;p&gt;通过以下命令下载源文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://nodejs.org/dist/v4.4.7/node-v4.4.7.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转]将 Centos 的 yum 源更改为国内的阿里云源</title>
+      <link>https://vxgo.github.io/2016/07/30/%E8%BD%AC%E5%B0%86-centos-%E7%9A%84-yum-%E6%BA%90%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%9B%BD%E5%86%85%E7%9A%84%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/</link>
+      <pubDate>Sat, 30 Jul 2016 11:57:59 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/30/%E8%BD%AC%E5%B0%86-centos-%E7%9A%84-yum-%E6%BA%90%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%9B%BD%E5%86%85%E7%9A%84%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/</guid>
+      <description>&lt;p&gt;阿里云Linux安装镜像源地址：&lt;a href=&#34;http://mirrors.aliyun.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://mirrors.aliyun.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CentOS系统更换软件安装源&lt;/p&gt;
+
+&lt;h3 id=&#34;一-备份你的原镜像文件-以免出错后可以恢复&#34;&gt;一、备份你的原镜像文件，以免出错后可以恢复。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Oracle 与 MySQL 知识总结</title>
+      <link>https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 28 Jul 2016 14:06:36 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/28/oracle-%E4%B8%8E-mysql-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;对日常工作中使用 Oracle 和 MySQL 数据库知识对比总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;sqlplus-连接数据库的方式&#34;&gt;SQLPlus 连接数据库的方式&lt;/h1&gt;
+
+&lt;h2 id=&#34;cmd-中输入-sqlplus-用户名-密码-数据库实例&#34;&gt;cmd 中输入：sqlplus 用户名/密码@数据库实例&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sqlplus system/lxr316@oracle
+sqlplus sys/admin as sysdba
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;打开-sqlplus-直接输入用户名和密码&#34;&gt;打开 SQLPlus 直接输入用户名和密码&lt;/h2&gt;
+
+&lt;h2 id=&#34;使用命令&#34;&gt;使用命令&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;connect sys/admin as sysdba
+connect system/lxr316
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub 更新已经 fork 的项目</title>
+      <link>https://vxgo.github.io/2016/07/28/update-from-github-fork/</link>
+      <pubDate>Thu, 28 Jul 2016 10:12:15 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/28/update-from-github-fork/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;GitHub 上有个很方便的功能叫 fork，将别人的工程一键复制到自己账号下。这个功能很方便，但有点不足的是，当源项目更新后，你 fork 的分支并不会一起更新，需要自己手动去更新，下面记录下网上找到的更新的开发方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;1-在本地装好-github-客户端-或者-git-客户端&#34;&gt;1. 在本地装好 GitHub 客户端，或者 Git 客户端&lt;/h3&gt;
+
+&lt;h3 id=&#34;2-clone-自己的-fork-分支到本地&#34;&gt;2. clone 自己的 fork 分支到本地&lt;/h3&gt;
+
+&lt;p&gt;可以直接使用 GitHub 客户端，clone 到本地，如果使用命令行，命令为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git clone git@github.com:ehlxr/strman-java.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sublime Text 插件安装</title>
+      <link>https://vxgo.github.io/2016/07/25/sublime-text-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 25 Jul 2016 21:06:57 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/25/sublime-text-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Sublime Text 官方介绍：
+&amp;gt; “Sublime Text is a sophisticated text editor for code, markup and prose.You&amp;rsquo;ll love the slick user interface, extraordinary features and amazing performance.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sublime Text 是一款优秀的轻量级编辑器，而且支持跨平台，支持Windows、Linux、Mac OS X 等主流操作系统。虽然是一款收费软件，但也允许人们&lt;strong&gt;无限期免费使用&lt;/strong&gt;。（&lt;a href=&#34;http://www.sublimetext.com/3&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方下载地址&lt;/a&gt;）&lt;/p&gt;
+
+&lt;p&gt;Sublime Text 具有漂亮的用户界面和强大可扩展插件功能，本文介绍如何安装 Sublime Text 插件。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git 同时 push 到多个远程仓库</title>
+      <link>https://vxgo.github.io/2016/07/24/git-%E5%90%8C%E6%97%B6-push-%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Sun, 24 Jul 2016 18:55:59 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/24/git-%E5%90%8C%E6%97%B6-push-%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h3 id=&#34;方法一&#34;&gt;方法一&lt;/h3&gt;
+
+&lt;p&gt;如果一个本地仓库添加多个远程仓库，不想 git push 多次，可以修改 .git/config 文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vim .git/config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;比如以下信息表示在 git@OSC 和 GitHub 两个远程托管&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20160724193534.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Hexo基于GitHub Pages搭建个人博客（二）</title>
+      <link>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</link>
+      <pubDate>Sat, 23 Jul 2016 15:57:49 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;上一篇介绍了 GitHub Pages 服务开启，这篇文章将介绍 Hexo 的安装和使用以及将博客部署到 GitHub Pages 的操作。&lt;/p&gt;
+
+&lt;blockquote class=&#39;blockquote-center&#39;&gt; [Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。][1] &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-node-js-安装&#34;&gt;一、Node.js 安装&lt;/h1&gt;
+
+&lt;p&gt;Hexo 是基于 Node.js 安装，所以安装 Hexo 之前首先要安装 Node.js。下载地址：&lt;a href=&#34;https://nodejs.org/en/download/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://nodejs.org/en/download/&lt;/a&gt; 根据自己的操作系统，下载对应版本即可。Windons 安装过程比较简单，一直下一步即可安装完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ehlxr.me/2016/07/30/CentOS-7-%E5%AE%89%E8%A3%85-Node-js/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;CentOS 7 安装 Node.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Hexo基于GitHub Pages搭建个人博客（一）</title>
+      <link>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80/</link>
+      <pubDate>Sat, 23 Jul 2016 11:35:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;GitHub Pages&lt;/code&gt; 是 &lt;code&gt;GitHub&lt;/code&gt; 提供的免费开源的静态站点托管服务，利用这个服务可以搭建轻量级的博客系统，本文介绍了如何使用 &lt;code&gt;Hexo&lt;/code&gt; 结合 &lt;code&gt;GitHub Pages&lt;/code&gt; 服务搭建个人博客。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-安装配置-git&#34;&gt;一、安装配置 &lt;code&gt;Git&lt;/code&gt;&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-安装-git&#34;&gt;1.1 安装 &lt;code&gt;Git&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;使用 &lt;code&gt;GitHub&lt;/code&gt; 首先要安装 &lt;code&gt;Git&lt;/code&gt;，可根据操作系统下载不同版本的 &lt;code&gt;Git&lt;/code&gt;，&lt;code&gt;Windows&lt;/code&gt; 下载地址：&lt;a href=&#34;https://git-scm.com/download/win&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://git-scm.com/download/win&lt;/a&gt; 安装过程比较简单，选择默认选项配置即可下一步，不再叙述。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-配置-git&#34;&gt;1.2 配置 &lt;code&gt;Git&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;设置本地机器默认 &lt;code&gt;commit&lt;/code&gt; 的昵称与 &lt;code&gt;Email&lt;/code&gt;，姓名与 &lt;code&gt;Email&lt;/code&gt; 只用于日志标识，实际推送到远程仓库时，要用有操作权限的账号登录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --global user.name &amp;quot;ehlxr&amp;quot;
+git config --global user.email &amp;quot;ehlxr@qq.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;二-生成-ssh-keys&#34;&gt;二、生成 &lt;code&gt;SSH keys&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;SSH Keys&lt;/code&gt; 是 &lt;code&gt;GitHub&lt;/code&gt; 推荐的公钥、秘钥形式验证用户合法性的机制，添加 &lt;code&gt;SSH Keys&lt;/code&gt; 可以省去每次都要输入密码的步骤，下面将演示如何在本地计算机生成 &lt;code&gt;SSH Keys&lt;/code&gt; 的公钥、秘钥。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] JMS 基本概念</title>
+      <link>https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Thu, 21 Jul 2016 12:35:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description>&lt;p&gt;JMS（JAVA Message Service,java消息服务）API是一个消息服务的标准或者说是规范，允许应用程序组件基于JavaEE平台创建、发送、接收和读取消息。它使分布式通信耦合度更低，消息服务更加可靠以及异步性。&lt;/p&gt;
+
+&lt;h2 id=&#34;基本概念&#34;&gt;基本概念&lt;/h2&gt;
+
+&lt;p&gt;JMS是java的消息服务，JMS的客户端之间可以通过JMS服务进行异步的消息传输。&lt;/p&gt;
+
+&lt;h2 id=&#34;消息模型&#34;&gt;消息模型&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Point-to-Point(P2P)&lt;/li&gt;
+&lt;li&gt;Publish/Subscribe(Pub/Sub)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;即点对点和发布订阅模型
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java List与数组之间的转换</title>
+      <link>https://vxgo.github.io/2016/07/20/java-list%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 20 Jul 2016 15:52:33 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/20/java-list%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&lt;h3 id=&#34;1-数组转换为list&#34;&gt;1. 数组转换为List&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;String[] arr = new String[] {&amp;quot;str1&amp;quot;, &amp;quot;str2&amp;quot;};
+List&amp;lt;String&amp;gt; list = Arrays.asList(arr);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL日期函数</title>
+      <link>https://vxgo.github.io/2016/07/20/mysql%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Wed, 20 Jul 2016 14:16:17 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/20/mysql%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0/</guid>
+      <description>&lt;h4 id=&#34;1-取得当天&#34;&gt;1. 取得当天&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;mysql&amp;gt; SELECT curdate();
++------------+
+| curdate()  |
++------------+
+| 2013-07-29 |
++------------+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-取得当前日期&#34;&gt;2. 取得当前日期&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;mysql&amp;gt; select sysdate();
++---------------------+
+| sysdate()           |
++---------------------+
+| 2016-05-30 13:58:17 |
++---------------------+
+1 row in set
+
+mysql&amp;gt; select now();
++---------------------+
+| now()               |
++---------------------+
+| 2016-05-30 13:58:29 |
++---------------------+
+1 row in set
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>开始blog，哈哈</title>
+      <link>https://vxgo.github.io/2016/07/19/%E5%BC%80%E5%A7%8Bblog%E5%93%88%E5%93%88/</link>
+      <pubDate>Tue, 19 Jul 2016 17:16:17 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/19/%E5%BC%80%E5%A7%8Bblog%E5%93%88%E5%93%88/</guid>
+      <description>public static void main(String args[]){ System.out.println(&amp;quot;hello world&amp;quot;); }  </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://vxgo.github.io/2016/07/19/hello-world/</link>
+      <pubDate>Tue, 19 Jul 2016 10:47:23 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/19/hello-world/</guid>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick Start Create a new post $ hexo new &amp;quot;My New Post&amp;quot;  More info: Writing
+Run server $ hexo server  More info: Server
+Generate static files $ hexo generate  More info: Generating</description>
+    </item>
+    
+  </channel>
+</rss>

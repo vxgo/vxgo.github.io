@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hello on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/hello/</link>
+    <description>Recent content in hello on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 19 Jul 2016 17:16:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/hello/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>开始blog，哈哈</title>
+      <link>https://vxgo.github.io/2016/07/19/%E5%BC%80%E5%A7%8Bblog%E5%93%88%E5%93%88/</link>
+      <pubDate>Tue, 19 Jul 2016 17:16:17 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/19/%E5%BC%80%E5%A7%8Bblog%E5%93%88%E5%93%88/</guid>
+      <description>public static void main(String args[]){ System.out.println(&amp;quot;hello world&amp;quot;); }  </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://vxgo.github.io/2016/07/19/hello-world/</link>
+      <pubDate>Tue, 19 Jul 2016 10:47:23 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/19/hello-world/</guid>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick Start Create a new post $ hexo new &amp;quot;My New Post&amp;quot;  More info: Writing
+Run server $ hexo server  More info: Server
+Generate static files $ hexo generate  More info: Generating</description>
+    </item>
+    
+  </channel>
+</rss>

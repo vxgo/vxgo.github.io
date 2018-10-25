@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/shell/</link>
+    <description>Recent content in shell on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 24 Sep 2016 12:31:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oh My Zsh 替换你的 Bash Shell</title>
+      <link>https://vxgo.github.io/2016/09/24/using-oh-my-zsh/</link>
+      <pubDate>Sat, 24 Sep 2016 12:31:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/24/using-oh-my-zsh/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Oh-My-Zsh is an open source, community-driven framework for managing your ZSH configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes, and a few things that make you shout&amp;hellip;&lt;/p&gt;
+
+&lt;blockquote class=&#39;blockquote-center&#39;&gt;[Oh My ZSH!][1]&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ws2.sinaimg.cn/large/687148dbly1focma5ect2j209d05s3yl.jpg&#34; alt=&#34;Oh My Zsh&#34; /&gt;
+&lt;!-- {% img /images/post/OMZLogo_BnW.png 200 &#39;Oh My Zsh&#39;%} --&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;1-oh-my-zsh-简介&#34;&gt;1. Oh My Zsh 简介&lt;/h1&gt;
+
+&lt;p&gt;无意中看见了 Linux 的一款 Shell，相比于 Bash 极其美艳，决定入坑试水一下，不试不知道，一试绝对有惊喜，不仅外观美艳而且功能强大，那还有不替换 Bash 的理由吗？搞起搞起&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

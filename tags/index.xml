@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/</link>
+    <description>Recent content in Tags on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 10 Jan 2017 11:01:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS</title>
+      <link>https://vxgo.github.io/tags/centos/</link>
+      <pubDate>Tue, 10 Jan 2017 11:01:09 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Daocloud</title>
+      <link>https://vxgo.github.io/tags/daocloud/</link>
+      <pubDate>Wed, 02 Nov 2016 19:03:06 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/daocloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://vxgo.github.io/tags/docker/</link>
+      <pubDate>Mon, 09 Jan 2017 16:54:24 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evernote</title>
+      <link>https://vxgo.github.io/tags/evernote/</link>
+      <pubDate>Wed, 19 Oct 2016 10:47:23 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/evernote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://vxgo.github.io/tags/git/</link>
+      <pubDate>Thu, 15 Jun 2017 10:18:29 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://vxgo.github.io/tags/github/</link>
+      <pubDate>Tue, 30 Aug 2016 14:23:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitLab</title>
+      <link>https://vxgo.github.io/tags/gitlab/</link>
+      <pubDate>Sun, 31 Jul 2016 18:15:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://vxgo.github.io/tags/go/</link>
+      <pubDate>Fri, 26 Jan 2018 21:27:56 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gogs</title>
+      <link>https://vxgo.github.io/tags/gogs/</link>
+      <pubDate>Tue, 06 Sep 2016 12:15:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/gogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://vxgo.github.io/tags/golang/</link>
+      <pubDate>Fri, 26 Jan 2018 21:27:56 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>https://vxgo.github.io/tags/hexo/</link>
+      <pubDate>Tue, 30 Aug 2016 14:23:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JMS</title>
+      <link>https://vxgo.github.io/tags/jms/</link>
+      <pubDate>Thu, 21 Jul 2016 12:35:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/jms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://vxgo.github.io/tags/jvm/</link>
+      <pubDate>Thu, 23 Aug 2018 15:15:07 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://vxgo.github.io/tags/java/</link>
+      <pubDate>Thu, 23 Aug 2018 15:15:07 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://vxgo.github.io/tags/kafka/</link>
+      <pubDate>Mon, 10 Oct 2016 21:40:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://vxgo.github.io/tags/linux/</link>
+      <pubDate>Wed, 24 May 2017 10:45:20 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux版本</title>
+      <link>https://vxgo.github.io/tags/linux%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Fri, 18 Nov 2016 14:56:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/linux%E7%89%88%E6%9C%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>List</title>
+      <link>https://vxgo.github.io/tags/list/</link>
+      <pubDate>Wed, 20 Jul 2016 15:52:33 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://vxgo.github.io/tags/mac/</link>
+      <pubDate>Fri, 30 Mar 2018 20:45:40 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://vxgo.github.io/tags/markdown/</link>
+      <pubDate>Wed, 19 Oct 2016 10:47:23 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mock</title>
+      <link>https://vxgo.github.io/tags/mock/</link>
+      <pubDate>Tue, 25 Jul 2017 19:01:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/mock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mockito</title>
+      <link>https://vxgo.github.io/tags/mockito/</link>
+      <pubDate>Tue, 25 Jul 2017 19:01:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/mockito/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://vxgo.github.io/tags/mysql/</link>
+      <pubDate>Thu, 31 May 2018 13:55:26 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://vxgo.github.io/tags/nginx/</link>
+      <pubDate>Fri, 23 Dec 2016 11:20:44 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://vxgo.github.io/tags/node.js/</link>
+      <pubDate>Sat, 30 Jul 2016 16:19:03 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oracle</title>
+      <link>https://vxgo.github.io/tags/oracle/</link>
+      <pubDate>Thu, 28 Jul 2016 14:06:36 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/oracle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerMock</title>
+      <link>https://vxgo.github.io/tags/powermock/</link>
+      <pubDate>Tue, 25 Jul 2017 19:01:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/powermock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://vxgo.github.io/tags/python/</link>
+      <pubDate>Sat, 07 Jan 2017 19:23:22 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://vxgo.github.io/tags/sql/</link>
+      <pubDate>Thu, 31 May 2018 13:55:26 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://vxgo.github.io/tags/shell/</link>
+      <pubDate>Sat, 24 Sep 2016 12:31:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sublime</title>
+      <link>https://vxgo.github.io/tags/sublime/</link>
+      <pubDate>Mon, 24 Oct 2016 17:30:55 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/sublime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>https://vxgo.github.io/tags/tmux/</link>
+      <pubDate>Wed, 25 Oct 2017 14:45:24 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travis CI</title>
+      <link>https://vxgo.github.io/tags/travis-ci/</link>
+      <pubDate>Wed, 02 Nov 2016 17:32:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/travis-ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://vxgo.github.io/tags/vim/</link>
+      <pubDate>Fri, 02 Dec 2016 20:46:05 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows 10</title>
+      <link>https://vxgo.github.io/tags/windows-10/</link>
+      <pubDate>Tue, 25 Oct 2016 11:48:31 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/windows-10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>https://vxgo.github.io/tags/zsh/</link>
+      <pubDate>Sat, 24 Sep 2016 12:31:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hello</title>
+      <link>https://vxgo.github.io/tags/hello/</link>
+      <pubDate>Tue, 19 Jul 2016 17:16:17 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/hello/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://vxgo.github.io/tags/k8s/</link>
+      <pubDate>Fri, 12 Jan 2018 09:23:01 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kernel</title>
+      <link>https://vxgo.github.io/tags/kernel/</link>
+      <pubDate>Tue, 10 Jan 2017 11:01:09 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://vxgo.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 12 Jan 2018 09:23:01 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>minikube</title>
+      <link>https://vxgo.github.io/tags/minikube/</link>
+      <pubDate>Fri, 12 Jan 2018 09:23:01 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/minikube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>naruto</title>
+      <link>https://vxgo.github.io/tags/naruto/</link>
+      <pubDate>Fri, 02 Sep 2016 14:36:04 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/naruto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nohup</title>
+      <link>https://vxgo.github.io/tags/nohup/</link>
+      <pubDate>Wed, 18 Jan 2017 16:13:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/nohup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>picture</title>
+      <link>https://vxgo.github.io/tags/picture/</link>
+      <pubDate>Fri, 02 Sep 2016 14:36:04 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/picture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rar</title>
+      <link>https://vxgo.github.io/tags/rar/</link>
+      <pubDate>Thu, 22 Dec 2016 15:39:45 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/rar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://vxgo.github.io/tags/shell/</link>
+      <pubDate>Sat, 24 Sep 2016 12:31:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zip</title>
+      <link>https://vxgo.github.io/tags/zip/</link>
+      <pubDate>Thu, 22 Dec 2016 15:39:45 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/zip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>事务</title>
+      <link>https://vxgo.github.io/tags/%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Thu, 31 May 2018 13:55:26 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/%E4%BA%8B%E5%8A%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>年末总结</title>
+      <link>https://vxgo.github.io/tags/%E5%B9%B4%E6%9C%AB%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 31 Dec 2017 11:52:58 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/%E5%B9%B4%E6%9C%AB%E6%80%BB%E7%BB%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>持续构建</title>
+      <link>https://vxgo.github.io/tags/%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA/</link>
+      <pubDate>Fri, 18 Nov 2016 09:44:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据库事务</title>
+      <link>https://vxgo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Thu, 31 May 2018 13:55:26 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>杂谈</title>
+      <link>https://vxgo.github.io/tags/%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Sat, 10 Mar 2018 23:02:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/%E6%9D%82%E8%B0%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>程序员幽默</title>
+      <link>https://vxgo.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B9%BD%E9%BB%98/</link>
+      <pubDate>Thu, 27 Oct 2016 15:06:38 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B9%BD%E9%BB%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

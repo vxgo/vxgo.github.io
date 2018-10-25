@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/python/</link>
+    <description>Recent content in Python on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 07 Jan 2017 19:23:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS 7 安装Python3、pip3</title>
+      <link>https://vxgo.github.io/2017/01/07/centos-7-%E5%AE%89%E8%A3%85python3pip3/</link>
+      <pubDate>Sat, 07 Jan 2017 19:23:22 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/07/centos-7-%E5%AE%89%E8%A3%85python3pip3/</guid>
+      <description>&lt;p&gt;CentOS 7 默认安装了 Python 2，当需要使用 Python 3 的时候，可以手动下载 Python 源码后编译安装。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-安装-python-3&#34;&gt;一、安装 Python 3&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-安装准备&#34;&gt;1.1 安装准备&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo mkdir /usr/local/python3 # 创建安装目录
+
+# 下载 Python 源文件
+$ wget --no-check-certificate https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+# 注意：wget获取https的时候要加上：--no-check-certificate
+
+$ tar -xzvf Python-3.6.0.tgz # 解压缩包
+
+$ cd Python-3.6.0 # 进入解压目录
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

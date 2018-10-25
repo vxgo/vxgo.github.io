@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daocloud on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/daocloud/</link>
+    <description>Recent content in Daocloud on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Nov 2016 19:03:06 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/daocloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>测试使用 daocloud 持续构建 Hexo</title>
+      <link>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8-daocloud-%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-hexo/</link>
+      <pubDate>Wed, 02 Nov 2016 19:03:06 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/02/%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8-daocloud-%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-hexo/</guid>
+      <description>测试使用 daocloud 持续构建 Hexo {% note danger %} Coding Hexo DaoCloud {% endnote %} {% note primary %} 看到这边博文，表示持续构建成功！！！ {% endnote %}</description>
+    </item>
+    
+  </channel>
+</rss>

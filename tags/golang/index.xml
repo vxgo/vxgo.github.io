@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/golang/</link>
+    <description>Recent content in Golang on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 26 Jan 2018 21:27:56 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang 反射使用总结</title>
+      <link>https://vxgo.github.io/2018/01/26/golang-reflect/</link>
+      <pubDate>Fri, 26 Jan 2018 21:27:56 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/01/26/golang-reflect/</guid>
+      <description>&lt;p&gt;Go 语言中反射的操作主要定义在标准库 &lt;a href=&#34;https://golang.org/pkg/reflect/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reflect&lt;/code&gt;&lt;/a&gt; 中，在标准库中定义了两种类型来表现运行时的对象信息，分别是：&lt;a href=&#34;https://golang.org/pkg/reflect/#Value&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reflect.Value&lt;/code&gt;&lt;/a&gt;（反射对象的类型）和 &lt;a href=&#34;https://golang.org/pkg/reflect/#Type&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reflect.Type&lt;/code&gt;&lt;/a&gt;（反射对象的值），Go 语言中所有反射操作都是基于这两个类型进行的。&lt;/p&gt;
+
+&lt;!-- {% img https://ws1.sinaimg.cn/large/687148dbly1fo6mhg1xw3j20mf0c10v1.jpg 350 %} --&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ws1.sinaimg.cn/large/687148dbly1fo6mhg1xw3j20mf0c10v1.jpg&#34; alt=&#34;golang-reflect&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;为了方便演示操作（&lt;a href=&#34;https://github.com/ehlxr/go-utils/blob/master/common/reflect/main.go&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;完整代码示例&lt;/a&gt;），首先定义以下结构体以及字段、方法：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go 常用代码块</title>
+      <link>https://vxgo.github.io/2017/12/06/go-commons-code-snippets/</link>
+      <pubDate>Wed, 06 Dec 2017 10:07:54 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/12/06/go-commons-code-snippets/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;总结备忘一下常用的的 Go 代码片段&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;遍历目录下的文件&#34;&gt;遍历目录下的文件&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func getFilelist(r string) {
+    err := filepath.Walk(r, func(p string, f os.FileInfo, err error) error {
+        if f == nil {
+            return nil
+        }
+        if p == r || f.IsDir() {
+            return nil
+        }
+        fmt.Println(p)
+        return nil
+    })
+    if err != nil {
+        fmt.Printf(&amp;quot;filepath.Walk() returned %v\n&amp;quot;, err)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Go Cheat Sheet</title>
+      <link>https://vxgo.github.io/2017/08/24/golang-cheat-sheet/</link>
+      <pubDate>Thu, 24 Aug 2017 14:18:53 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/08/24/golang-cheat-sheet/</guid>
+      <description>&lt;h1 id=&#34;go-cheat-sheet&#34;&gt;Go Cheat Sheet&lt;/h1&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Most example code taken from &lt;a href=&#34;http://tour.golang.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;A Tour of Go&lt;/a&gt;, which is an excellent introduction to Go.
+If you&amp;rsquo;re new to Go, do that tour. Seriously.&lt;/p&gt;
+
+&lt;h2 id=&#34;go-in-a-nutshell&#34;&gt;Go in a Nutshell&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Imperative language&lt;/li&gt;
+&lt;li&gt;Statically typed&lt;/li&gt;
+&lt;li&gt;Syntax tokens similar to C (but less parentheses and no semicolons) and the structure to Oberon-2&lt;/li&gt;
+&lt;li&gt;Compiles to native code (no JVM)&lt;/li&gt;
+&lt;li&gt;No classes, but structs with methods&lt;/li&gt;
+&lt;li&gt;Interfaces&lt;/li&gt;
+&lt;li&gt;No implementation inheritance. There&amp;rsquo;s &lt;a href=&#34;http://golang.org/doc/effective%5Fgo.html#embedding&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;type embedding&lt;/a&gt;, though.&lt;/li&gt;
+&lt;li&gt;Functions are first class citizens&lt;/li&gt;
+&lt;li&gt;Functions can return multiple values&lt;/li&gt;
+&lt;li&gt;Has closures&lt;/li&gt;
+&lt;li&gt;Pointers, but not pointer arithmetic&lt;/li&gt;
+&lt;li&gt;Built-in concurrency primitives: Goroutines and Channels&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Java 程序员的 Golang 入门笔记</title>
+      <link>https://vxgo.github.io/2017/07/22/from-java-to-golang/</link>
+      <pubDate>Sat, 22 Jul 2017 11:23:10 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/07/22/from-java-to-golang/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;最近抽空学习了一下 &lt;code&gt;Go&lt;/code&gt; 语言，好多特性感觉非常棒，由于高效的开发效率以及性能，现在好多优秀的开源项目都是基于 &lt;code&gt;Go&lt;/code&gt; 开发，比如 &lt;code&gt;Docker&lt;/code&gt;、&lt;code&gt;etcd&lt;/code&gt;、&lt;code&gt;consul&lt;/code&gt;、&lt;code&gt;Kubernetes&lt;/code&gt; 等。&lt;code&gt;Go&lt;/code&gt; 势必会在互联网技术的服务化，容器化的将来大展拳脚。正好网上看到一篇关于 &lt;code&gt;Java&lt;/code&gt; 程序员入门 &lt;code&gt;Golang&lt;/code&gt; 的文章，写的挺好的，所以特此转载过来，再加上自己的一些学习经验，供大家参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;Golang&lt;/code&gt; 从 &lt;code&gt;09&lt;/code&gt; 年发布，中间经历了多个版本的演进，已经渐渐趋于成熟，其媲美于 &lt;code&gt;C&lt;/code&gt; 语言的性能、&lt;code&gt;Python&lt;/code&gt; 的开发效率，又被称为 21 世纪的 &lt;code&gt;C&lt;/code&gt; 语言，尤其适合开发后台服务。这篇文章主要是介绍 &lt;code&gt;Golang&lt;/code&gt; 的一些主要特性，和 &lt;code&gt;Java&lt;/code&gt; 做一个对比，以便更好的理解 &lt;code&gt;Golang&lt;/code&gt; 这门语言。&lt;/p&gt;
+
+&lt;p&gt;关于 &lt;code&gt;Golang&lt;/code&gt; 环境的搭建就不讲了，可以参考 &lt;a href=&#34;https://golang.org/doc/install&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 或者大神 &lt;a href=&#34;https://github.com/astaxie&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;astaxie&lt;/a&gt; 的开源书籍 &lt;a href=&#34;https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.0.md&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;build-web-application-with-golang&lt;/a&gt; 的相关篇章。下面我没让你就从 &lt;code&gt;Go&lt;/code&gt; 版本的&lt;code&gt;Hello World&lt;/code&gt; 开始。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

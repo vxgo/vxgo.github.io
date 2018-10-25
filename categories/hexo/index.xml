@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on 胡言乱语</title>
+    <link>https://vxgo.github.io/categories/hexo/</link>
+    <description>Recent content in Hexo on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 30 Aug 2016 14:23:52 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hexo基于GitHub Pages搭建个人博客（三）</title>
+      <link>https://vxgo.github.io/2016/08/30/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%89/</link>
+      <pubDate>Tue, 30 Aug 2016 14:23:52 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/08/30/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%89/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;生命不息，折腾不休。从搭建 blog 以来，博文虽没有写几篇，但折腾的时间花了不少，走过了不少弯路，也踩过了不少的坑，虽然很懒，但本着好记性不如烂笔头的宗旨，打算在折腾记忆尚未磨灭之际记录一下走过的路和踩过的坑&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;接着前两篇使用 Hexo 基于 GitHub Pages 搭建个人博客之上，本文记录了在使用非常漂亮简洁的 &lt;a href=&#34;http://theme-next.iissnan.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Next&lt;/a&gt; 主题过程中的各种折腾，其它主题的相关设置大同小异。再次衷心的感谢 Hexo 的作者和 Next 主题作者的无私奉献。&lt;/p&gt;
+
+&lt;h1 id=&#34;一-主题基本配置&#34;&gt;一、主题基本配置&lt;/h1&gt;
+
+&lt;p&gt;记录一下 Next 主题的基本配置、设置「阅读全文」、关闭新建页面的评论功能、页面文章的篇数、宽度调节、设置「JavaScript 第三方库」等内容、在线字体替换（选择关闭，加快访问速度）&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Hexo基于GitHub Pages搭建个人博客（二）</title>
+      <link>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</link>
+      <pubDate>Sat, 23 Jul 2016 15:57:49 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;上一篇介绍了 GitHub Pages 服务开启，这篇文章将介绍 Hexo 的安装和使用以及将博客部署到 GitHub Pages 的操作。&lt;/p&gt;
+
+&lt;blockquote class=&#39;blockquote-center&#39;&gt; [Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。][1] &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-node-js-安装&#34;&gt;一、Node.js 安装&lt;/h1&gt;
+
+&lt;p&gt;Hexo 是基于 Node.js 安装，所以安装 Hexo 之前首先要安装 Node.js。下载地址：&lt;a href=&#34;https://nodejs.org/en/download/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://nodejs.org/en/download/&lt;/a&gt; 根据自己的操作系统，下载对应版本即可。Windons 安装过程比较简单，一直下一步即可安装完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ehlxr.me/2016/07/30/CentOS-7-%E5%AE%89%E8%A3%85-Node-js/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;CentOS 7 安装 Node.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Hexo基于GitHub Pages搭建个人博客（一）</title>
+      <link>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80/</link>
+      <pubDate>Sat, 23 Jul 2016 11:35:43 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;GitHub Pages&lt;/code&gt; 是 &lt;code&gt;GitHub&lt;/code&gt; 提供的免费开源的静态站点托管服务，利用这个服务可以搭建轻量级的博客系统，本文介绍了如何使用 &lt;code&gt;Hexo&lt;/code&gt; 结合 &lt;code&gt;GitHub Pages&lt;/code&gt; 服务搭建个人博客。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-安装配置-git&#34;&gt;一、安装配置 &lt;code&gt;Git&lt;/code&gt;&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-安装-git&#34;&gt;1.1 安装 &lt;code&gt;Git&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;使用 &lt;code&gt;GitHub&lt;/code&gt; 首先要安装 &lt;code&gt;Git&lt;/code&gt;，可根据操作系统下载不同版本的 &lt;code&gt;Git&lt;/code&gt;，&lt;code&gt;Windows&lt;/code&gt; 下载地址：&lt;a href=&#34;https://git-scm.com/download/win&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://git-scm.com/download/win&lt;/a&gt; 安装过程比较简单，选择默认选项配置即可下一步，不再叙述。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-配置-git&#34;&gt;1.2 配置 &lt;code&gt;Git&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;设置本地机器默认 &lt;code&gt;commit&lt;/code&gt; 的昵称与 &lt;code&gt;Email&lt;/code&gt;，姓名与 &lt;code&gt;Email&lt;/code&gt; 只用于日志标识，实际推送到远程仓库时，要用有操作权限的账号登录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --global user.name &amp;quot;ehlxr&amp;quot;
+git config --global user.email &amp;quot;ehlxr@qq.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;二-生成-ssh-keys&#34;&gt;二、生成 &lt;code&gt;SSH keys&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;SSH Keys&lt;/code&gt; 是 &lt;code&gt;GitHub&lt;/code&gt; 推荐的公钥、秘钥形式验证用户合法性的机制，添加 &lt;code&gt;SSH Keys&lt;/code&gt; 可以省去每次都要输入密码的步骤，下面将演示如何在本地计算机生成 &lt;code&gt;SSH Keys&lt;/code&gt; 的公钥、秘钥。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/mac/</link>
+    <description>Recent content in Mac on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 30 Mar 2018 20:45:40 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac 实用小工具</title>
+      <link>https://vxgo.github.io/2018/03/30/mac-utility-tools/</link>
+      <pubDate>Fri, 30 Mar 2018 20:45:40 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2018/03/30/mac-utility-tools/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;记录备忘一下 Mac 系统下一些实用的小工具&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;收费&#34;&gt;收费&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Bartender&lt;/code&gt; : 菜单栏管理工具，可以将菜单放进 Bartender 的二级菜单&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SizeUp&lt;/code&gt; : 实用分屏小工具&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Proxifier&lt;/code&gt; :  配合 ss/ssr 可以实现真正的全局代理软件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;iStat Menus&lt;/code&gt; : 能够在系统菜单栏实时监控 CPU、内存、硬盘、网络、温度、电池以及系统时间等&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CleanMyMac&lt;/code&gt; : 系统清理工具，可以清除 mac 系统多余的语言包、系统缓存、应用程序等&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;KeyCue&lt;/code&gt; : 快捷键辅助工具，忘记一些快捷键的时候按住 Command 就会出现快捷键大全的菜单&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Araxis Merge&lt;/code&gt; : 可视化文件合并以及数据同步工具&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>占用端口、PID 查询总结</title>
+      <link>https://vxgo.github.io/2017/05/24/query-port-pid/</link>
+      <pubDate>Wed, 24 May 2017 10:45:20 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/05/24/query-port-pid/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;总结一下日常工作学习中常用的查询占用端口、PID相关命令。主要有命令 ps、lsof、netstat 等命令。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;ps&#34;&gt;ps&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ps -ef&lt;/code&gt; 或者 &lt;code&gt;ps aux&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;根据命令（IntelliJIDEALicenseServer）搜索 PID（17107）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ps -ef | grep IntelliJIDEALicenseServer | grep -v &amp;quot;grep&amp;quot;
+  501 17017 12203   0 10:01上午 ttys000    0:00.02 IntelliJIDEALicenseServer -p 21014
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;lsof&#34;&gt;lsof&lt;/h2&gt;
+
+&lt;p&gt;根据 PID（17107）搜索占用端口（21014）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ lsof -p 17017 -nP | grep TCP
+COMMAND     PID  USER   FD     TYPE             DEVICE SIZE/OFF    NODE NAME
+IntelliJI 17017 ehlxr    3u    IPv4 0xc0df10496212b0e3      0t0     TCP *:21014 (LISTEN)
+
+# 或者使用
+$ lsof -nP -iTCP -sTCP:LISTEN | grep 17017
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;-n 表示不显示主机名&lt;/li&gt;
+&lt;li&gt;-P 表示不显示端口俗称&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac 使用技巧总结</title>
+      <link>https://vxgo.github.io/2017/02/21/mac-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 21 Feb 2017 21:40:06 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/02/21/mac-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Mac 系统日常使用技巧归纳总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;一-mac-中-finder-显示-关闭隐藏文件&#34;&gt;一、Mac 中 Finder 显示、关闭隐藏文件&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-1-终端命令模式&#34;&gt;1.1 终端命令模式&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;打开终端，输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  # 此命令显示隐藏文件
+  defaults write com.apple.finder AppleShowAllFiles -bool true
+
+  # 此命令关闭显示隐藏文件
+  defaults write com.apple.finder AppleShowAllFiles -bool false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;命令运行之后需要重新加载 Finder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;快捷键 &lt;code&gt;Option + Command + ESC&lt;/code&gt;，选中 &lt;code&gt;Finder&lt;/code&gt;，重新启动即可&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-finder-快捷键&#34;&gt;1.2 Finder 快捷键&lt;/h2&gt;
+
+&lt;p&gt;在 macOS Sierra（10.12） 版本的系统中，我们可以使用快捷键&lt;code&gt;⌘⇧.&lt;/code&gt;(&lt;code&gt;Command + Shift + .&lt;/code&gt;) 来快速（在 Finder 中）显示和隐藏隐藏文件了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

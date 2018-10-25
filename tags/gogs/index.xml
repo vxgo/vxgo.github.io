@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gogs on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/gogs/</link>
+    <description>Recent content in Gogs on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Sep 2016 12:15:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/gogs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>5 分钟搭建 Git 服务器-Gogs</title>
+      <link>https://vxgo.github.io/2016/09/06/gogs-installation-introduction/</link>
+      <pubDate>Tue, 06 Sep 2016 12:15:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/06/gogs-installation-introduction/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Gogs 基于 Go 语言的自助 Git 服务。它具有易安装、跨平台、轻量级、开源化等特性&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/gogs-logo.png&#34; alt=&#34;&#34; /&gt;
+&lt;!-- {% img /images/post/gogs-logo.png 150 %} --&gt;&lt;/p&gt;
+
+&lt;p&gt;最近新到一家公司，发现在使用 Gogs 搭建 Git 服务，遂研究了一下，和前段时间研究的 GitLab 做了一个简单的对比，虽然 Gogs 相对与 GitLab 还比较年轻，也许没有 GitLab 强大和稳健，但 Gogs 更加简单易用，而且能够满足正常的工作使用。&lt;/p&gt;
+
+&lt;p&gt;Gogs 是轻量级的 Git 服务，正如官方介绍的：一个廉价的树莓派的配置足以满足 Gogs 的最低系统硬件要求。最大程度上节省您的服务器资源！关键的一点是免费开源的，所有的代码都开源在 GitHub 上。下面结合官方的介绍，总结一下在 Linux 系统下的安装方法，真的是相当的简单，5 分钟足矣！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

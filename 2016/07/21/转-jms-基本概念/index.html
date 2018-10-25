@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="ehlxr">
+  <meta name="description" content="My Hugo Blog.">
+  <meta name="keywords" content="[Hugo theme ehlxr]">
+  
+  <link rel="prev" href="https://vxgo.github.io/2016/07/20/java-list%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/" />
+  <link rel="next" href="https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80/" />
+  <link rel="canonical" href="https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           [转] JMS 基本概念 | 胡言乱语
+       
+  </title>
+  <meta name="title" content="[转] JMS 基本概念 | 胡言乱语">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://vxgo.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "[转] JMS 基本概念",
+    "headline" : "[转] JMS 基本概念",
+    "description" : "<p>JMS（JAVA Message Service,java消息服务）API是一个消息服务的标准或者说是规范，允许应用程序组件基于JavaEE平台创建、发送、接收和读取消息。它使分布式通信耦合度更低，消息服务更加可靠以及异步性。</p>
+
+<h2 id="基本概念">基本概念</h2>
+
+<p>JMS是java的消息服务，JMS的客户端之间可以通过JMS服务进行异步的消息传输。</p>
+
+<h2 id="消息模型">消息模型</h2>
+
+<ul>
+<li>Point-to-Point(P2P)</li>
+<li>Publish/Subscribe(Pub/Sub)</li>
+</ul>
+
+<p>即点对点和发布订阅模型
+</p>",
+    "inLanguage" : "zh-cn",
+    "author" : "ehlxr",
+    "creator" : "ehlxr",
+    "publisher": "ehlxr",
+    "accountablePerson" : "ehlxr",
+    "copyrightHolder" : "ehlxr",
+    "copyrightYear" : "2016",
+    "datePublished": "2016-07-21 12:35:43 &#43;0000 UTC",
+    "dateModified" : "2016-07-21 12:35:43 &#43;0000 UTC",
+    "url" : "https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/",
+    "wordCount" : "70",
+    "keywords" : [ "Java","JMS", "胡言乱语"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://vxgo.github.io">胡言乱语</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/link/" title="">Links</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title=""></a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+          
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">[转] JMS 基本概念</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://vxgo.github.io" rel="author">ehlxr</a> with ♥
+                <span class="post-time">
+                on <time datetime=2016-07-21 itemprop="datePublished">July 21, 2016</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://vxgo.github.io/categories/java%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"> Java开发技术 </a>
+                        
+                </span>
+
+                |
+                <a href="#gitalk-container" itemprop="discussionUrl">
+                    <span class="gitalk-comment-count" itemprop="commentCount"></span>
+                </a>
+                条评论
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#消息模型">消息模型</a></li>
+<li><a href="#p2p模型">P2P模型</a>
+<ul>
+<li><a href="#p2p模式图">P2P模式图</a></li>
+<li><a href="#涉及到的概念">涉及到的概念</a></li>
+<li><a href="#p2p模型的特点">P2P模型的特点</a></li>
+</ul></li>
+<li><a href="#pub-sub模型">Pub/Sub模型</a>
+<ul>
+<li><a href="#pub-sub模式图">Pub/Sub模式图</a></li>
+<li><a href="#涉及到的概念-1">涉及到的概念</a></li>
+<li><a href="#pub-sub模型的特点">Pub/Sub模型的特点</a></li>
+</ul></li>
+<li><a href="#消息的消费">消息的消费</a></li>
+<li><a href="#jms编程模型">JMS编程模型</a></li>
+<li><a href="#企业消息系统的好处">企业消息系统的好处</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <p>JMS（JAVA Message Service,java消息服务）API是一个消息服务的标准或者说是规范，允许应用程序组件基于JavaEE平台创建、发送、接收和读取消息。它使分布式通信耦合度更低，消息服务更加可靠以及异步性。</p>
+
+<h2 id="基本概念">基本概念</h2>
+
+<p>JMS是java的消息服务，JMS的客户端之间可以通过JMS服务进行异步的消息传输。</p>
+
+<h2 id="消息模型">消息模型</h2>
+
+<ul>
+<li>Point-to-Point(P2P)</li>
+<li>Publish/Subscribe(Pub/Sub)</li>
+</ul>
+
+<p>即点对点和发布订阅模型
+</p>
+
+<h2 id="p2p模型">P2P模型</h2>
+
+<h3 id="p2p模式图">P2P模式图</h3>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/1469075459852.jpg" alt="P2P模式图" class="lazyload"><figcaption class="image-caption">P2P模式图</figcaption></figure></p>
+
+<h3 id="涉及到的概念">涉及到的概念</h3>
+
+<ul>
+<li>消息队列（Queue）</li>
+<li>发送者(Sender)</li>
+<li>接收者(Receiver)</li>
+</ul>
+
+<p>每个消息都被发送到一个特定的队列，接收者从队列中获取消息。队列保留着消息，直到他们被消费或超时。</p>
+
+<h3 id="p2p模型的特点">P2P模型的特点</h3>
+
+<ul>
+<li>每个消息只有一个消费者（Consumer）(即一旦被消费，消息就不再在消息队列中)</li>
+<li>发送者和接收者之间在时间上没有依赖性，也就是说当发送者发送了消息之后，不管接收者有没有正在运行，它不会影响到消息被发送到队列</li>
+<li>接收者在成功接收消息之后需向队列应答成功</li>
+</ul>
+
+<p>如果你希望发送的每个消息都应该被成功处理的话，那么你需要P2P模式。</p>
+
+<h2 id="pub-sub模型">Pub/Sub模型</h2>
+
+<h3 id="pub-sub模式图">Pub/Sub模式图</h3>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/20150630221227522.jpg" alt="Pub/Sub模式图" class="lazyload"><figcaption class="image-caption">Pub/Sub模式图</figcaption></figure></p>
+
+<h3 id="涉及到的概念-1">涉及到的概念</h3>
+
+<ul>
+<li>主题（Topic）</li>
+<li>发布者（Publisher）</li>
+<li>订阅者（Subscriber）</li>
+</ul>
+
+<p>客户端将消息发送到主题。多个发布者将消息发送到Topic,系统将这些消息传递给多个订阅者。</p>
+
+<h3 id="pub-sub模型的特点">Pub/Sub模型的特点</h3>
+
+<ul>
+<li>每个消息可以有多个消费者</li>
+<li>发布者和订阅者之间有时间上的依赖性。针对某个主题（Topic）的订阅者，它必须创建一个订阅者之后，才能消费发布者的消息，而且为了消费消息，订阅者必须保持运行的状态。</li>
+<li>为了缓和这样严格的时间相关性，JMS允许订阅者创建一个可持久化的订阅。这样，即使订阅者没有被激活（运行），它也能接收到发布者的消息。</li>
+</ul>
+
+<p>如果你希望发送的消息可以不被做任何处理、或者被一个消息者处理、或者可以被多个消费者处理的话，那么可以采用Pub/Sub模型。</p>
+
+<h2 id="消息的消费">消息的消费</h2>
+
+<p>在JMS中，消息的产生和消息是异步的。对于消费来说，JMS的消息者可以通过两种方式来消费消息。</p>
+
+<ul>
+<li>同步
+订阅者或接收者调用receive方法来接收消息，receive方法在能够接收到消息之前（或超时之前）将一直阻塞</li>
+<li>异步
+订阅者或接收者可以注册为一个消息监听器。当消息到达之后，系统自动调用监听器的onMessage方法</li>
+</ul>
+
+<h2 id="jms编程模型">JMS编程模型</h2>
+
+<ul>
+<li>### ConnectionFactory</li>
+</ul>
+
+<p>创建Connection对象的工厂，针对两种不同的jms消息模型，分别有QueueConnectionFactory和TopicConnectionFactory两种。可以通过JNDI来查找ConnectionFactory对象。</p>
+
+<ul>
+<li>### Destination</li>
+</ul>
+
+<p>Destination的意思是消息生产者的消息发送目标或者说消息消费者的消息来源。对于消息生产者来说，它的Destination是某个队列（Queue）或某个主题（Topic）;对于消息消费者来说，它的Destination也是某个队列或主题（即消息来源）。</p>
+
+<p>所以，Destination实际上就是两种类型的对象：Queue、Topic可以通过JNDI来查找Destination。</p>
+
+<ul>
+<li>### Connection</li>
+</ul>
+
+<p>Connection表示在客户端和JMS系统之间建立的链接（对TCP/IP socket的包装）。Connection可以产生一个或多个Session。跟ConnectionFactory一样，Connection也有两种类型：QueueConnection和TopicConnection。</p>
+
+<ul>
+<li>### Session</li>
+</ul>
+
+<p>Session是我们操作消息的接口。可以通过session创建生产者、消费者、消息等。Session提供了事务的功能。当我们需要使用session发送/接收多个消息时，可以将这些发送/接收动作放到一个事务中。同样，也分QueueSession和TopicSession。</p>
+
+<ul>
+<li>### 消息的生产者</li>
+</ul>
+
+<p>消息生产者由Session创建，并用于将消息发送到Destination。同样，消息生产者分两种类型：QueueSender和TopicPublisher。可以调用消息生产者的方法（send或publish方法）发送消息。</p>
+
+<ul>
+<li>### 消息消费者</li>
+</ul>
+
+<p>消息消费者由Session创建，用于接收被发送到Destination的消息。两种类型：QueueReceiver和TopicSubscriber。可分别通过session的createReceiver(Queue)或createSubscriber(Topic)来创建。当然，也可以session的creatDurableSubscriber方法来创建持久化的订阅者。</p>
+
+<ul>
+<li>### MessageListener</li>
+</ul>
+
+<p>消息监听器。如果注册了消息监听器，一旦消息到达，将自动调用监听器的onMessage方法。EJB中的MDB（Message-Driven Bean）就是一种MessageListener。</p>
+
+<h2 id="企业消息系统的好处">企业消息系统的好处</h2>
+
+<p>我们先来看看下图，应用程序A将Message发送到服务器上，然后应用程序B从服务器中接收A发来的消息，通过这个图我们一起来分析一下JMS的好处：</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/post/20150630221818616.jpg" alt="企业消息系统的好处" class="lazyload"><figcaption class="image-caption">企业消息系统的好处</figcaption></figure></p>
+
+<ul>
+<li>提供消息灵活性</li>
+<li>松散耦合</li>
+<li>异步性</li>
+</ul>
+
+<hr />
+
+<p><a href="http://blog.csdn.net/jiuqiyuliang/article/details/46701559" rel="nofollow noreferrer" target="_blank">原文地址</a></p>
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>ehlxr </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://vxgo.github.io/2016/07/21/%E8%BD%AC-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/>
+                        <script>
+                            document.write(decodeURI(location.origin + location.pathname))
+                        </script>
+                    </a>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/java/">
+                    #Java</a></span>
+            
+            <span class="tag"><a href="https://vxgo.github.io/tags/jms/">
+                    #JMS</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://vxgo.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://vxgo.github.io/2016/07/20/java-list%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/" class="prev" rel="prev" title="Java List与数组之间的转换"><i class="iconfont icon-left"></i>&nbsp;Java List与数组之间的转换</a>
+        
+        
+        <a href="https://vxgo.github.io/2016/07/23/%E4%BD%BF%E7%94%A8hexo%E5%9F%BA%E4%BA%8Egithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80/" class="next" rel="next" title="使用Hexo基于GitHub Pages搭建个人博客（一）">使用Hexo基于GitHub Pages搭建个人博客（一）&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+</article>
+          
+<div class="post-comment"><div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div><div id="gitalk-container" class="gitalk-container"></div>
+    <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '8fab0d6aeac1aa8d76dab0970e413d13',
+        title: '[转] JMS 基本概念',
+        clientID: '9d9d3623e388cb2f2283',
+        clientSecret: '99c5b47b7553ab9122642f3e8f8d27973b22f8d2',
+        repo: 'vxgo.github.io',
+        owner: 'vxgo',
+        admin: ['ehlxr'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a>
+    </noscript><div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function showDisqus() {
+      
+
+      
+      
+      
+      
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+      var disqus_shortname = 'ehlxr';
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      window.location.hash = "#disqus_thread";
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://vxgo.github.io">ehlxr</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kernel on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/kernel/</link>
+    <description>Recent content in kernel on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 10 Jan 2017 11:01:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转] CentOS 升级 kernel</title>
+      <link>https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/</link>
+      <pubDate>Tue, 10 Jan 2017 11:01:09 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/10/%E8%BD%AC-centos-%E5%8D%87%E7%BA%A7-kernel/</guid>
+      <description>&lt;h1 id=&#34;一-手动档&#34;&gt;一、手动档&lt;/h1&gt;
+
+&lt;p&gt;手动档就是从源码开始编译内核安装，好处是可以自己选择任意版本的内核，缺点就是耗时长，编译安装消耗系统资源&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-获取-kernel-源码&#34;&gt;1.1、获取 kernel 源码&lt;/h2&gt;
+
+&lt;p&gt;这世界上最伟大的 Linux 内核源码下载地址是 &lt;a href=&#34;https://kernel.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;kernel&lt;/a&gt; 官网，选择一个稳定版本下载即可&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-解压并清理&#34;&gt;1.2、解压并清理&lt;/h2&gt;
+
+&lt;p&gt;官方要求将其解压到 &lt;code&gt;/usr/src&lt;/code&gt; 目录，其实在哪都可以，为了规范一点索性也解压到此位置，然后为了防止编译残留先做一次清理动作&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载内核源码
+$ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.xz
+
+# 解压并移动到 /usr/src
+$ tar -Jxvf linux-4.8.6.tar.xz
+$ mv linux-4.8.6 /usr/src/kernels
+
+# 执行清理（没 gcc 的要装一下）
+$ cd /usr/src/kernels/linux-4.8.6
+$ make mrproper &amp;amp;&amp;amp; make clean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

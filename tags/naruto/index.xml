@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>naruto on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/naruto/</link>
+    <description>Recent content in naruto on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Sep 2016 14:36:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/naruto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Naruto-Pictures</title>
+      <link>https://vxgo.github.io/2016/09/02/naruto-pictures/</link>
+      <pubDate>Fri, 02 Sep 2016 14:36:04 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/02/naruto-pictures/</guid>
+      <description>{% gp 5-3 %} {% endgp %}
+Your browser does not support the audio element.  --  </description>
+    </item>
+    
+  </channel>
+</rss>

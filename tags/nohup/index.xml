@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nohup on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/nohup/</link>
+    <description>Recent content in nohup on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Jan 2017 16:13:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/nohup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 的 nohup 命令的用法</title>
+      <link>https://vxgo.github.io/2017/01/18/linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Wed, 18 Jan 2017 16:13:21 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/01/18/linux-%E7%9A%84-nohup-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用 &lt;code&gt;nohup&lt;/code&gt; 命令。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;命令简介&#34;&gt;命令简介&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ nohup Command [ Arg … ] [ &amp;amp; ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。&lt;code&gt;nohup&lt;/code&gt; 就是不挂起的意思（&lt;code&gt;no hang up&lt;/code&gt;）。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nohup&lt;/code&gt; 运行由 &lt;code&gt;Command&lt;/code&gt; 和相关的 &lt;code&gt;Arg&lt;/code&gt; 参数指定的命令，忽略所有挂断（&lt;code&gt;SIGHUP&lt;/code&gt;）信号。要运行后台中的 &lt;code&gt;nohup&lt;/code&gt; 命令，添加 &lt;code&gt;&amp;amp;&lt;/code&gt; （ 表示 &lt;code&gt;and&lt;/code&gt; 的符号）到命令的尾部。&lt;/p&gt;
+
+&lt;p&gt;如果使用 &lt;code&gt;nohup&lt;/code&gt; 命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为 &lt;code&gt;nohup.out&lt;/code&gt; 的文件中，除非另外指定了输出文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tmux on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/tmux/</link>
+    <description>Recent content in Tmux on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 Oct 2017 14:45:24 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转]Tmux 快捷键速查表</title>
+      <link>https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/</link>
+      <pubDate>Wed, 25 Oct 2017 14:45:24 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/10/25/tmux-cheat-sheet/</guid>
+      <description>&lt;h1 id=&#34;tmux-快捷键-速查表&#34;&gt;Tmux 快捷键 &amp;amp; 速查表&lt;/h1&gt;
+
+&lt;p&gt;启动新会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux [new -s 会话名 -n 窗口名]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;恢复会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux at [-t 会话名]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;列出所有会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name=&#34;killSessions&#34;&gt;&lt;/a&gt;关闭会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux kill-session -t 会话名
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name=&#34;killAllSessions&#34;&gt;&lt;/a&gt;关闭所有会话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

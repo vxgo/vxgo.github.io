@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/sublime/</link>
+    <description>Recent content in Sublime on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 24 Oct 2016 17:30:55 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设置 Sublime Text3 主题透明</title>
+      <link>https://vxgo.github.io/2016/10/24/%E8%AE%BE%E7%BD%AE-sublime-text3-%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E/</link>
+      <pubDate>Mon, 24 Oct 2016 17:30:55 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/10/24/%E8%AE%BE%E7%BD%AE-sublime-text3-%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E/</guid>
+      <description>&lt;h1 id=&#34;1-下载安装包&#34;&gt;1. 下载安装包&lt;/h1&gt;
+
+&lt;p&gt;下载地址：&lt;a href=&#34;https://github.com/vhanla/SublimeTextTrans&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;SublimeTextTrans&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h1 id=&#34;2-安装插件&#34;&gt;2. 安装插件&lt;/h1&gt;
+
+&lt;p&gt;解压到 Sublime Text3 的 Packages 存放目录下，命名为：&lt;code&gt;SublimeTextTrans&lt;/code&gt;。点击 Sublime Text3 的 &lt;code&gt;Preferences -&amp;gt; Browse Packages&lt;/code&gt; 打开 Packages 存放目录，一般情况是在 &lt;code&gt;C:\Users\YOURNAME\AppData\Roaming\Sublime Text 3\Packages&lt;/code&gt; 目录下。&lt;/p&gt;
+
+&lt;h1 id=&#34;3-设置-sublime-text3-的透明度级别&#34;&gt;3. 设置 Sublime Text3 的透明度级别。&lt;/h1&gt;
+
+&lt;p&gt;点击 Sublime Text3 的 &lt;code&gt;Preferences -&amp;gt; Package Setting -&amp;gt; SublimeTextTrans -&amp;gt; Setting - User&lt;/code&gt; 就可以设置透明度的级别了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sublime Text 插件安装</title>
+      <link>https://vxgo.github.io/2016/07/25/sublime-text-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 25 Jul 2016 21:06:57 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/25/sublime-text-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Sublime Text 官方介绍：
+&amp;gt; “Sublime Text is a sophisticated text editor for code, markup and prose.You&amp;rsquo;ll love the slick user interface, extraordinary features and amazing performance.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sublime Text 是一款优秀的轻量级编辑器，而且支持跨平台，支持Windows、Linux、Mac OS X 等主流操作系统。虽然是一款收费软件，但也允许人们&lt;strong&gt;无限期免费使用&lt;/strong&gt;。（&lt;a href=&#34;http://www.sublimetext.com/3&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方下载地址&lt;/a&gt;）&lt;/p&gt;
+
+&lt;p&gt;Sublime Text 具有漂亮的用户界面和强大可扩展插件功能，本文介绍如何安装 Sublime Text 插件。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on 胡言乱语</title>
+    <link>https://vxgo.github.io/tags/vim/</link>
+    <description>Recent content in Vim on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Dec 2016 20:46:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vim Tab 设置为 4 个空格</title>
+      <link>https://vxgo.github.io/2016/12/02/vim-tab-%E8%AE%BE%E7%BD%AE%E4%B8%BA-4-%E4%B8%AA%E7%A9%BA%E6%A0%BC/</link>
+      <pubDate>Fri, 02 Dec 2016 20:46:05 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/12/02/vim-tab-%E8%AE%BE%E7%BD%AE%E4%B8%BA-4-%E4%B8%AA%E7%A9%BA%E6%A0%BC/</guid>
+      <description>&lt;p&gt;在 &lt;code&gt;vim&lt;/code&gt; 的配置文件中（Liunx：&lt;code&gt;/etc/vimrc&lt;/code&gt;）中添加以下代码后，重启 &lt;code&gt;vim&lt;/code&gt; 即可实现按 &lt;code&gt;TAB&lt;/code&gt; 产生 &lt;code&gt;4&lt;/code&gt; 个空格：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;set ts=4 # 注：ts 是 tabstop 的缩写，设 TAB 宽 4 个空格
+set expandtab
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对于已保存的文件，可以使用下面的方法进行空格和 &lt;code&gt;TAB&lt;/code&gt; 的替换：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TAB&lt;/code&gt; 替换为空格：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;:set ts=4
+:set expandtab
+:%retab!
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

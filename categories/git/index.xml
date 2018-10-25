@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 胡言乱语</title>
+    <link>https://vxgo.github.io/categories/git/</link>
+    <description>Recent content in Git on 胡言乱语</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 15 Jun 2017 10:18:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://vxgo.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转] Git查看、删除、重命名远程分支和tag</title>
+      <link>https://vxgo.github.io/2017/06/15/%E8%BD%AC-git%E6%9F%A5%E7%9C%8B%E5%88%A0%E9%99%A4%E9%87%8D%E5%91%BD%E5%90%8D%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%92%8Ctag/</link>
+      <pubDate>Thu, 15 Jun 2017 10:18:29 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2017/06/15/%E8%BD%AC-git%E6%9F%A5%E7%9C%8B%E5%88%A0%E9%99%A4%E9%87%8D%E5%91%BD%E5%90%8D%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%92%8Ctag/</guid>
+      <description>&lt;h2 id=&#34;查看远程分支&#34;&gt;查看远程分支&lt;/h2&gt;
+
+&lt;p&gt;加上 &lt;code&gt;-a&lt;/code&gt; 参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git branch -a
+ master
+ remote
+ tungway
+ v1.52
+* zrong
+ remotes/origin/master
+ remotes/origin/tungway
+ remotes/origin/v1.52
+ remotes/origin/zrong
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;删除远程分支和-tag&#34;&gt;删除远程分支和 &lt;code&gt;tag&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;code&gt;Git v1.7.0&lt;/code&gt; 之后，可以使用这种语法删除远程分支：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git push origin --delete &amp;lt;branchName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转] Git 版本回滚</title>
+      <link>https://vxgo.github.io/2016/11/07/%E8%BD%AC-git-%E7%89%88%E6%9C%AC%E5%9B%9E%E6%BB%9A/</link>
+      <pubDate>Mon, 07 Nov 2016 16:53:38 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/11/07/%E8%BD%AC-git-%E7%89%88%E6%9C%AC%E5%9B%9E%E6%BB%9A/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;总有一天你会遇到下面的问题：
+* 改完代码匆忙提交，上线发现有问题，怎么办？赶紧回滚。
+* 改完代码测试也没有问题，但是上线发现你的修改影响了之前运行正常的代码报错，必须回滚。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这些开发中很常见的问题，所以 &lt;code&gt;git&lt;/code&gt; 的取消提交，回退甚至返回上一版本都是特别重要的。大致分为下面 &lt;code&gt;2&lt;/code&gt; 种情况：&lt;/p&gt;
+
+&lt;h1 id=&#34;一-没有-push&#34;&gt;一、没有 push&lt;/h1&gt;
+
+&lt;p&gt;这种情况发生在你的本地代码仓库，可能你 &lt;code&gt;add&lt;/code&gt;，&lt;code&gt;commit&lt;/code&gt; 以后发现代码有点问题，准备取消提交，用到下面命令回退到某个版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset [--soft | --mixed | --hard]
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>5 分钟搭建 Git 服务器-Gogs</title>
+      <link>https://vxgo.github.io/2016/09/06/gogs-installation-introduction/</link>
+      <pubDate>Tue, 06 Sep 2016 12:15:14 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/06/gogs-installation-introduction/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Gogs 基于 Go 语言的自助 Git 服务。它具有易安装、跨平台、轻量级、开源化等特性&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/gogs-logo.png&#34; alt=&#34;&#34; /&gt;
+&lt;!-- {% img /images/post/gogs-logo.png 150 %} --&gt;&lt;/p&gt;
+
+&lt;p&gt;最近新到一家公司，发现在使用 Gogs 搭建 Git 服务，遂研究了一下，和前段时间研究的 GitLab 做了一个简单的对比，虽然 Gogs 相对与 GitLab 还比较年轻，也许没有 GitLab 强大和稳健，但 Gogs 更加简单易用，而且能够满足正常的工作使用。&lt;/p&gt;
+
+&lt;p&gt;Gogs 是轻量级的 Git 服务，正如官方介绍的：一个廉价的树莓派的配置足以满足 Gogs 的最低系统硬件要求。最大程度上节省您的服务器资源！关键的一点是免费开源的，所有的代码都开源在 GitHub 上。下面结合官方的介绍，总结一下在 Linux 系统下的安装方法，真的是相当的简单，5 分钟足矣！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 中配置 Git 命令自动补全</title>
+      <link>https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</link>
+      <pubDate>Sun, 04 Sep 2016 10:03:35 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/09/04/centos-%E4%B8%AD%E9%85%8D%E7%BD%AE-git-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</guid>
+      <description>&lt;h1 id=&#34;1-step-1&#34;&gt;1. Step 1&lt;/h1&gt;
+
+&lt;p&gt;保存以下文件的内容为：&lt;code&gt;git-completion.bash&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/git/git/blob/master/contrib/completion/git-completion.bash&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;git-completion.bash&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-step-2&#34;&gt;2.  Step 2&lt;/h1&gt;
+
+&lt;p&gt;将上述文件 &lt;code&gt;git-completion.bash&lt;/code&gt; copy 至个人 &lt;code&gt;home&lt;/code&gt; 目录，可设为隐藏文件以免后续被误删。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cp git-completion.bash ~/.git-completion.bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 系统下 GitLab 搭建与基本配置</title>
+      <link>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 31 Jul 2016 18:15:47 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/31/centos-%E7%B3%BB%E7%BB%9F%E4%B8%8B-gitlab-%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://about.gitlab.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitLab 是一个开源的版本管理系统，提供了类似于 GitHub 的源代码浏览，管理缺陷和注释等功能，你可以将代码免费托管到 GitLab.com，而且不限项目数量和成员数。最吸引人的一点是，可以在自己的服务器上搭建 GitLab CE （社区免费版）版本，方便内部团队协作开发和代码管理。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面介绍如何在 CentOS 服务器上搭建 GitLab CE 版本，以及一些基本的配置。&lt;/p&gt;
+
+&lt;h1 id=&#34;1-安装&#34;&gt;1. 安装&lt;/h1&gt;
+
+&lt;p&gt;GitLab 提供了两种安装方式：源码手动编译安装和软件包管理安装。&lt;/p&gt;
+
+&lt;p&gt;源码手动编译安装虽然配置灵活，但过程比较麻烦，不容易安装成功，所以我这里选择软件包管理安装的形式。&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-使用-gitlab-提供仓库在线安装&#34;&gt;1.1 使用 GitLab 提供仓库在线安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+yum install gitlab-ce
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub 更新已经 fork 的项目</title>
+      <link>https://vxgo.github.io/2016/07/28/update-from-github-fork/</link>
+      <pubDate>Thu, 28 Jul 2016 10:12:15 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/28/update-from-github-fork/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;GitHub 上有个很方便的功能叫 fork，将别人的工程一键复制到自己账号下。这个功能很方便，但有点不足的是，当源项目更新后，你 fork 的分支并不会一起更新，需要自己手动去更新，下面记录下网上找到的更新的开发方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;1-在本地装好-github-客户端-或者-git-客户端&#34;&gt;1. 在本地装好 GitHub 客户端，或者 Git 客户端&lt;/h3&gt;
+
+&lt;h3 id=&#34;2-clone-自己的-fork-分支到本地&#34;&gt;2. clone 自己的 fork 分支到本地&lt;/h3&gt;
+
+&lt;p&gt;可以直接使用 GitHub 客户端，clone 到本地，如果使用命令行，命令为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git clone git@github.com:ehlxr/strman-java.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git 同时 push 到多个远程仓库</title>
+      <link>https://vxgo.github.io/2016/07/24/git-%E5%90%8C%E6%97%B6-push-%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Sun, 24 Jul 2016 18:55:59 +0000</pubDate>
+      
+      <guid>https://vxgo.github.io/2016/07/24/git-%E5%90%8C%E6%97%B6-push-%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h3 id=&#34;方法一&#34;&gt;方法一&lt;/h3&gt;
+
+&lt;p&gt;如果一个本地仓库添加多个远程仓库，不想 git push 多次，可以修改 .git/config 文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vim .git/config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;比如以下信息表示在 git@OSC 和 GitHub 两个远程托管&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://vxgo.github.io/images/post/20160724193534.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
